@@ -1,0 +1,2431 @@
+swagger: '2.0'
+info:
+  description: >-
+    C4E
+  version: 1.0.0
+  title: C4E billing-management RESTful API
+basePath: /api
+tags:
+  - name: Account
+  - name: Account Balance
+  - name: Account Subscription
+  - name: Account Subscription Contract
+  - name: Balance Type
+  - name: Contract
+  - name: Distribution System Operator
+  - name: Energy Point
+  - name: Energy Point Contract
+  - name: Provider
+  - name: Service
+  - name: Service Offer
+  - name: Service Offer Group
+  - name: Rating
+  - name: Rating Plan
+  - name: Rating Plan Type
+  - name: Tariff
+  - name: Tariff Type
+  - name: Tariff Instance
+  - name: Unit Type
+schemes:
+  - http
+security:
+  - basicAuth: []
+paths:
+  '/contract/{contractId}':
+    get:
+      tags:
+        - Contract
+      summary: Find Contract by ID
+      description: ''
+      operationId: getContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of Contract that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ContractDtoPostResp'
+  '/contract':
+    post:
+      tags:
+        - Contract
+      summary: Create a new Contract
+      description: ''
+      operationId: createContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: >-
+            Contract object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ContractDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ContractDtoPostResp'
+  '/contract/{contractId}/subscription':
+    get:
+      tags:
+        - Account Subscription Contract
+      summary: Find Account Subscription Contract by ID
+      description: ''
+      operationId: getAccountSubscriptionContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of Account Subscription Contract that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountSubscriptionContractDtoPostResp'
+    delete:
+      tags:
+        - Account Subscription Contract
+      summary: Delete an existing Account Subscription Contract
+      description: ''
+      operationId: deleteAccountSubscriptionContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of Account Subscription Contract that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Account Subscription Contract not found
+        '500':
+          description: Internal Server Error
+  '/contract/subscription':
+    post:
+      tags:
+        - Account Subscription Contract
+      summary: Create a new Account Subscription Contract
+      description: ''
+      operationId: createAccountSubscriptionContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: >-
+            Account Subscription Contract object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountSubscriptionContractDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountSubscriptionContractDtoPostResp'
+  '/distribution_system_operator/{distributionSystemOperatorId}':
+    get:
+      tags:
+        - Distribution System Operator
+      summary: Find Distribution System Operator by ID
+      description: ''
+      operationId: getDistributionSystemOperator
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: distributionSystemOperatorId
+          in: path
+          description: ID of Distribution System Operator that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DistributionSystemOperatorDtoPostResp'
+    put:
+      tags:
+        - Distribution System Operator
+      summary: Update an existing Distribution System Operator
+      description: ''
+      operationId: updateDistributionSystemOperator
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: distributionSystemOperatorId
+          in: path
+          description: ID of Distribution System Operator that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Distribution System Operator object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/DistributionSystemOperatorDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DistributionSystemOperatorDtoPostResp'
+    delete:
+      tags:
+        - Distribution System Operator
+      summary: Delete an existing Distribution System Operator
+      description: ''
+      operationId: deleteDistributionSystemOperator
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: distributionSystemOperatorId
+          in: path
+          description: ID of Distribution System Operator that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Distribution System Operator not found
+        '500':
+          description: Internal Server Error
+  '/distribution_system_operator':
+    post:
+      tags:
+        - Distribution System Operator
+      summary: Create a new Distribution System Operator
+      description: ''
+      operationId: createDistributionSystemOperator
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: >-
+            Distribution System Operator object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/DistributionSystemOperatorDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/DistributionSystemOperatorDtoPostResp'
+  '/energy_point/{energyPointId}':
+    get:
+      tags:
+        - Energy Point
+      summary: Find Energy Point by ID
+      description: ''
+      operationId: getEnergyPoint
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/EnergyPointDtoPostResp'
+    put:
+      tags:
+        - Energy Point
+      summary: Update an existing Energy Point
+      description: ''
+      operationId: updateEnergyPoint
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Energy Point object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/EnergyPointDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/EnergyPointDtoPostResp'
+    delete:
+      tags:
+        - Energy Point
+      summary: Delete an existing Energy Point
+      description: ''
+      operationId: deleteEnergyPoint
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Energy Point not found
+        '500':
+          description: Internal Server Error
+  '/energy_point':
+    post:
+      tags:
+        - Energy Point
+      summary: Create a new Energy Point
+      description: ''
+      operationId: createEnergyPoint
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: >-
+            Energy Point object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/EnergyPointDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/EnergyPointDtoPostResp'
+  '/energy_point/{energyPointId}/contract/{contractId}':
+    get:
+      tags:
+        - Energy Point Contract
+      summary: Find Energy Point Contract by ID
+      description: ''
+      operationId: getEnergyPointContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of Energy Point Contract that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/EnergyPointContractDtoPostResp'
+    put:
+      tags:
+        - Energy Point Contract
+      summary: Update an existing Energy Point Contract
+      description: ''
+      operationId: updateEnergyPointContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of Energy Point Contract that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Energy Point Contract object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/EnergyPointContractDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/EnergyPointContractDtoPostResp'
+    delete:
+      tags:
+        - Energy Point Contract
+      summary: Delete an existing Energy Point Contract
+      description: ''
+      operationId: deleteEnergyPointContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: contractId
+          in: path
+          description: ID of Energy Point Contract that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Energy Point Contract not found
+        '500':
+          description: Internal Server Error
+  '/energy_point/{energyPointId}/contract':
+    post:
+      tags:
+        - Energy Point Contract
+      summary: Create a new Energy Point Contract
+      description: ''
+      operationId: createEnergyPointContract
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: energyPointId
+          in: path
+          description: ID of Energy Point that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Energy Point Contract object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/EnergyPointContractDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/EnergyPointContractDtoPostResp'
+  '/provider/{providerId}':
+    get:
+      tags:
+        - Provider
+      summary: Find Provider by ID
+      description: ''
+      operationId: getProvider
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ProviderDtoPostResp'
+    put:
+      tags:
+        - Provider
+      summary: Update an existing Provider
+      description: ''
+      operationId: updateProvider
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Provider object that needs to be added; require: name, address, status, nip, regon
+          required: true
+          schema:
+            $ref: '#/definitions/ProviderDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ProviderDtoPostResp'
+    delete:
+      tags:
+        - Provider
+      summary: Delete an existing Provider
+      description: ''
+      operationId: deleteProvider
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Provider not found
+        '500':
+          description: Internal Server Error
+  '/provider':
+    post:
+      tags:
+        - Provider
+      summary: Create a new Provider
+      description: ''
+      operationId: createProvider
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: >-
+            Provider object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ProviderDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ProviderDtoPostResp'
+  '/provider/{providerId}/account/{accountId}':
+    get:
+      tags:
+        - Account
+      summary: Find Account by ID
+      description: ''
+      operationId: getAccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountDtoPostResp'
+    put:
+      tags:
+        - Account
+      summary: Update an existing Account
+      description: ''
+      operationId: updateAccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Account  object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountDtoPostResp'
+    delete:
+      tags:
+        - Account
+      summary: Delete an existing Account
+      description: ''
+      operationId: deleteAccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Account  not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/account':
+    post:
+      tags:
+        - Account
+      summary: Create a new Account
+      description: ''
+      operationId: createAccount
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Account  object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountDtoPostResp'
+  '/provider/{providerId}/account/{accountId}/balance/{accountBalanceId}':
+    get:
+      tags:
+        - Account Balance
+      summary: Find Account Balance by ID
+      description: ''
+      operationId: getAccountBalance
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountBalanceId
+          in: path
+          description: ID of Account Balance
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountBalanceDtoPostResp'
+    put:
+      tags:
+        - Account Balance
+      summary: Update an existing Account Balance
+      description: ''
+      operationId: updateAccountBalance
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountBalanceId
+          in: path
+          description: ID of Account Balance
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Account Balance object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountBalanceDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountBalanceDtoPostResp'
+    delete:
+      tags:
+        - Account Balance
+      summary: Delete an existing Account Balance
+      description: ''
+      operationId: deleteAccountBalance
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountBalanceId
+          in: path
+          description: ID of Account Balance
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Account Balance not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/account/{accountId}/balance':
+    post:
+      tags:
+        - Account Balance
+      summary: Create a new Account Balance
+      description: ''
+      operationId: createAccountBalance
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Account Balance object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountBalanceDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountBalanceDtoPostResp'
+  '/provider/{providerId}/account/{accountId}/subscription/{groupId}':
+    get:
+      tags:
+        - Account Subscription
+      summary: Find Account Subscription by ID
+      description: ''
+      operationId: getAccountSubscription
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: groupId
+          in: path
+          description: ID of Group to subscribe
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountSubscriptionDtoPostResp'
+    put:
+      tags:
+        - Account Subscription
+      summary: Update an existing Account Subscription
+      description: ''
+      operationId: updateAccountSubscription
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: groupId
+          in: path
+          description: ID of Group to subscribe
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Account Subscription object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountSubscriptionDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountSubscriptionDtoPostResp'
+    delete:
+      tags:
+        - Account Subscription
+      summary: Delete an existing Account Subscription
+      description: ''
+      operationId: deleteAccountSubscription
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: groupId
+          in: path
+          description: ID of Group to subscribe
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Account Subscription not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/account/{accountId}/subscription':
+    post:
+      tags:
+        - Account Subscription
+      summary: Create a new Account Subscription
+      description: ''
+      operationId: createAccountSubscription
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: accountId
+          in: path
+          description: ID of Account subscribed
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Account Subscription object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/AccountSubscriptionDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/AccountSubscriptionDtoPostResp'
+  '/provider/{providerId}/service/{serviceId}':
+    get:
+      tags:
+        - Service
+      summary: Find Service by ID
+      description: ''
+      operationId: getService
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: serviceId
+          in: path
+          description: ID of Service that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceDtoPostResp'
+    put:
+      tags:
+        - Service
+      summary: Update an existing Service
+      description: ''
+      operationId: updateService
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: serviceId
+          in: path
+          description: ID of Service that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Service object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ServiceDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceDtoPostResp'
+    delete:
+      tags:
+        - Service
+      summary: Delete an existing Service
+      description: ''
+      operationId: deleteService
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: serviceId
+          in: path
+          description: ID of Service that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Service not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/service':
+    post:
+      tags:
+        - Service
+      summary: Create a new Service
+      description: ''
+      operationId: createService
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Service object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ServiceDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceDtoPostResp'
+  '/provider/{providerId}/service/offer/{offerId}':
+    get:
+      tags:
+        - Service Offer
+      summary: Find Service Offer by ID
+      description: ''
+      operationId: getService Offer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: offerId
+          in: path
+          description: ID of Service Offer that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceOfferDtoPostResp'
+    put:
+      tags:
+        - Service Offer
+      summary: Update an existing Service Offer
+      description: ''
+      operationId: updateService Offer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: offerId
+          in: path
+          description: ID of Service Offer that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - in: body
+          name: body
+          description: >-
+            Service Offer object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ServiceOfferDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceOfferDtoPostResp'
+    delete:
+      tags:
+        - Service Offer
+      summary: Delete an existing Service Offer
+      description: ''
+      operationId: deleteService Offer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: offerId
+          in: path
+          description: ID of Service Offer that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Service Offer not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/service/offer':
+    post:
+      tags:
+        - Service Offer
+      summary: Create a new Service Offer
+      description: ''
+      operationId: createService Offer
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Service Offer object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ServiceOfferDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceOfferDtoPostResp'
+  '/provider/{providerId}/service/offer/group/{groupId}':
+    get:
+      tags:
+        - Service Offer Group
+      summary: Find Service Offer Group by ID
+      description: ''
+      operationId: getServiceOfferGroup
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: groupId
+          in: path
+          description: ID of Service Offer Group that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceOfferGroupDtoPostResp'
+    put:
+      tags:
+        - Service Offer Group
+      summary: Update an existing Service Offer Group
+      description: ''
+      operationId: updateServiceOfferGroup
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: groupId
+          in: path
+          description: ID of Service Offer Group that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - in: body
+          name: body
+          description: >-
+            Service Offer Group object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/ServiceOfferGroupDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceOfferGroupDtoPostResp'
+    delete:
+      tags:
+        - Service Offer Group
+      summary: Delete an existing Service Offer Group
+      description: ''
+      operationId: deleteServiceOfferGroup
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: groupId
+          in: path
+          description: ID of Service Offer Group that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Service Offer Group not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/service/offer/group':
+    post:
+      tags:
+        - Service Offer Group
+      summary: Create a new Service Offer Group
+      description: ''
+      operationId: createServiceOfferGroup
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing service
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Service Offer Group object that needs to be added; require: name, address, status, nip, regon
+          required: true
+          schema:
+            $ref: '#/definitions/ServiceOfferGroupDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/ServiceOfferGroupDtoPostResp'
+  '/provider/{providerId}/tariff/{tariffName}':
+    get:
+      tags:
+        - Tariff
+      summary: Find Tariff by ID
+      description: ''
+      operationId: getTariff
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing tariff
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: tariffName
+          in: path
+          description: ID of Tariff that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/TariffDtoPostResp'
+    put:
+      tags:
+        - Tariff
+      summary: Update an existing Tariff
+      description: ''
+      operationId: updateTariff
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing tariff
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: tariffName
+          in: path
+          description: ID of Tariff that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - in: body
+          name: body
+          description: >-
+            Tariff object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/TariffDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/TariffDtoPostResp'
+    delete:
+      tags:
+        - Tariff
+      summary: Delete an existing Tariff
+      description: ''
+      operationId: deleteTariff
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: tariffName
+          in: path
+          description: ID of Tariff that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing tariff
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Tariff not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/tariff':
+    post:
+      tags:
+        - Tariff
+      summary: Create a new Tariff
+      description: ''
+      operationId: createTariff
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing tariff
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Tariff object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/TariffDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/TariffDtoPostResp'
+#  '/provider/{providerId}/tariff/instance/{tariffInstanceId}':
+#    get:
+#      tags:
+#        - Tariff Instance
+#      summary: Find Tariff Instance by ID
+#      description: ''
+#      operationId: getTariffInstance
+#      consumes:
+#        - application/json
+#      produces:
+#        - application/json
+#      parameters:
+#        - name: providerId
+#          in: path
+#          description: ID of Provider who's providing tariff instance
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#        - name: tariffInstanceId
+#          in: path
+#          description: ID of Tariff Instance that needs to be fetched
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#      responses:
+#        '200':
+#          description: successful operation
+#          schema:
+#            $ref: '#/definitions/TariffInstanceDtoPostResp'
+#    put:
+#      tags:
+#        - Tariff Instance
+#      summary: Update an existing Tariff Instance
+#      description: ''
+#      operationId: updateTariffInstance
+#      consumes:
+#        - application/json
+#      produces:
+#        - application/json
+#      parameters:
+#        - name: providerId
+#          in: path
+#          description: ID of Provider who's providing tariff instance
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#        - name: tariffInstanceId
+#          in: path
+#          description: ID of Tariff Instance that needs to be updated
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#
+#        - in: body
+#          name: body
+#          description: >-
+#            Tariff Instance object that needs to be added
+#          required: true
+#          schema:
+#            $ref: '#/definitions/TariffInstanceDtoPostReq'
+#      responses:
+#        '200':
+#          description: successful operation
+#          schema:
+#            $ref: '#/definitions/TariffInstanceDtoPostResp'
+#    delete:
+#      tags:
+#        - Tariff Instance
+#      summary: Delete an existing Tariff Instance
+#      description: ''
+#      operationId: deleteTariffInstance
+#      consumes:
+#        - application/json
+#      produces:
+#        - application/json
+#      parameters:
+#        - name: tariffInstanceId
+#          in: path
+#          description: ID of Tariff Instance that needs to be deleted
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#
+#        - name: providerId
+#          in: path
+#          description: ID of Provider who's providing tariff instance
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#      responses:
+#        '403':
+#          description: Not enough privileges to perform request
+#        '404':
+#          description: Tariff Instance not found
+#        '500':
+#          description: Internal Server Error
+#  '/provider/{providerId}/tariff/instance':
+#    post:
+#      tags:
+#        - Tariff Instance
+#      summary: Create a new Tariff Instance
+#      description: ''
+#      operationId: createTariffInstance
+#      consumes:
+#        - application/json
+#      produces:
+#        - application/json
+#      parameters:
+#        - name: providerId
+#          in: path
+#          description: ID of Provider who's providing tariff instance
+#          required: true
+#          type: integer
+#          minimum: 0
+#          format: int64
+#        - in: body
+#          name: body
+#          description: >-
+#            Tariff Instance object that needs to be added
+#          required: true
+#          schema:
+#            $ref: '#/definitions/TariffInstanceDtoPostReq'
+#      responses:
+#        '200':
+#          description: successful operation
+#          schema:
+#            $ref: '#/definitions/TariffInstanceDtoPostResp'
+  '/provider/{providerId}/rating/{ratingId}':
+    get:
+      tags:
+        - Rating
+      summary: Find Rating by ID
+      description: ''
+      operationId: getRating
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: ratingId
+          in: path
+          description: ID of Rating that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/RatingDtoPostResp'
+    put:
+      tags:
+        - Rating
+      summary: Update an existing Rating
+      description: ''
+      operationId: updateRating
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: ratingId
+          in: path
+          description: ID of Rating that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - in: body
+          name: body
+          description: >-
+            Rating object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/RatingDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/RatingDtoPostResp'
+    delete:
+      tags:
+        - Rating
+      summary: Delete an existing Rating
+      description: ''
+      operationId: deleteRating
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: ratingId
+          in: path
+          description: ID of Rating that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Rating not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/rating':
+    post:
+      tags:
+        - Rating
+      summary: Create a new Rating
+      description: ''
+      operationId: createRating
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Rating object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/RatingDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/RatingDtoPostResp'
+  '/provider/{providerId}/rating/plan/{ratingPlanId}':
+    get:
+      tags:
+        - Rating Plan
+      summary: Find Rating Plan by ID
+      description: ''
+      operationId: getRatingPlan
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: ratingPlanId
+          in: path
+          description: ID of Rating Plan that needs to be fetched
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/RatingPlanDtoPostResp'
+    put:
+      tags:
+        - Rating Plan
+      summary: Update an existing Rating Plan
+      description: ''
+      operationId: updateRatingPlan
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: ratingPlanId
+          in: path
+          description: ID of Rating Plan that needs to be updated
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Rating Plan object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/RatingPlanDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/RatingPlanDtoPostResp'
+    delete:
+      tags:
+        - Rating Plan
+      summary: Delete an existing Rating Plan
+      description: ''
+      operationId: deleteRatingPlan
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: ratingPlanId
+          in: path
+          description: ID of Rating Plan that needs to be deleted
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+      responses:
+        '403':
+          description: Not enough privileges to perform request
+        '404':
+          description: Rating Plan not found
+        '500':
+          description: Internal Server Error
+  '/provider/{providerId}/rating/plan':
+    post:
+      tags:
+        - Rating Plan
+      summary: Create a new Rating Plan
+      description: ''
+      operationId: createRatingPlan
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - name: providerId
+          in: path
+          description: ID of Provider who's providing rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - name: ratingId
+          in: path
+          description: ID of rating
+          required: true
+          type: integer
+          minimum: 0
+          format: int64
+        - in: body
+          name: body
+          description: >-
+            Rating Plan object that needs to be added
+          required: true
+          schema:
+            $ref: '#/definitions/RatingPlanDtoPostReq'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/RatingPlanDtoPostResp'
+securityDefinitions:
+  basicAuth:
+    type: basic
+definitions:
+  AccountDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      address:
+        type: string
+      email:
+        type: string
+  AccountDtoPostResp:
+    type: object
+    properties:
+      providerId:
+        type: integer
+        format: int64
+      accountId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      address:
+        type: string
+      email:
+        type: string
+  AccountBalanceDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      units:
+        type: integer
+        format: int64
+  AccountBalanceDtoPostResp:
+    type: object
+    properties:
+      providerId:
+        type: integer
+        format: int64
+      accountId:
+        type: integer
+        format: int64
+      accountBalanceId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      units:
+        type: integer
+        format: int64
+  AccountSubscriptionDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      priority:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+      endDate:
+        type: string
+  AccountSubscriptionDtoPostResp:
+    type: object
+    properties:
+      providerId:
+        type: integer
+        format: int64
+      accountId:
+        type: integer
+        format: int64
+      groupId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      priority:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+      endDate:
+        type: string
+  AccountSubscriptionContractDtoPostReq:
+    type: object
+    properties:
+      providerId:
+        type: integer
+        format: int64
+      accountId:
+        type: integer
+        format: int64
+      groupId:
+        type: integer
+        format: int64
+  AccountSubscriptionContractDtoPostResp:
+    type: object
+    properties:
+      contractId:
+        type: integer
+        format: int64
+      providerId:
+        type: integer
+        format: int64
+      accountId:
+        type: integer
+        format: int64
+      groupId:
+        type: integer
+        format: int64
+  ContractDtoPostReq:
+    type: object
+    properties:
+      distributionNetworkOperatorId:
+        type: integer
+        format: int64
+  ContractDtoPostResp:
+    type: object
+    properties:
+      contractId:
+        type: integer
+        format: int64
+      distributionNetworkOperatorId:
+        type: integer
+        format: int64
+  DistributionSystemOperatorDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      nip:
+        type: string
+      address:
+        type: string
+  DistributionSystemOperatorDtoPostResp:
+    type: object
+    properties:
+      distributionSystemOperatorId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      nip:
+        type: string
+      address:
+        type: string
+  EnergyPointDtoPostReq:
+    type: object
+    properties:
+      address:
+        type: string
+      meterNumber:
+        type: string
+      energyPointCode:
+        type: string
+      accountId:
+        type: integer
+        format: int64
+  EnergyPointDtoPostResp:
+    type: object
+    properties:
+      contractId:
+        type: integer
+        format: int64
+      address:
+        type: string
+      meterNumber:
+        type: string
+      energyPointCode:
+        type: string
+      accountId:
+        type: integer
+        format: int64
+  EnergyPointContractDtoPostReq:
+    type: object
+    properties:
+      contractId:
+        type: integer
+        format: int64
+  EnergyPointContractDtoPostResp:
+    type: object
+    properties:
+      energyPointId:
+        type: integer
+        format: int64
+      contractId:
+        type: integer
+        format: int64
+  ProviderDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      address:
+        type: string
+      status:
+        type: boolean
+      nip:
+        type: string
+      regon:
+        type: string
+  ProviderDtoPostResp:
+    type: object
+    properties:
+      providerId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      address:
+        type: string
+      status:
+        type: boolean
+      nip:
+        type: string
+      regon:
+        type: string
+  ServiceDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+  ServiceDtoPostResp:
+    type: object
+    properties:
+      serviceId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      providerId:
+        type: integer
+        format: int64
+  ServiceOfferDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      serviceId:
+        type: integer
+        format: int64
+      ratingPlanId:
+        type: integer
+        format: int64
+      serviceOfferGroupId:
+        type: integer
+        format: int64
+  ServiceOfferDtoPostResp:
+    type: object
+    properties:
+      offerId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      serviceId:
+        type: integer
+        format: int64
+      providerId:
+        type: integer
+        format: int64
+      ratingPlanId:
+        type: integer
+        format: int64
+      serviceOfferGroupId:
+        type: integer
+        format: int64
+  ServiceOfferGroupDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+      endDate:
+        type: string
+  ServiceOfferGroupDtoPostResp:
+    type: object
+    properties:
+      groupId:
+        type: integer
+        format: int64
+      providerId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+      endDate:
+        type: string
+  TariffDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      tariffType:
+        type: integer
+        format: int64
+      unitType:
+        type: integer
+        format: int64
+  TariffDtoPostResp:
+    type: object
+    properties:
+      tariffName:
+        type: string
+      name:
+        type: string
+      status:
+        type: integer
+        format: int64
+      tariffType:
+        type: integer
+        format: int64
+      unitType:
+        type: integer
+        format: int64
+  TariffInstanceDtoPostReq:
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int64
+      cost:
+        type: number
+        format: float64
+      units:
+        type: integer
+        format: int64
+      freeUnits:
+        type: integer
+        format: int64
+      vatFlag:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+      endDate:
+        type: string
+  TariffInstanceDtoPostResp:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      status:
+        type: integer
+        format: int64
+      cost:
+        type: number
+        format: float64
+      units:
+        type: integer
+        format: int64
+      freeUnits:
+        type: integer
+        format: int64
+      vatFlag:
+        type: integer
+        format: int64
+      startDate:
+        type: string
+      endDate:
+        type: string
+  RatingDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      tariffName:
+        type: string
+      tariffProviderId:
+        type: integer
+        format: int64
+      providerId:
+        type: integer
+        format: int64
+      balanceType:
+        type: integer
+        format: int64
+  RatingDtoPostResp:
+    type: object
+    properties:
+      ratingId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      tariffName:
+        type: string
+      tariffProviderId:
+        type: integer
+        format: int64
+      providerId:
+        type: integer
+        format: int64
+      balanceType:
+        type: integer
+        format: int64
+  RatingPlanDtoPostReq:
+    type: object
+    properties:
+      name:
+        type: string
+      ratingPlanType:
+        type: integer
+        format: int64
+      ratingId:
+        type: integer
+        format: int64
+  RatingPlanDtoPostResp:
+    type: object
+    properties:
+      ratingPlanId:
+        type: integer
+        format: int64
+      name:
+        type: string
+      ratingId:
+        type: integer
+        format: int64
+      providerId:
+        type: integer
+        format: int64
+      ratingPlanType:
+        type: integer
+        format: int64

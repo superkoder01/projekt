@@ -1,0 +1,250 @@
+roles:
+  # SUPER ADMIN
+  - name: "SUPER_ADMIN"
+    rules:
+      - resource: "*"
+        verbs:
+          - "*"
+
+  # ADMIN FULL
+  - name: "ADMINISTRATOR_FULL"
+    rules:
+      - resource: "/providers/details"
+        verbs:
+          - GET
+      - resource: "/providers/{id}/administrators"
+        verbs:
+          - GET
+      - resource: "/users/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/users/details"
+        verbs:
+          - GET
+      - resource: "/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/customerAccounts/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/customerUsers"
+        verbs:
+          - POST
+      - resource: "/workers"
+        verbs:
+          - GET
+      - resource: "/workers/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/workerUsers"
+        verbs:
+          - POST
+      - resource: "/workers/details"
+        verbs:
+          - GET
+      - resource: "/workers/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/serviceAccessPoints"
+        verbs:
+          - GET
+          - POST
+      - resource: "/serviceAccessPoints/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+
+  # ADMIN BASIC (READ ONLY)
+  - name: "ADMINISTRATOR_BASIC"
+    rules:
+      - resource: "/providers/details"
+        verbs:
+          - GET
+      - resource: "/providers/{id}/administrators"
+        verbs:
+          - GET
+      - resource: "/users/{id}"
+        verbs:
+          - GET
+      - resource: "/users/details"
+        verbs:
+          - GET
+      - resource: "/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/customerAccounts/{id}"
+        verbs:
+          - GET
+      - resource: "/workers"
+        verbs:
+          - GET
+      - resource: "/workers/{id}"
+        verbs:
+          - GET
+      - resource: "/workers/details"
+        verbs:
+          - GET
+      - resource: "/serviceAccessPoints"
+        verbs:
+          - GET
+      - resource: "/serviceAccessPoints/{id}"
+        verbs:
+          - GET
+
+  - name: "TRADER"
+    rules:
+      - resource: "/providers/details"
+        verbs:
+          - GET
+      - resource: "/users/details"
+        verbs:
+          - GET
+      - resource: "/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/customerAccounts/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/customerUsers"
+        verbs:
+          - POST
+      - resource: "/workers"
+        verbs:
+          - GET
+      - resource: "/workers/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/workerUsers"
+        verbs:
+          - POST
+      - resource: "/workers/details"
+        verbs:
+          - GET
+      - resource: "/workers/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/serviceAccessPoints"
+        verbs:
+          - GET
+          - POST
+      - resource: "/serviceAccessPoints/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+
+  - name: "SUPER_AGENT"
+    rules:
+      - resource: "/providers/details"
+        verbs:
+          - GET
+      - resource: "/users/details"
+        verbs:
+          - GET
+      - resource: "/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/customerAccounts/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/customerUsers"
+        verbs:
+          - POST
+      - resource: "/workers"
+        verbs:
+          - GET
+      - resource: "/workers/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/workerUsers"
+        verbs:
+          - POST
+      - resource: "/workers/details"
+        verbs:
+          - GET
+      - resource: "/workers/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/serviceAccessPoints"
+        verbs:
+          - GET
+          - POST
+      - resource: "/serviceAccessPoints/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+
+  - name: "AGENT"
+    rules:
+      - resource: "/providers/details"
+        verbs:
+          - GET
+      - resource: "/users/details"
+        verbs:
+          - GET
+      - resource: "/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/customerAccounts/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+      - resource: "/customerUsers"
+        verbs:
+          - POST
+      - resource: "/workers"
+        verbs:
+          - GET
+      - resource: "/workers/{id}"
+        verbs:
+          - GET
+      - resource: "/workers/details"
+        verbs:
+          - GET
+      - resource: "/workers/customerAccounts"
+        verbs:
+          - GET
+      - resource: "/serviceAccessPoints"
+        verbs:
+          - GET
+          - POST
+      - resource: "/serviceAccessPoints/{id}"
+        verbs:
+          - GET
+          - PUT
+          - DELETE
+
+  - name: "PROSUMER"
+    rules:
+      - resource: "/providers/details"
+        verbs:
+          - GET
+      - resource: "/customerAccounts/details"
+        verbs:
+          - GET
+      - resource: "/users/details"
+        verbs:
+          - GET
+
+omitEndpoints:
+  - "/authenticate"
+  - "/activate"
+
+apiPrefix: "/api/management"

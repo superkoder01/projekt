@@ -1,0 +1,27 @@
+th {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    font-weight: normal;
+    width: 50%
+}
+
+ol li ul {
+    list-style-type: disc;
+    font-weight: normal;
+    text-align: justify;
+    padding-left: 15pt;
+}
+
+ol li p {
+    font-weight: normal;
+}
+
+ol {
+    list-style-type: decimal;
+    font-weight: bold;
+}

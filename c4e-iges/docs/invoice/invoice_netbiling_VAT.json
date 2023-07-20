@@ -1,0 +1,371 @@
+{
+  "header": {
+    "version": "1.0.0",
+    "provider": "keno",
+    "content": {
+      "type": "invoice",
+      "catg": "prosument"
+    }
+  },
+  "payload": {
+    "invoiceDetails": {
+      "number": "2022/06/1728333/SP/1",
+      "issueDt": "06/07/2022",
+      "serviceDt": "30/06/2022",
+      "type": "VAT",
+      "customerId": "1728333",
+      "billingStartDt": "01/06/2022",
+      "billingEndDt": "30/06/2022",
+      "catg": "prosument",
+      "status": "issued"
+    },
+    "sellerDetails": {
+      "legalName": "Keno Energia Sp. z o.o.",
+      "displayName": "Keno Energia Sp. z o.o.",
+      "krs": "0000935806",
+      "nip": "6312701187",
+      "regon": "520600217",
+      "address": {
+        "street": "O. Jana Siemińskiego 22",
+        "postCode": "44-100",
+        "city": "Gliwice"
+      },
+      "contact": {
+        "address": {
+          "street": "O. Jana Siemińskiego 22",
+          "postCode": "44-100",
+          "city": "Gliwice"
+        },
+        "phoneNumbers": [
+          {"type": "mobile", "number": ""},
+          {"type": "fix", "number": "32 230 25 71"}
+        ],
+        "email": "biuro@keno-energia.com",
+        "www": "www.keno-energia.com"
+      }
+    },
+    "customerDetails": {
+      "customerId": "1728333",
+      "firstName": "Grzegorz",
+      "lastName": "Sikora",
+      "displayName": "Grzegorz Sikora",
+      "nip": "3232701121",
+      "regon": "345600543",
+      "address": {
+        "street": "Marylskiego 210",
+        "postCode": "05-825",
+        "city": "Grodzisk Mazowiecki"
+      },
+      "contact": {
+        "address": {
+          "street": "Marylskiego 210",
+          "postCode": "05-825",
+          "city": "Grodzisk Mazowiecki"
+        },
+        "phoneNumbers": [
+          {"type": "mobile", "number": "+48987654321"}
+        ],
+        "email": "grzegorz.sikora@wp.pl",
+        "www": "www.greg.com"
+      }
+    },
+    "paymentDetails": {
+      "bankDetails": {
+        "account": "31 2290 0005 0000 6000 4316 5540"
+      },
+      "paymentTitle": "Nr. Ew: 1728333",
+      "paymentDueDt": "20/07/2022"
+    },
+    "payerDetails": {
+      "customerId": "1728333",
+      "firstName": "Grzegorz",
+      "lastName": "Sikora",
+      "displayName": "Grzegorz Sikora",
+      "nip": "3232701121",
+      "regon": "345600543",
+      "address": {
+        "street": "Marylskiego 210",
+        "postCode": "05-825",
+        "city": "Grodzisk Mazowiecki"
+      },
+      "contact": {
+        "address": {
+          "street": "Marylskiego 210",
+          "postCode": "05-825",
+          "city": "Grodzisk Mazowiecki"
+        },
+        "phoneNumbers": [
+          {"type": "mobile", "number": "+48987654321"}
+        ],
+        "email": "grzegorz.sikora@wp.pl",
+        "www": "www.greg.com"
+      }
+    },
+    "ppeDetails": [
+      {
+        "ppeCode": "PL_ZEWD_1405012128_06",
+        "ppeName": "Grzegorz Sikora",
+        "ppeObName": "Sikora Grzegorz",
+        "address": {
+          "street": "Marylskiego 210",
+          "postCode": "05-825",
+          "city": "Grodzisk Mazowiecki"
+        },
+        "tariffGroup": "G11",
+        "contractedPower": {"value": 12, "unit": "kW"}
+      }
+    ],
+    "activeEnergyConsumed": {
+      "energySell": {
+        "meters": [
+          {
+            "meterNumber": "72421726",
+            "items": [
+              {
+                "itemName": "Sprzedaż energii elektrycznej (A)",
+                "itemCode": "",
+                "prevMeterRead": { "dt": "01/06/2022", "value": 100, "readType": "Z" },
+                "currMeterRead": {"dt": "15/06/2022", "value": 150, "readType": "Z"},
+                "factor": 1,
+                "consumption": 50,
+                "netVal": 10.25,
+                "vatRate": 5
+              },
+              {
+                "itemName": "Sprzedaż energii elektrycznej (A)",
+                "itemCode": "",
+                "prevMeterRead": { "dt": "15/06/2022", "value": 150, "readType": "Z" },
+                "currMeterRead": {"dt": "30/06/2022", "value": 200, "readType": "Z"},
+                "factor": 1,
+                "consumption": 50,
+                "netVal": 30.25,
+                "vatRate": 23
+              },
+              {
+                "itemName": "Opłata handlowa",
+                "itemCode": "",
+                "prevMeterRead": { "dt": "01/06/2022" },
+                "currMeterRead": {"dt": "30/06/2022" },
+                "factor": 1,
+                "netUnitPrice": 20.00,
+                "netVal": 20.00,
+                "vatRate": 23
+              }
+            ]
+          }
+        ],
+        "exciseTax": 0.5,
+        "subtotal": {"amount": 100, "netVal": 60.50}
+      }
+    },
+    "activeEnergyProduced": {
+      "meters": [
+        {
+          "meterNumber": "72421726",
+          "items": [
+            {
+              "itemName": "Odkup energii",
+              "itemCode": "",
+              "dateFrom": "01/06/2022",
+              "dateTo": "15/06/2022",
+              "production": 45,
+              "vatRate": 5,
+              "netVal": 20.00,
+              "taxVal": 1.00,
+              "grossVal": 21.00
+            },
+            {
+              "itemName": "Odkup energii",
+              "itemCode": "",
+              "dateFrom": "15/06/2022",
+              "dateTo": "30/06/2022",
+              "production": 45,
+              "vatRate": 23,
+              "netVal": 30.00,
+              "taxVal": 6.90,
+              "grossVal": 36.90
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "production": 90,
+        "netVal": 50.00,
+        "taxVal": 7.90,
+        "grossVal": 57.90
+      }
+    },
+    "depositSummary": {
+      "deposit": [
+        {
+          "ppeCode": "PL_ZEWD_1405012128_06",
+          "ppeSummary": {
+            "depositCurrent": 15.20,
+            "depositConsumed": 15.20,
+            "depositNext": 57.90
+          }
+        }
+      ],
+      "ppeSummaryTotal": {
+        "depositCurrent": 15.20,
+        "depositConsumed": 15.20,
+        "depositNext": 57.90
+      }
+    },
+    "excessSalesBalance": {
+      "items": [
+        {
+          "itemName": "Wartość sprzedaży energii w bieżącym okresie rozliczeniowym",
+          "itemCode": "",
+          "grossVal": 47.97
+        },
+        {
+          "itemName": "Środki z depozytu Prosumenta wykorzystane w bieżącym rozliczeniu",
+          "itemCode": "",
+          "grossVal": -15.20
+        }
+      ],
+      "summary": {"grossVal": 32.77}
+    },
+    "sellSummary": {
+      "items": [
+        {
+          "itemName": "Sprzedaż energii elektrycznej",
+          "itemCode": "",
+          "vatRate": 5,
+          "netVal": 10.25,
+          "taxVal": 0.51,
+          "grossVal": 10.76
+        },
+        {
+          "itemName": "Sprzedaż energii elektrycznej",
+          "itemCode": "",
+          "vatRate": 23,
+          "netVal": 30.25,
+          "taxVal": 6.96,
+          "grossVal": 37.21
+        },
+        {
+          "itemName": "Opłata handlowa",
+          "itemCode": "",
+          "vatRate": 23,
+          "netVal": 20.00,
+          "taxVal": 4.60,
+          "grossVal": 24.60
+        }
+      ],
+      "total": {"netVal": 60.50, "taxVal": 12.07, "grossVal": 72.57}
+    },
+    "paymentSummary": {
+      "items": [
+        {
+          "itemName": "Sprzedaż energii elektrycznej",
+          "itemCode": "",
+          "vatRate": 5,
+          "netVal": 10.25,
+          "taxVal": 0.51,
+          "grossVal": 10.76
+        },
+        {
+          "itemName": "Sprzedaż energii elektrycznej",
+          "itemCode": "",
+          "vatRate": 23,
+          "netVal": 30.25,
+          "taxVal": 6.96,
+          "grossVal": 37.21
+        },
+        {
+          "itemName": "Uwzględniona nadwyżka",
+          "itemCode": "",
+          "vatRate": 5,
+          "netVal": -14.48,
+          "taxVal": -0.72,
+          "grossVal": -15.20
+        },
+        {
+          "itemName": "Opłata handlowa",
+          "itemCode": "",
+          "vatRate": 23,
+          "netVal": 20.00,
+          "taxVal": 4.60,
+          "grossVal": 24.60
+        }
+      ],
+      "total": {"netVal": 46.02, "taxVal": 11.35, "grossVal": 57.37}
+    },
+    "energyValueAnnualBalance": {
+      "history": [
+        {
+          "ppeCode": "PL_ZEWD_1405012128_06",
+          "items": [
+            {
+              "itemName": "Wartość energii pobranej z sieci",
+              "itemCode": "",
+              "periods": [200, 40, 100, 90, 40, 47.97, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Wartość energii wprowadzonej do sieci",
+              "itemCode": "",
+              "periods": [10, 50, 40, 45, 10.20, 57.90, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Środki na depozycie Prosumenta",
+              "itemCode": "",
+              "periods": [0, 10, 50, 40, 45, 15.20, 57.90, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Środki wykorzystane z depozytu Prosumenta",
+              "itemCode": "",
+              "periods": [0, 10, 50, 40, 40, 15.20, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Wartość energii wprowadzonej do sieci jaka pozostała do wykorzystania w danym miesiącu",
+              "itemCode": "",
+              "periods": [0, 0, 0, 0, 0, 57.90, 0, 0, 0, 0, 0, 0, 0]
+            }
+          ]
+        }
+      ]
+    },
+    "energyAmountAnnualBalance": {
+      "history": [
+        {
+          "ppeCode": "PL_ZEWD_1405012128_06",
+          "items": [
+            {
+              "itemName": "Ilość energii pobranej z sieci",
+              "itemCode": "",
+              "periods": [200, 70, 100, 90, 30, 100, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Ilość energii wprowadzonej do sieci",
+              "itemCode": "",
+              "periods": [10, 50, 40, 45, 30, 90, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Suma energii wprowadzonej do sieci jaka pozostaje do wykorzystania",
+              "itemCode": "",
+              "periods": [0, 10, 50, 40, 45, 45, 90, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Ilość wprowadzonej energii do sieci wykorzystanej",
+              "itemCode": "",
+              "periods": [0, 10, 50, 40, 30, 45, 0, 0, 0, 0, 0, 0, 0]
+            },
+            {
+              "itemName": "Ilość energii wprowadzonej do sieci jaka pozostała do wykorzystania w danym miesiącu",
+              "itemCode": "",
+              "periods": [0, 0, 0, 0, 0, 90, 0, 0, 0, 0, 0, 0, 0]
+            }
+          ]
+        }
+      ]
+    },
+    "ppeSummary": {
+      "items": [
+        {"ppeCode": "PL_ZEWD_1405012128_06", "value": 57.37, "energyConsumed": 100, "energyProduced": 90}
+      ],
+      "total": {"value": 57.37, "energyConsumed": 100, "energyProduced": 90}
+    }
+  }
+}

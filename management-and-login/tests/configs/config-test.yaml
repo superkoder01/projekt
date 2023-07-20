@@ -1,0 +1,41 @@
+service:
+
+  persistence:
+    user: root
+    password: root
+    host: localhost
+    port: 3306
+    database: test
+    image: mariadb:10.7
+
+  redis:
+    username: redis
+    password: redis
+    address: 172.17.0.4:6379
+    image: 10.0.8.1:5000/redis-env
+
+  auth:
+    keyPath: "/home/adam/projekty/c4e/billing/management-and-login/tests/data/key/ed25519key.pem"
+    accessExpirationTime: 60
+    refreshExpirationTime: 1800
+
+  rabbit:
+    email:
+      host: 172.17.0.2
+      port: 5672
+      user: user
+      password: pass
+      queue: email-que
+      image: rabbitmq:3.8
+
+  http:
+    apiPrefix: "/api/management"
+
+  blockchain:
+    adapterHost: 127.0.0.1
+    adapterPort: 8282
+    endpoint: "/accounts"
+
+  emailMessage:
+    title: "User %s, please activate your C4E account!"
+    body: "Hello\nClick on below link in order to activate your C4E user account:\nhttps://c4e.com/api/register/%s\nYou will be asked to change your password\nKind regards C4E team!"

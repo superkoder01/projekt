@@ -1,0 +1,13 @@
+bases:
+  - ../../base
+resources:
+  - ens-secret.yaml
+  - ens-app-config.yaml
+namespace: billing
+images:
+  - name: email-notification-service
+    newName: g99vzm03.gra7.container-registry.ovh.net/c4e/email-notification-service
+    newTag: prod-IMAGE_TAG
+patchesStrategicMerge:
+  - ens-regcred.yaml
+  - ens-affinity.yaml

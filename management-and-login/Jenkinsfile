@@ -1,0 +1,36 @@
+pipeline {
+
+  environment {
+    APP_VER = '$TAG_NAME'
+  }
+
+  agent { label 'c4e' }
+
+  stages {
+
+    stage('Checkout Source') {
+      steps {
+        git branch: 'master', credentialsId: 'gitlab_api_token', url: 'http://gitlab.sce-ovoo.pl/ovoo/products/chain4energy/billing/management-and-login.git'
+      }
+    }
+
+    stage('Tests') {
+       steps {
+         dir ('./management-and-login') {
+           sh('./tests/run_all_tests.sh')
+         }
+       }
+    }
+
+    stage('Build and deploy') {
+      steps {
+         dir ('./management-and-login') {
+           sh('make clean')
+           sh('make install')
+         }
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,169 @@
+{
+  "id": "62ebaf36104e5d619c2ebc89",
+  "header": {
+    "version": "1.0",
+    "provider": "Keno Energia Sp. z o.o. (test)",
+    "content": {
+      "type": "contract",
+      "catg": "prosumer"
+    }
+  },
+  "payload": {
+    "contractDetails": {
+      "title": "",
+      "type": "split",
+      "clientType": "customerWithMicroinstallation",
+      "offerId": "62eb9210104e5d619c2ebc78",
+      "tpaParameter": "nowe przyłącze",
+      "number": "C.10/04/08/2022",
+      "creationDate": "2022/08/04 11:36:22",
+      "state": "DRAFT",
+      "customerId": "375",
+      "transactionId": "",
+      "referenceId": "",
+      "tariffGroup": "G11",
+      "agreementType": "B2C"
+    },
+    "sellerDtls": {
+      "legalName": "Keno Energia Sp. z o.o. (test)",
+      "displayName": "Keno Energia Sp. z o.o. (test)",
+      "krs": "0000571930",
+      "nip": "1231302800",
+      "address": {
+        "street": "O. Jana Siemińskiego 22",
+        "postCode": "44-100",
+        "city": "Gliwice"
+      },
+      "contact": {
+        "address": {
+          "street": "O. Jana Siemińskiego 22",
+          "postCode": "44-100",
+          "city": "Gliwice"
+        },
+        "phoneNumbers": [
+          {
+            "type": "fix",
+            "number": ""
+          }
+        ]
+      }
+    },
+    "customerDtls": {
+      "registrationNumber": "395680446456",
+      "isVatPayer": "0",
+      "firstName": "Malwina",
+      "lastName": "Łokietek",
+      "displayName": "Malwina Łokietek",
+      "pesel": "89093125443",
+      "address": {
+        "number": "113",
+        "street": "Srebrna",
+        "postCode": "39-200",
+        "city": "Dębica"
+      },
+      "contact": {
+        "address": {
+          "number": "113",
+          "street": "Srebrna",
+          "postCode": "39-200",
+          "city": "Dębica"
+        },
+        "phoneNumbers": [
+          {
+            "type": "mobile",
+            "number": "544332187"
+          }
+        ],
+        "email": "tojotos906@aregods.com"
+      }
+    },
+    "conditions": {
+      "signatureDate": "2022/09/01",
+      "billingPeriod": {
+        "calendarUnit": "month",
+        "number": "1"
+      },
+      "invoiceDueDate": "14",
+      "offerActivePeriod": {
+        "startDate": "2022/08/04",
+        "endDate": "2022/09/03"
+      },
+      "estimatedAnnualElectricityConsumption": {
+        "unit": "MWh",
+        "amount": "5"
+      },
+      "estimatedAnnualElectricityProduction": {
+        "unit": "MWh",
+        "amount": "5"
+      }
+    },
+    "serviceAccessPoints": [
+      {
+        "objectName": "dom",
+        "address": "Dębica Srebrna 113",
+        "sapCode": "PPE_453264324",
+        "meterNumber": "23456578453",
+        "osd": {
+          "name": "Energa"
+        },
+        "tariffGroup": "G11",
+        "estimatedEnergyUsage": {
+          "unit": "MWh",
+          "amount": "5"
+        },
+        "declaredEnergyUsage": {
+          "unit": "MWh",
+          "amount": "5"
+        },
+        "connectionPower": {
+          "unit": "kW",
+          "amount": "10"
+        },
+        "contractedPower": {
+          "unit": "kW",
+          "amount": "10"
+        },
+        "currentSeller": {
+          "name": "-",
+          "noticePeriod": "0"
+        },
+        "phase": "",
+        "sourceType": "Instalacja fotowoltaiczna",
+        "sourcePower": {
+          "unit": "kWp",
+          "amount": "5"
+        }
+      }
+    ],
+    "priceList": [
+      {
+        "name": "cennik_3.08-16:21",
+        "id": "",
+        "type": "sale",
+        "osd": "ENID",
+        "tariffGroup": "G11",
+        "zones": [
+          {
+            "id": "1",
+            "name": "całodobowa",
+            "unit": "MWh",
+            "cost": "200",
+            "currency": "pln"
+          }
+        ],
+        "commercialFee": {
+          "calendarUnit": "month",
+          "cost": "100",
+          "currency": "pln"
+        },
+        "price": {}
+      }
+    ],
+    "repurchase": {
+      "name": "cennik_3.08",
+      "type": "rdn",
+      "id": "62ea33b0e45d78c6ca9b7835",
+      "price": {}
+    }
+  }
+}

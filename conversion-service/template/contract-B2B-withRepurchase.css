@@ -1,0 +1,36 @@
+th {
+    text-align: center;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
+
+ol li ol {
+    list-style-type: decimal;
+    font-weight: normal;
+    text-align: justify;
+    padding-left: 15pt;
+}
+
+ol li ol li ol {
+    list-style-type: lower-alpha;
+}
+
+#ol0 {
+    list-style-type: none;
+    counter-reset: elementcounter;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 0;
+}
+
+#ol0>li:before {
+    content: "§ " counter(elementcounter) " ";
+    counter-increment: elementcounter;
+}
+
+.ul0 {
+    list-style-type: none;
+}

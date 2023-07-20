@@ -1,0 +1,496 @@
+{
+  "header": {
+    "content": {
+      "catg": "prosument",
+      "type": "invoice"
+    },
+    "provider": "Keno Energia Sp. z o.o. (test)",
+    "version": "1.0"
+  },
+  "payload": {
+    "activeEnergyConsumed": {
+      "energyDistribution": {
+        "exciseTax": 0,
+        "meters": [
+          {
+            "items": [
+              {
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_04",
+                "itemName": "Opłata abonamentowa",
+                "netUnitPrice": 0.75,
+                "netVal": 0.75,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_03",
+                "itemName": "Opłata dystrybucyjna stała",
+                "netUnitPrice": 6.56,
+                "netVal": 6.56,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_07",
+                "itemName": "Opłata przejściowa",
+                "netUnitPrice": 0.33,
+                "netVal": 0.33,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "consumption": 100,
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_08",
+                "itemName": "Opłata jakościowa",
+                "netUnitPrice": 0.0095,
+                "netVal": 0.95,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "consumption": 100,
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_02",
+                "itemName": "Opłata dystrybucyjna zmienna",
+                "netUnitPrice": 0.2223,
+                "netVal": 22.23,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "consumption": 100,
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_05",
+                "itemName": "Opłata OZE",
+                "netUnitPrice": 0.0009,
+                "netVal": 0.09,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "consumption": 100,
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_06",
+                "itemName": "Opłata kogeneracyjna",
+                "netUnitPrice": 0.0047,
+                "netVal": 0.47,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_09",
+                "itemName": "Opłata mocowa",
+                "netUnitPrice": 13.25,
+                "netVal": 13.25,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              }
+            ],
+            "meterNumber": "72421727"
+          }
+        ],
+        "subtotal": {
+          "amount": 100,
+          "netVal": 44.63
+        }
+      },
+      "energySell": {
+        "exciseTax": 0.5,
+        "meters": [
+          {
+            "items": [
+              {
+                "consumption": 100,
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_00",
+                "itemName": "Sprzedaż energii elektrycznej",
+                "netUnitPrice": 0.405,
+                "netVal": 40.5,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 5
+              },
+              {
+                "currMeterRead": {
+                  "dt": "30/06/2022"
+                },
+                "factor": 1,
+                "itemCode": "ITEM_01",
+                "itemName": "Opłata handlowa",
+                "netUnitPrice": 20,
+                "netVal": 20,
+                "prevMeterRead": {
+                  "dt": "01/06/2022"
+                },
+                "vatRate": 23
+              }
+            ],
+            "meterNumber": "72421727"
+          }
+        ],
+        "subtotal": {
+          "amount": 100,
+          "netVal": 60.5
+        }
+      }
+    },
+    "activeEnergyProduced": {
+      "meters": [
+        {
+          "items": [
+            {
+              "dateFrom": "01/06/2022",
+              "dateTo": "30/06/2022",
+              "grossVal": 30.35,
+              "itemCode": "ITEM_10",
+              "itemName": "Odkup energii",
+              "netVal": 30.35,
+              "production": 90
+            }
+          ],
+          "meterNumber": "72421727"
+        }
+      ],
+      "summary": {
+        "grossVal": 30.35,
+        "netVal": 30.35,
+        "production": 90
+      }
+    },
+    "customerDetails": {
+      "address": {
+        "city": "Grodzisk Mazowiecki",
+        "postCode": "08-999",
+        "street": "Polna"
+      },
+      "contact": {
+        "address": {
+          "city": "Grodzisk Mazowiecki",
+          "postCode": "08-999",
+          "street": "Polna"
+        },
+        "email": "jan.lukasik@ovoo.pl",
+        "phoneNumbers": [
+          {
+            "number": "602206060",
+            "type": "mobile"
+          }
+        ],
+        "www": "nie wiem co tu wpisac"
+      },
+      "customerId": "123",
+      "displayName": "Grzegorz Sikora",
+      "firstName": "Grzegorz",
+      "lastName": "Sikora"
+    },
+    "depositSummary": {
+      "deposit": [
+        {
+          "ppeCode": "PL_ZEWD_1405012128_06",
+          "ppeSummary": {
+            "depositConsumed": 30.35,
+            "depositCurrent": 30.35,
+            "depositNext": 0
+          }
+        }
+      ],
+      "ppeSummaryTotal": {
+        "depositConsumed": 30.35,
+        "depositCurrent": 30.35,
+        "depositNext": 0
+      }
+    },
+    "energyAmountAnnualBalance": {
+      "history": null
+    },
+    "energyValueAnnualBalance": {
+      "history": [
+        {
+          "items": [
+            {
+              "itemCode": "ITEM_15",
+              "itemName": "Wartość energii pobranej z sieci",
+              "periods": [
+                42.53
+              ]
+            },
+            {
+              "itemCode": "ITEM_16",
+              "itemName": "Wartość energii wprowadzonej do sieci",
+              "periods": [
+                30.35
+              ]
+            },
+            {
+              "itemCode": "ITEM_17",
+              "itemName": "Środki na depozycie Prosumenta",
+              "periods": [
+                30.35
+              ]
+            },
+            {
+              "itemCode": "ITEM_18",
+              "itemName": "Środki z depozytu Prosumenta wykorzystane w bieżącym rozliczeniu",
+              "periods": [
+                30.35
+              ]
+            },
+            {
+              "itemCode": "ITEM_19",
+              "itemName": "Środki z depozytu Prosumenta jakie pozostały do wykorzystania",
+              "periods": [
+                0
+              ]
+            }
+          ],
+          "ppeCode": "PL_ZEWD_1405012128_06"
+        }
+      ]
+    },
+    "excessSalesBalance": {
+      "items": null,
+      "summary": {
+        "grossVal": 0
+      }
+    },
+    "invoiceDetails": {
+      "billingEndDt": "30/06/2022",
+      "billingStartDt": "01/06/2022",
+      "catg": "prosument",
+      "customerId": "123",
+      "issueDt": "2022-07-14T10:43:16.743537016+02:00",
+      "number": "2022/06/123/SP/1",
+      "serviceDt": "30/06/2022",
+      "status": "issued",
+      "type": "VAT"
+    },
+    "payerDetails": {
+      "address": {
+        "city": "Grodzisk Mazowiecki",
+        "postCode": "08-999",
+        "street": "Polna"
+      },
+      "contact": {
+        "address": {
+          "city": "Grodzisk Mazowiecki",
+          "postCode": "08-999",
+          "street": "Polna"
+        },
+        "email": "jan.lukasik@ovoo.pl",
+        "phoneNumbers": [
+          {
+            "number": "602206060",
+            "type": "mobile"
+          }
+        ],
+        "www": "nie wiem co tu wpisac"
+      },
+      "customerId": "123",
+      "displayName": "Grzegorz Sikora",
+      "firstName": "Grzegorz",
+      "lastName": "Sikora"
+    },
+    "paymentDetails": {
+      "bankDetails": {
+        "account": "1000100010001000100010001999"
+      },
+      "paymentDueDt": "2022-07-28T10:43:16.743537016+02:00",
+      "paymentTitle": "nr. ew. 123"
+    },
+    "paymentSummary": {
+      "items": [
+        {
+          "grossVal": 42.53,
+          "itemCode": "ITEM_00",
+          "itemName": "Sprzedaż energii elektrycznej",
+          "netVal": 40.5,
+          "taxVal": 2.03,
+          "vatRate": 5
+        },
+        {
+          "grossVal": 46.86,
+          "itemCode": "ITEM_11",
+          "itemName": "Dystrybucja energii",
+          "netVal": 44.63,
+          "taxVal": 2.23,
+          "vatRate": 5
+        },
+        {
+          "grossVal": 24.6,
+          "itemCode": "ITEM_01",
+          "itemName": "Opłata handlowa",
+          "netVal": 20,
+          "taxVal": 4.6,
+          "vatRate": 23
+        },
+        {
+          "grossVal": -30.35,
+          "itemCode": "ITEM_14",
+          "itemName": "Uwzględniona nadwyżka",
+          "netVal": -30.35
+        }
+      ],
+      "total": {
+        "grossVal": 83.64,
+        "netVal": 83.64
+      }
+    },
+    "ppeDetails": [
+      {
+        "address": {
+          "city": "Grodzisk Mazowiecki",
+          "postCode": "08-999",
+          "street": "Polna"
+        },
+        "contractedPower": {
+          "unit": "kW",
+          "value": 7
+        },
+        "ppeCode": "PL_ZEWD_1405012128_06",
+        "ppeName": "Gospodarstwo domowe",
+        "ppeObName": "Gospodarstwo domowe",
+        "tariffGroup": "G11"
+      }
+    ],
+    "ppeSummary": {
+      "items": [
+        {
+          "energyConsumed": 100,
+          "energyProduced": 90,
+          "ppeCode": "PL_ZEWD_1405012128_06",
+          "value": 83.64
+        }
+      ],
+      "total": {
+        "energyConsumed": 100,
+        "energyProduced": 90,
+        "value": 83.64
+      }
+    },
+    "sellSummary": {
+      "groupByVatRate": {
+        "itemCode": "ITEM_25",
+        "itemName": "W tym wg. stawek VAT",
+        "items": [
+          {
+            "grossVal": 89.39,
+            "netVal": 85.13,
+            "taxVal": 4.26,
+            "vatRate": 5
+          },
+          {
+            "grossVal": 24.6,
+            "netVal": 20,
+            "taxVal": 4.6,
+            "vatRate": 23
+          }
+        ]
+      },
+      "items": [
+        {
+          "grossVal": 42.53,
+          "itemCode": "ITEM_00",
+          "itemName": "Sprzedaż energii elektrycznej",
+          "netVal": 40.5,
+          "taxVal": 2.03,
+          "vatRate": 5
+        },
+        {
+          "grossVal": 46.86,
+          "itemCode": "ITEM_11",
+          "itemName": "Dystrybucja energii",
+          "netVal": 44.63,
+          "taxVal": 2.23,
+          "vatRate": 5
+        },
+        {
+          "grossVal": 24.6,
+          "itemCode": "ITEM_01",
+          "itemName": "Opłata handlowa",
+          "netVal": 20,
+          "taxVal": 4.6,
+          "vatRate": 23
+        }
+      ],
+      "total": {
+        "grossVal": 113.99,
+        "netVal": 105.13,
+        "taxVal": 8.86
+      }
+    },
+    "sellerDetails": {
+      "address": {
+        "city": "Gliwice",
+        "postCode": "44-100",
+        "street": "O. Jana Siemińskiego"
+      },
+      "bankAccountNumber": "1000100010001000100010001999",
+      "contact": {
+        "address": {
+          "city": "Gliwice",
+          "postCode": "44-100",
+          "street": "O. Jana Siemińskiego"
+        },
+        "phoneNumbers": [
+          {
+            "number": "",
+            "type": "fix"
+          }
+        ]
+      },
+      "displayName": "Keno Energia Sp. z o.o. (test)",
+      "krs": "0000571930",
+      "legalName": "Keno Energia Sp. z o.o. (test)",
+      "nip": "1231302800"
+    }
+  }
+}

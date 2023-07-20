@@ -1,0 +1,22 @@
+{
+  "depositId": 1,
+  "customerId": "1728333",
+  "from": "01/01/2022",
+  "to": "31/01/2022",
+  "deposit": {
+    "5": {
+      "in": {"amount": 100, "value": 100},
+      "out": {"amount": 5, "value": 5},
+      "has": {"amount": 0, "value": 0},
+      "used": {"amount": 0, "value": 0},
+      "residual": {"amount": 0, "value": 0}
+    },
+    "23": {
+      "in": {"amount": 100, "value": 100},
+      "out": {"amount": 5, "value": 5},
+      "has": {"amount": 0, "value": 0},
+      "used": {"amount": 0, "value": 0},
+      "residual": {"amount": 0, "value": 0}
+    }
+  }
+}

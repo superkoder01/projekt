@@ -1,0 +1,41 @@
+apiVersion: v1
+data:
+  email-notification-service.yaml: |+
+    service:
+      ServiceName: Email-Notification-App
+      TestMode: true
+      WorkerPoolSize: 1
+      ErrorEmailTo: ["info@chain4.energy"]
+      ErrorEmailEnvironment: prod
+    
+    conversion:
+      Url: http://conversion-service
+      Timeout: 60
+    
+    smtp:
+      Host: keno-energia.com
+      Port: 465
+      User: user
+      Password: pass
+      SenderName: Platforma Dla Energii - Powiadomienie
+      Security: TLS
+    
+    rabbitmq:
+      QueueName: email-que
+      QueueType: quorum
+      IsAutoAck: false
+      PrefetchCount: 1
+      RabbitMQConfig:
+        RabbitUrl: "amqp://user:3Bxy5AXa2vW9qhtE@rabbitmq.rabbitmq.svc.cluster.local:5672/"
+        IsDurable: true
+        IsAutoDelete: false
+    
+    logger:
+      Development: true
+      DisableCaller: false
+      DisableStacktrace: false
+      Encoding: console
+      Level: info
+kind: ConfigMap
+metadata:
+  name: ens-config

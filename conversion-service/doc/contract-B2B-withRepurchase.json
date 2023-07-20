@@ -1,0 +1,174 @@
+{
+  "id": "62eb7f20fdadc2147f447e00",
+  "header": {
+    "version": "1.0",
+    "provider": "Keno Energia Sp. z o.o. (test)",
+    "content": {
+      "type": "contract",
+      "catg": "prosumer"
+    }
+  },
+  "payload": {
+    "contractDetails": {
+      "title": "",
+      "type": "split",
+      "clientType": "prosumer",
+      "offerId": "62ea8594fdadc2147f447dff",
+      "tpaParameter": "nowe przyłącze",
+      "number": "C.6/04/08/2022",
+      "creationDate": "2022/08/04 08:11:12",
+      "state": "ACCEPTED",
+      "customerId": "367",
+      "transactionId": "",
+      "referenceId": "",
+      "tariffGroup": "G11",
+      "agreementType": "B2B"
+    },
+    "sellerDtls": {
+      "legalName": "Keno Energia Sp. z o.o. (test)",
+      "displayName": "Keno Energia Sp. z o.o. (test)",
+      "krs": "0000571930",
+      "nip": "1231302800",
+      "address": {
+        "street": "O. Jana Siemińskiego 22",
+        "postCode": "44-100",
+        "city": "Gliwice"
+      },
+      "contact": {
+        "address": {
+          "street": "O. Jana Siemińskiego 22",
+          "postCode": "44-100",
+          "city": "Gliwice"
+        },
+        "phoneNumbers": [
+          {
+            "type": "fix",
+            "number": ""
+          }
+        ]
+      }
+    },
+    "customerDtls": {
+      "registrationNumber": "395664254687",
+      "isVatPayer": "0",
+      "companyType": "SOE",
+      "firstName": "Tomasz",
+      "lastName": "Kowalik",
+      "legalName": "Tom-bud",
+      "displayName": "Tomasz Kowalik",
+      "pesel": "21260236594",
+      "nip": "4781344623",
+      "address": {
+        "number": "12",
+        "street": "Długa",
+        "postCode": "64-920",
+        "city": "Wrocław"
+      },
+      "contact": {
+        "address": {
+          "number": "12",
+          "street": "Długa",
+          "postCode": "64-920",
+          "city": "Wrocław"
+        },
+        "phoneNumbers": [
+          {
+            "type": "mobile",
+            "number": "344235789"
+          }
+        ],
+        "email": "faleb63844@logodez.com"
+      }
+    },
+    "conditions": {
+      "signatureDate": "2022/08/04 12:06:13",
+      "startDate": "2022/09/01",
+      "endDate": "2023/09/01",
+      "billingPeriod": {
+        "calendarUnit": "month",
+        "number": "1"
+      },
+      "invoiceDueDate": "7",
+      "offerActivePeriod": {
+        "startDate": "2022/08/03",
+        "endDate": "2022/09/02"
+      },
+      "estimatedAnnualElectricityConsumption": {
+        "unit": "MWh",
+        "amount": "10"
+      },
+      "estimatedAnnualElectricityProduction": {
+        "unit": "MWh",
+        "amount": "8"
+      }
+    },
+    "serviceAccessPoints": [
+      {
+        "objectName": "dom",
+        "address": "Wrocław Długa 12",
+        "sapCode": "PPE_324442",
+        "meterNumber": "234567894345",
+        "osd": {
+          "name": "Energa"
+        },
+        "tariffGroup": "G11",
+        "estimatedEnergyUsage": {
+          "unit": "MWh",
+          "amount": "10"
+        },
+        "declaredEnergyUsage": {
+          "unit": "MWh",
+          "amount": "10"
+        },
+        "connectionPower": {
+          "unit": "kW",
+          "amount": "10"
+        },
+        "contractedPower": {
+          "unit": "kW",
+          "amount": "10"
+        },
+        "currentSeller": {
+          "name": "-",
+          "noticePeriod": "0"
+        },
+        "phase": "",
+        "sourceType": "Instalacja fotowoltaiczna",
+        "sourcePower": {
+          "unit": "kWp",
+          "amount": "12"
+        }
+      }
+    ],
+    "priceList": [
+      {
+        "name": "Cennik sprzedaży EE",
+        "id": "",
+        "type": "sale",
+        "osd": "ENID",
+        "tariffGroup": "G11",
+        "zones": [
+          {
+            "id": "1",
+            "name": "całodobowa",
+            "unit": "MWh",
+            "cost": "405",
+            "currency": "pln"
+          }
+        ],
+        "commercialFee": {
+          "calendarUnit": "month",
+          "cost": "25",
+          "currency": "pln"
+        },
+        "price": {}
+      }
+    ],
+    "repurchase": {
+      "name": "Cennik odkupu RDN",
+      "type": "rdn",
+      "id": "62cd3525da1a55cbc6ed10ae",
+      "price": {}
+    }
+  }
+}

@@ -1,0 +1,9 @@
+service:
+
+  persistence:
+    user: root
+    password: root
+    host: 172.17.0.2
+    port: 3306
+    database: c4e
+    image: mariadb:10.7

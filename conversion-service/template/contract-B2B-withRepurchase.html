@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Umowa B2B z odkupem ${contractDetails.number}</title>
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="contract-B2B-withRepurchase.css"/>
+    <script type="text/javascript" src="common.js">
+        window.onload = function () {
+            var object = JSON.parse('${.}');
+            document.getElementById("microInstallation").checked="checked";
+            document.getElementById("number").innerText = object.contractDetails.number;
+            document.getElementById("date0").innerText = toDate(object.conditions.signatureDate);
+            document.getElementById("date1").innerText = toDate(object.conditions.signatureDate);
+            document.getElementById("date2").innerText = toDate(object.conditions.signatureDate);
+            document.getElementById("clientName0").innerText = object.customerDtls.legalName;
+            document.getElementById("clientName1").innerText = object.customerDtls.legalName;
+            document.getElementById("clientAddress").innerText = addressToString(object.customerDtls.address)
+            document.getElementById("clientCorrespondenceAddress").innerText = addressToString(object.customerDtls.contact.address);
+            document.getElementById("clientKrs").innerText = toString(object.customerDtls.krs);
+            document.getElementById("clientNip").innerText = toString(object.customerDtls.nip);
+            document.getElementById("clientRegon").innerText = toString(object.customerDtls.regon);
+            document.getElementById("clientRepresentationName").innerText = customerToString(object.customerDtls);
+            document.getElementById("clientRepresentationPesel").innerText = object.customerDtls.pesel;
+            document.getElementById("clientContactName").innerText = customerToString(object.customerDtls);
+            document.getElementById("clientContactPhone").innerText = object.customerDtls.contact.phoneNumbers[0].number;
+            document.getElementById("clientContactEmail").innerText = object.customerDtls.contact.email;
+            document.getElementById("clientEmail0").innerText = object.customerDtls.contact.email;
+            document.getElementById("clientEmail1").innerText = object.customerDtls.contact.email;
+            document.getElementById("clientPhone").innerText = object.customerDtls.contact.phoneNumbers[0].number;
+        };
+    </script>
+</head>
+<body>
+
+<p class="p0">
+    UMOWA SPRZEDAŻY ENERGII ELEKTRYCZNEJ
+    <br>
+    nr <span id="number"/>
+</p>
+<br>
+<b>zawarta w Gliwicach dnia <span id="date0"/> pomiędzy:</b>
+<br>
+<br>
+<br>
+<b>Sprzedawcą:</b>
+<br>
+<br>
+<b>KENO Energia Sp. z o.o.</b> z siedzibą w Gliwicach, przy ulicy Siemińskiego 22, 44-100 Gliwice, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla Sądu Rejonowego w Bydgoszczy, XIII Wydział Gospodarczy, KRS: 0000571938 kapitał zakładowy 1 000 400,00 zł, NIP: 1231302807 REGON: 362304076
+<br>
+<br>
+Reprezentowaną przez:
+<br>
+<br>
+Mateusza Pielka – Prezesa Zarządu
+<br>
+<br>
+Tomasza Maronę – Wiceprezesa Zarządu
+<br>
+<br>
+a
+<br>
+<br>
+<b>Klientem:</b>
+<br>
+<p id="clientName0"/>
+<br>
+<br>
+<table>
+    <tr>
+        <td>Nazwa firmy</td>
+        <td id="clientName1"/>
+    </tr>
+    <tr>
+        <td>Adres siedziby</td>
+        <td id="clientAddress"/>
+    </tr>
+    <tr>
+        <td>Adres korespondencyjny</td>
+        <td id="clientCorrespondenceAddress"/>
+    </tr>
+    <tr>
+        <td>KRS</td>
+        <td id="clientKrs"/>
+    </tr>
+    <tr>
+        <td>NIP</td>
+        <td id="clientNip"/>
+    </tr>
+    <tr>
+        <td>REGON</td>
+        <td id="clientRegon"/>
+    </tr>
+</table>
+<br>
+reprezentowanym przez:
+<br>
+<table>
+    <tr>
+        <td class="td0" id="clientRepresentationName"/>
+        <td class="td0">-</td>
+        <td class="td0"></td>
+        <td class="td0">-</td>
+        <td class="td0" id="clientRepresentationPesel"/>
+    </tr>
+    <tr>
+        <td class="td0">Imię i nazwisko</td>
+        <td class="td0"></td>
+        <td class="td0">Funkcja</td>
+        <td class="td0"></td>
+        <td class="td0">PESEL</td>
+    </tr>
+</table>
+<br>
+<br>
+<ol id="ol0">
+    <li>Przedmiot Umowy
+        <ol>
+            <li>Na warunkach określonych w Umowie, w tym w załącznikach do Umowy, które stanowią jej integralną część, Sprzedawca zobowiązuje się do sprzedaży energii elektrycznej, a Klient zobowiązuje się do odbioru energii elektrycznej oraz dokonywania płatności w umówionym terminie. Klient jednocześnie oświadcza iż posiada odnawialne źródło energii elektrycznej i dysponuje nadwyżkami energii elektrycznej wytworzonej w :
+                <ul class="ul0">
+                    <li><input type="checkbox" id="microInstallation">Mikroinstalacji</li>
+                    <li><input type="checkbox" id="smallInstallation">Małej instalacji wpisanej do rejestru MIOZE pod nr…………………………. z dnia ………</li>
+                    <li><input type="checkbox" id="manufacturingSource">W źródle wytwórczym na podstawie udzielonej koncesji nr……………… z dnia………..</li>
+                </ul>
+            </li>
+            <li>Klient oświadcza że wprowadza do sieci OSD energię elektryczną wytworzoną wyłącznie z odnawialnego źródła energii stanowiącego nadwyżkę wytworzonej energii, której nie zużył na potrzeby własne. Szczegółowe warunki sprzedaży energii elektrycznej, w tym zakres praw i obowiązków Sprzedawcy i Klienta, określone zostały w Ogólnych Warunkach Umowy, stanowiących Załącznik nr 3 do Umowy.</li>
+            <li>W przypadku wystąpienia sprzeczności postanowień zawartych w Umowie z postanowieniami OWU, przeważające są postanowienia OWU.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Zobowiązania Sprzedawcy
+        <ol>
+            <li>Sprzedawca zobowiązany jest do sprzedaży energii elektrycznej do Punktów Poboru wymienionych w Załączniku nr 1 do Umowy.</li>
+            <li>Sprzedawca jest odpowiedzialny za bilansowanie handlowe realizowane w ramach Umowy.</li>
+            <li>Sprzedawca zobowiązany jest do zakupu energii wytworzonej oraz niezużytej na potrzeby własne Klienta oraz do bilansowania handlowego punktów poboru Klienta objętych umową.</li>
+            <li>Sprzedawca po zakończeniu każdego Okresu Rozliczeniowego przekaże klientowi dane dotyczące ilości energii zużytej oraz wytworzonej w każdym okresie rozliczeniowym (po ich otrzymaniu z OSD) oraz na tej podstawie wystawi fakturę VAT na zasadzie samofakturowania.</li>
+            <li>Szczegółowe zasady rozliczeń, w tym sposób wynagradzania za energię elektryczną sprzedaną do Klienta, oraz wprowadzoną do sieci, zawarte są w załączniku do Umowy pn. Oferta Sprzedawcy.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Oświadczenia Klienta
+        <ol>
+            <li>Klient oświadcza, że:
+                <ol>
+                    <li>przysługuje mu tytuł prawny do Punktów Poboru wymienionych w Załączniku nr 1 do Umowy;</li>
+                    <li>nie posiada statusu konsumenta w rozumieniu art. 22 1 Kodeksu cywilnego;</li>
+                    <li>pobiera energię elektryczną zgodnie z Grupą Taryfową określoną dla każdego Punktu Poboru w Załączniku nr 1;</li>
+                    <li>wyraża zgodę na dostęp Sprzedawcy do danych pomiarowych dla Punktów Poboru;</li>
+                    <li>nie zachodzą żadne przeszkody uniemożliwiające realizację Umowy;</li>
+                    <li>zużyje na potrzeby własne energię elektryczną zakupioną na podstawie Umowy;</li>
+                    <li>Posiada tytuł prawny do dysponowania Mikroinstalacją, Małą instalacją lub źródłem wytwórczym;</li>
+                    <li>Dysponuje tytułem prawnym do nieruchomości lub obiektu budowlanego, na terenie którego zlokalizowana jest Mikroinstalacja, Mała Instalacja, lub źródło wytwarzania.</li>
+                </ol>
+            </li>
+            <li>Klient udziela Sprzedawcy upoważnienia do wypowiedzenia dotychczasowej umowy sprzedaży energii elektrycznej lub umowy kompleksowej Klienta w celu rozpoczęcia świadczenia na podstawie niniejszej Umowy oraz do dokonywania wszelkich czynności faktycznych i prawnych niezbędnych do zmiany sprzedawcy oraz do rozpoczęcia sprzedaży energii elektrycznej na podstawie niniejszej Umowy.</li>
+            <li>Klient zgadza się na udostępnianie Sprzedawcy danych pomiarowych Klienta przez OSD. W związku z tym Klient składa stosowne oświadczenie dotyczące obecnego sprzedawcy oraz terminu wypowiedzenia poprzedniej umowy oraz udziela stosownego pełnomocnictwa do dokonania zmiany sprzedawcy, które stanowi Załącznik nr 4 do Umowy.</li>
+            <li>Klient zobowiązuje się do wprowadzania energii elektrycznej do OSD, spełniającej parametry jakościowe określone w IRiESD i w Prawie Energetycznym, takie jak te do których zapewnienia zobowiązany jest OSD w zakresie energii elektrycznej pobieranej z sieci dystrybucyjnej.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Operator Systemu Dystrybucyjnego
+        <ol>
+            <li>Sprzedaż energii elektrycznej jest dokonywana za pośrednictwem sieci dystrybucyjnej OSD, z którym Klient ma obowiązującą Umowę o świadczenie usług dystrybucji lub będzie miał zawartą Umowę o świadczenie usług dystrybucji najpóźniej w dniu rozpoczęcia sprzedaży energii elektrycznej na podstawie Umowy.</li>
+            <li>Umowa reguluje wyłącznie warunki sprzedaży energii elektrycznej i w żaden sposób nie zastępuje Umowy o świadczenie usług dystrybucji.</li>
+            <li>Obowiązywanie Umowy o świadczenie usług dystrybucji energii elektrycznej dla każdego Punktu Poboru jest warunkiem rozpoczęcia i prowadzenia sprzedaży energii elektrycznej na podstawie Umowy.</li>
+            <li>Moc umowna, warunki jej zmiany, jak również Grupa Taryfowa OSD i zasady jej zmiany określane są każdorazowo w Umowie o świadczenie usług dystrybucji, zawartej pomiędzy Klientem a OSD.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Ilość energii elektrycznej
+        <ol>
+            <li>Przewidywana i zadeklarowana ilość energii elektrycznej w całym okresie obowiązywania Umowy została wyznaczona dla każdego Punktu Poboru w Załączniku nr 1.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Czas trwania Umowy
+        <ol>
+            <li>Umowa wchodzi w życie z dniem jej skutecznego zawarcia.</li>
+            <li>Umowa zawarta jest na czas określony, od dnia jej zawarcia do dnia <span id="date1"/> przy czym rozpoczęcie sprzedaży energii elektrycznej nastąpi z dniem określonym w ust. 4 niniejszego paragrafu.</li>
+            <li>Po upływie okresu, na jaki Umowa została zawarta, Umowa będzie obowiązywać na czas nieoznaczony, chyba że któraś ze Stron złoży oświadczenie, o którym mowa w § 10 ust 1 OWU.</li>
+            <li>Strony ustalają, że rozpoczęcie sprzedaży energii elektrycznej nastąpi z dniem <span id="date2"/>, ale nie wcześniej niż przed:
+                <ol>
+                    <li>dniem pomyślnej weryfikacji zgłoszenia zmiany sprzedawcy przez właściwego OSD oraz</li>
+                    <li>rozpoczęciem obowiązywania Umowy o świadczenie usług dystrybucji.</li>
+                </ol>
+            </li>
+            <li>Strony zgodnie ustalają, że w przypadku braku możliwości rozpoczęcia sprzedaży w dniu określonym powyżej z uwagi na brak pozytywnej weryfikacji zgłoszenia przez OSD bez względu na przyczynę, Sprzedawca ma prawo dokonać zgłoszenia zmiany sprzedawcy na najbliższy możliwy termin, w którym zmiana sprzedawcy będzie możliwa.</li>
+            <li>W przypadku wcześniejszego oddania do użytkowania Punktu Poboru energii elektrycznej, rozpoczęcie sprzedaży może nastąpić przed datą wskazaną w ust. 4, z zastrzeżeniem spełnienia pozostałych warunków tam określonych.</li>
+            <li>W przypadku rozwiązania Umowy przez Klienta przed upływem okresu, o którym mowa w ustępie 2 powyżej lub braku możliwości realizacji Umowy z przyczyn leżących po stronie Klienta, Klient zapłaci karę umowną na zasadach określonych w § 11 OWU.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Sposób dokonywania rozliczeń
+        <ol>
+            <li>Rozliczenie zużycia energii elektrycznej odbywać się będzie w okresach rozliczeniowych, które pokrywają się z okresem rozliczeniowym za dystrybucję energii elektrycznej określonym w Umowie o świadczenie usług dystrybucji dla Punktu Poboru (dalej „Okres Rozliczeniowy”). Szczegółowe zasady dokonywania rozliczeń zawarte są w OWU.</li>
+            <li>W okresie, o którym mowa w § 6 ust. 2 Umowy obowiązuje Cennik, natomiast w okresie, o którym mowa w § 6 ust. 3 Umowy obowiązuje Cennik Standardowy. W rozliczeniach pomiędzy Stronami dla Grup taryfowych określonych w Załączniku nr 1 stosuje się ceny i stawki opłat wskazane w Załączniku nr 2 (Cennik) albo ceny i stawki opłat opublikowane
+                na stronie internetowej Sprzedawcy (Cennik Standardowy) dla danej Grupy Taryfowej wskazanej w Umowie dla danego Punktu Poboru.</li>
+            <li>Terminem płatności jest dzień wskazany na fakturze VAT, wynoszący 14 dni od daty wystawienia danej faktury.</li>
+            <li>Podatek od towarów i usług VAT będzie doliczany do wszelkich cen oraz stawek określonych w Umowie i załącznikach w wysokości zgodnej z aktualnie obowiązującymi przepisami prawa.</li>
+            <li>Klient zgadza się na przesyłanie faktur oraz innych dokumentów rozliczeniowych drogą elektroniczną. Faktury będą przesyłane przez Sprzedawcę na adres e-mail: <span id="clientEmail0"/>. Klient oświadcza, że będzie niezwłocznie informować Sprzedawcę o zmianie adresu e-mail do przesyłania faktur VAT. Zmiana adresu e-mail nie stanowi zmiany Umowy. W przypadku niepoinformowania Sprzedawcy o zmianie adresu e-mail, wysłanie faktur na adres e-mail uznaje się za skutecznie doręczone.</li>
+        </ol>
+    </li>
+    <br>
+    <li>Postanowienia końcowe
+        <ol>
+            <li>Strony ustalają następujące dane kontaktowe:
+                <br>
+                <br>
+                osoba wyznaczona do kontaktu przez Klienta:
+                <table>
+                    <tr>
+                        <th>Imię i nazwisko</th>
+                        <th>Stanowisko</th>
+                        <th>Telefon kom.</th>
+                        <th>Telefon stac.</th>
+                        <th>Adres e-mail</th>
+                    </tr>
+                    <tr>
+                        <td id="clientContactName"/>
+                        <td><br></td>
+                        <td id="clientContactPhone"/>
+                        <td><br></td>
+                        <td id="clientContactEmail"/>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                osoba wyznaczona do kontaktu przez Sprzedawcę:
+                <table>
+                    <tr>
+                        <th>Imię i nazwisko</th>
+                        <th>Stanowisko</th>
+                        <th>Nr telefonu</th>
+                        <th>Adres e-mail</th>
+                    </tr>
+                    <tr>
+                        <td>Biuro Obsługi Klienta</td>
+                        <td>realizacja umowy</td>
+                        <td>+48 32 230 25 71</td>
+                        <td>sprzedaz@keno-energia.com</td>
+                    </tr>
+                    <tr>
+                        <td>Biuro Obsługi Klienta</td>
+                        <td>faktury i rozliczenia</td>
+                        <td>+48 798 448 586</td>
+                        <td>bok@keno-energia.com</td>
+                    </tr>
+                </table>
+            </li>
+            <br>
+            <br>
+            <li>W zakresie nieuregulowanym Umową stosuje się przepisy prawa polskiego, w szczególności Prawo energetyczne, Kodeks cywilny oraz IRiESD.</li>
+            <li>Załączniki stanowią integralną część Umowy.</li>
+            <li>Pojęcia użyte w Umowie i pisane z dużej litery mają znaczenie określone w OWU.</li>
+            <li>Klient oświadcza, że jest zarejestrowany jako czynny podatnik podatku VAT.</li>
+            <li>Sprzedawca oświadcza, że jest zarejestrowanym podatnikiem podatku VAT.</li>
+            <li>Klient i Sprzedawca oświadczają, że są czynnymi podatnikami podatku VAT.</li>
+            <li>Sprzedawca oświadcza, że rachunek bankowy wskazany na fakturach pozwoli Klientowi na dokonanie płatności z wykorzystaniem mechanizmu podzielonej płatności, jak również będzie rachunkiem ujawnionym na tzw. białej liście podatników VAT.</li>
+            <li>Strony zobowiązane są do informowania o każdej zmianie okoliczności, o których mowa w ust. 6-9 powyżej w terminie 7 dni. Każda ze stron zobowiązuje się do naprawienia drugiej stronie szkody, którą ta poniosła na skutek posiadania nieprawdziwych informacji, o których mowa w ust. 6-9 powyżej lub informacji nieaktualnych na skutek zaniechania obowiązku informacyjnego, o którym mowa w poprzednim zdaniu. Sprzedawca jest uprawniony do rozwiązania umowy bez wypowiedzenia oraz do dochodzenia naprawienia szkody w pełnej wysokości.</li>
+            <li>Wszelkie spory wynikające z Umowy będą rozstrzygane przez sąd właściwy dla siedziby Sprzedawcy, chyba że właściwym organem do rozstrzygnięcia sporu będzie Prezes Urzędu Regulacji Energetyki.</li>
+            <li>Umowa została sporządzona w dwóch jednobrzmiących egzemplarzach, po jednym dla każdej ze Stron.</li>
+            <li>Klient oświadcza, że:
+                <table>
+                    <td>☐ wyraża zgodę na otrzymywanie od Sprzedawcy na adres e-mail <span id="clientEmail1"/> oraz numer telefonu <span id="clientPhone"/> informacji marketingowej o produktach oraz usługach Sprzedawcy.</td>
+                </table>
+            </li>
+        </ol>
+    </li>
+</ol>
+<br>
+<b>
+    Dane osoby składającej ofertę: ……………………………………. (Imię i nazwisko),
+    <br>
+   ……….………………………….. (nr telefonu), ………………………………………………… (e-mail).
+</b>
+<br>
+<br>
+<br>
+<table>
+    <tr>
+        <td><br><br><br><br><br></td>
+        <td><br><br><br><br><br></td>
+    </tr>
+    <tr>
+        <th>Podpis Sprzedawcy</th>
+        <th>Podpis Klienta</th>
+    </tr>
+</table>
+<br>
+<br>
+<br>
+<b>Załączniki do umowy:</b>
+<br>
+<br>
+<b>Załączniki:</b>
+<br>
+Załącznik nr 1 – Wykaz Punktów Poboru wraz z oświadczeniem o posiadaniu tytułu prawnego do lokalu
+<br>
+Załącznik nr 2 – Ceny i stawki opłat lub też zaakceptowana oferta przez klienta
+<br>
+Załącznik nr 3 – Ogólne Warunki Umowy
+<br>
+Załącznik nr 4 – Pełnomocnictwo
+<br>
+Załącznik nr 5 – Oświadczenie dotyczące obowiązku modernizacji układu pomiarowego
+<br>
+Załącznik nr 6 – Klauzula RODO
+<br>
+Załącznik nr 7 – Oświadczenie, że Umowa nie ma zawodowego charakteru dla Klienta będącego osobą fizyczną prowadzącą działalność gospodarczą
+<br>
+Załącznik nr 8 - Oświadczenie o statusie VAT
+
+</body>
+</html>

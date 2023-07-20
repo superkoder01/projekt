@@ -1,0 +1,10 @@
+bases:
+  - ../../base
+resources:
+  - ens-secret.yaml
+  - ens-app-config.yaml
+namespace: billing-ovoo
+images:
+  - name: email-notification-service
+    newName: 10.0.8.1:5000/c4e/email-notification-service
+    newTag: dev-1.1.0

@@ -1,0 +1,87 @@
+service:
+  ServiceName: Conversion-App
+  Port: 8080
+  ReleaseMode: true
+  TrustedProxies: []
+  DebugMode: false
+
+htmlToPdfConverter:
+  Url: http://127.0.0.1:80
+  Dpi: 300
+  MarginLRTB: [15, 15, 15, 15]
+  Timeout: 60
+  DebugJavascript: true
+
+template: [
+  { Path: ./template/invoice.html,
+    Type: Invoice,
+    Versions: [Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+  { Path: ./template/offer-B2C.html,
+    Type: Offer,
+    Conditions: [
+      offerDetails.agreementType: B2C,
+    ],
+    Versions: [Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+  { Path: ./template/offer-B2B-withRepurchase.html,
+    Type: Offer,
+    Conditions: [
+      offerDetails.agreementType: B2B,
+      repurchase.id: .+
+    ],
+    Versions: [ Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0 ],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+  { Path: ./template/offer-B2B-withoutRepurchase.html,
+    Type: Offer,
+    Conditions: [
+      offerDetails.agreementType: B2B,
+      repurchase.id: ^$
+    ],
+    Versions: [ Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0 ],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+  { Path: ./template/contract-B2C.html,
+    Type: Contract,
+    Conditions: [
+      contractDetails.agreementType: B2C,
+    ],
+    Versions: [Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+  { Path: ./template/contract-B2B-withRepurchase.html,
+    Type: Contract,
+    Conditions: [
+      contractDetails.agreementType: B2B,
+      repurchase.id: .+
+    ],
+    Versions: [ Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0 ],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+  { Path: ./template/contract-B2B-withoutRepurchase.html,
+    Type: Contract,
+    Conditions: [
+      contractDetails.agreementType: B2B,
+      repurchase.id: ^$
+    ],
+    Versions: [ Keno-1.0.0, Keno Energia Sp. z o.o.-1.0.0, Keno Energia Sp. z o.o.-1.0, Keno Energia Sp. z o.o. (test)-1.0 ],
+    FooterTemplatePath: /myfiles/template/footer.html,
+    FooterMargin: 10
+  },
+]
+
+logger:
+  Development: true
+  DisableCaller: false
+  DisableStacktrace: false
+  Encoding: console
+  Level: debug

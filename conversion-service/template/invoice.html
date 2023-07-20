@@ -1,0 +1,1250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Faktura VAT ${invoiceDetails.number}</title>
+    <link rel="stylesheet" href="invoice.css"/>
+</head>
+
+<body>
+<table style="border-collapse:collapse;margin-left:6pt" cellspacing="0">
+    <tr style="height:56pt">
+        <td style="width:248pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <br/>
+            <table border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td>
+                        <img width="128" height="48" src="data:image/jpg;base64,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" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA">
+            <p class="s1">Faktura VAT nr <span class="s2">${invoiceDetails.number}</span></p>
+        </td>
+    </tr>
+    <tr style="height:38pt">
+        <td style="width:248pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">Nr konta do wpłaty: <span class="s2">${paymentDetails.bankDetails.account}</span></p>
+            <p class="s3">Tytuł wpłaty: <span class="s2">${paymentDetails.paymentTitle}</span></p>
+            <p class="s3">Termin płatności: <span class="s2">${convertDate(paymentDetails.paymentDueDt, "2006-01-02T15:04:05Z07:00", "2/01/2006")}</span></p>
+        </td>
+        <td style="width:205pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA">
+            <p class="s3">Data wystawienia: <span class="s2">${convertDate(invoiceDetails.issueDt, "2006-01-02T15:04:05Z07:00", "2/01/2006")}</span></p>
+            <br/>
+            <p class="s3">Data wykonania usługi: <span class="s2">${invoiceDetails.serviceDt}</span></p>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <br/>
+        </td>
+        <td style="width:205pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:11pt">
+        <td style="width:248pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">Sprzedawca:</p>
+        </td>
+        <td style="width:205pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <p class="s3">Nabywca:</p>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s4">${sellerDetails.displayName}</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <p class="s4">${customerDetails.displayName}</p>
+        </td>
+    </tr>
+    <tr style="height:11pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s4">${sellerDetails.address.street}</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <p class="s4">${customerDetails.address.street}</p>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s4">${sellerDetails.address.postCode} ${sellerDetails.address.city}</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <p class="s4">${customerDetails.address.postCode} ${customerDetails.address.city}</p>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">NIP: <span class="s2">${sellerDetails.nip}</span></p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">REGON: <span class="s2">${sellerDetails.regon}</span></p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <p class="s3">Numer Ewidencyjny Klienta: <span class="s2">${payerDetails.registrationNumber}</span></p>
+        </td>
+    </tr>
+    <tr style="height:15pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">KRS: <span class="s2">${sellerDetails.krs}</span></p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:15pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">Adres korespondencyjny sprzedawcy:</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s4">${sellerDetails.legalName}</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:11pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s4">${sellerDetails.contact.address.street}</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:15pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s4">${sellerDetails.contact.address.postCode} ${sellerDetails.contact.address.city}</p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:15pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">Tel: <span class="s2">${sellerDetails.contact.phoneNumbers.0.number}</span></p>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td style="width:248pt;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <a href="mailto:${sellerDetails.contact.email}" class="s3" target="_blank">Email: </a><a href="${sellerDetails.contact.email}" class="s2" target="_blank">${sellerDetails.contact.email}</a>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:19pt">
+        <td style="width:248pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <a href="${sellerDetails.contact.www}" class="s3" target="_blank">www: </a><a href="${sellerDetails.contact.www}" class="s2" target="_blank">${sellerDetails.contact.www}</a>
+        </td>
+        <td style="width:205pt;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td style="width:248pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <br/>
+        </td>
+        <td style="width:205pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#AEAAAA">
+            <br/>
+        </td>
+    </tr>
+    <tr style="height:69pt">
+        <td style="width:248pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-right-style:solid;border-right-width:1pt;border-right-color:#AEAAAA">
+            <p class="s3">Numer Punktu Poboru: <span class="s2">${ppeDetails.0.ppeCode}</span></p>
+            <p class="s3">Nazwa Punktu Poboru: <span class="s2">${ppeDetails.0.ppeName}</span></p>
+            <p class="s3">Adres Punktu Poboru: <span class="s2">${ppeDetails.0.address.street} ${ppeDetails.0.address.postCode} ${ppeDetails.0.address.city}</span></p>
+            <p class="s3">Grupa Taryfowa: <span class="s2">${ppeDetails.0.tariffGroup}</span></p>
+            <p class="s3">Moc Umowna: <span class="s2">${ppeDetails.0.contractedPower.value} ${ppeDetails.0.contractedPower.unit}</span></p>
+            <p class="s3">Rozliczenie za okres: <span class="s2">od ${invoiceDetails.billingStartDt} do ${invoiceDetails.billingEndDt}</span></p>
+        </td>
+        <td style="width:205pt;border-top-style:solid;border-top-width:1pt;border-top-color:#AEAAAA;border-left-style:solid;border-left-width:1pt;border-left-color:#AEAAAA">
+            <p class="s3">Nazwa Obiektu: <span class="s2">${ppeDetails.0.ppeObName}</span></p>
+        </td>
+    </tr>
+</table>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<p class="s5">Energia czynna pobrana</p>
+<p class="s5">Dane techniczno-rozliczeniowe</p>
+<p class="s5">Typ odczytu: <span class="s2">F- fizyczny, O-odbiorcy, S-szacunkowy, Z-zdalny</span></p>
+<table style="width:490pt;border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr>
+        <td class="s34" rowspan="2">
+            <p class="s27">Nazwa Towaru lub usługi</p>
+        </td>
+        <td class="s35" rowspan="2">
+            <p class="s29">Nr Licznika</p>
+        </td>
+        <td class="s35" colspan="2">
+            <p class="s29">Wskazanie poprzednie</p>
+        </td>
+        <td class="s35" colspan="2">
+            <p class="s29">Wskazanie obecne</p>
+        </td>
+        <td class="s35" rowspan="2">
+            <p class="s29">Mnożna/ il.m-c/ Wskaźnik</p>
+        </td>
+        <td class="s35" rowspan="2">
+            <p class="s29">Zużycie (kWh)</p>
+        </td>
+        <td class="s35" rowspan="2">
+            <p class="s29">Cena netto (zł)</p>
+        </td>
+        <td class="s35" rowspan="2">
+            <p class="s29">Wartość netto (zł)</p>
+        </td>
+        <td class="s36" rowspan="2">
+            <p class="s29">Stawka VAT (%)</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s332">
+            <p class="s29">Odczyt (kWh)</p>
+        </td>
+        <td class="s332">
+            <p class="s29">Data</p>
+        </td>
+        <td class="s332">
+            <p class="s29">Odczyt (kWh)</p>
+        </td>
+        <td class="s332">
+            <p class="s29">Data</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energySell.meters.0.items.0.itemName} (A)<span class="s21">1</span></p>
+        </td>
+        <td class="s33" rowspan="2">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.meterNumber}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energySell.meters.0.items.0.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.0.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energySell.meters.0.items.0.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.0.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.0.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.0.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${convertFloat(activeEnergyConsumed.energySell.meters.0.items.0.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${convertFloat(activeEnergyConsumed.energySell.meters.0.items.0.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.0.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energySell.meters.0.items.1.itemName} (C)</p>
+        </td>
+        <td class="s33">
+            <br/>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.1.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <br/>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.1.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.1.factor}</p>
+        </td>
+        <td class="s33">
+            <br/>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${convertFloat(activeEnergyConsumed.energySell.meters.0.items.1.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${convertFloat(activeEnergyConsumed.energySell.meters.0.items.1.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${activeEnergyConsumed.energySell.meters.0.items.1.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s371" colspan="2">
+            <p class="text12BoldLeftPadding5">Razem:</p>
+        </td>
+        <td class="s332">
+            <br/>
+        </td>
+        <td class="s332">
+            <br/>
+        </td>
+        <td class="s332">
+            <br/>
+        </td>
+        <td class="s332">
+            <br/>
+        </td>
+        <td class="s332">
+            <br/>
+        </td>
+        <td class="s332">
+            <p class="text12BoldCenterPadding5">${activeEnergyConsumed.energySell.meters.0.items.0.consumption}</p>
+        </td>
+        <td class="s332">
+            <br/>
+        </td>
+        <td class="s332">
+            <p class="text12BoldRigthPadding5">${convertFloat(activeEnergyConsumed.energySell.subtotal.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38" bgcolor="#D9E9D3">
+            <br/>
+        </td>
+    </tr>
+    <tr>
+        <td class="s372" colspan="10">
+            <p class="s27">Dystrybucja energii (B)</p>
+        </td>
+        <td class="s38" bgcolor="#F2F2F2">
+            <br/>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.0.itemName}</p>
+        </td>
+        <td class="s33" rowspan="8">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.meterNumber}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.0.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.0.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.0.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.0.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.0.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.0.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.0.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.0.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.0.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.1.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.1.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.1.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.1.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.1.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.1.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.1.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.1.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.1.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.1.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.2.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.2.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.2.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.2.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.2.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.2.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.2.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.2.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.2.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.2.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.3.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.3.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.3.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.3.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.3.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.3.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.3.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.3.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.3.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.3.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.4.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.4.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.4.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.4.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.4.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.4.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.4.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.4.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.4.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.4.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.5.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.5.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.5.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.5.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.5.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.5.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.5.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.5.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.5.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.5.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.6.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.6.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.6.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.6.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.6.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.6.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.6.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.6.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.6.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.6.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s37">
+            <p class="s28">${activeEnergyConsumed.energyDistribution.meters.0.items.7.itemName}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.7.prevMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.7.prevMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.7.currMeterRead.value}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${activeEnergyConsumed.energyDistribution.meters.0.items.7.currMeterRead.dt}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.7.factor}</p>
+        </td>
+        <td class="s33">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.7.consumption}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding5">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.7.netUnitPrice, "%.5f", false)}</p>
+        </td>
+        <td class="s33">
+            <p class="text6NormalRightPadding15">${!convertFloat(activeEnergyConsumed.energyDistribution.meters.0.items.7.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s38">
+            <p class="s30">${!activeEnergyConsumed.energyDistribution.meters.0.items.7.vatRate}</p>
+        </td>
+    </tr>
+    <tr>
+        <td class="s39" colspan="7">
+            <p class="text12BoldLeftPadding5">Razem:</p>
+        </td>
+        <td class="s40">
+            <p class="text12BoldCenterPadding5">${activeEnergyConsumed.energyDistribution.subtotal.amount}</p>
+        </td>
+        <td class="s40">
+            <br/>
+        </td>
+        <td class="s40">
+            <p class="text12BoldRigthPadding5">${convertFloat(activeEnergyConsumed.energyDistribution.subtotal.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s41">
+            <br/>
+        </td>
+    </tr>
+</table>
+<p class="s6"><span class="s21">1</span> Sprzedaż energii elektrycznej z sieci zawiera podatek akcyzowy od energii elektrycznej w wysokości  <b>${activeEnergyConsumed.energySell.exciseTax}</b> zł.</p>
+<div style = "display:block; clear:both; page-break-after:always;"></div>
+<p class="s5">Energia czynna oddawana Dane techniczno-rozliczeniowe Typ odczytu: <span class="s2">Z - zdalny</span></p>
+<table style="border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr style="height:21pt">
+        <td class="s31" style="width:52pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" rowspan="2" bgcolor="#D9E9D3">
+            <p class="s29">Nazwa Towaru lub usługi</p>
+        </td>
+        <td class="s31" style="width:58pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" rowspan="2" bgcolor="#D9E9D3">
+            <p class="s29">Nr Licznika</p>
+        </td>
+        <td class="s31" style="width:95pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="2" bgcolor="#D9E9D3">
+            <p class="s29">Za okres</p>
+        </td>
+        <td class="s31" style="width:277pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt" colspan="2" bgcolor="#D9E9D3">
+            <p class="s29">Nadwyżka wprowadzona do sieci w bieżącym okresie rozliczeniowym</p>
+        </td>
+    </tr>
+    <tr style="height:36pt">
+        <td class="s31" style="width:47pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9E9D3">
+            <p class="s29">Od</p>
+        </td>
+        <td class="s31" style="width:48pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9E9D3">
+            <p class="s29">Do</p>
+        </td>
+        <td class="s31" style="width:135pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9E9D3">
+            <p class="s29">Ilość (kWh)</p>
+        </td>
+        <td class="s31" style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt" bgcolor="#D9E9D3">
+            <p class="s29">Wartość Brutto (zł) (Wartość wyznaczona wg. RDN<span class="s14">2</span>) (D)</p>
+        </td>
+    </tr>
+    <tr style="height:13pt">
+        <td class="s31" style="width:52pt;border-top-style:solid;border-top-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+            <p class="s28">${activeEnergyProduced.meters.0.items.0.itemName}</p>
+        </td>
+        <td class="s31" style="width:58pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+            <p class="s30">${activeEnergyProduced.meters.0.meterNumber}</p>
+        </td>
+        <td class="s31" style="width:47pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+            <p class="s30">${activeEnergyProduced.meters.0.items.0.dateFrom}</p>
+        </td>
+        <td class="s31" style="width:48pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+            <p class="s30">${activeEnergyProduced.meters.0.items.0.dateTo}</p>
+        </td>
+        <td class="s31" style="width:135pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt;border-right-style:solid;border-right-width:1pt">
+            <p class="s30">${activeEnergyProduced.meters.0.items.0.production}</p>
+        </td>
+        <td class="s31" style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-bottom-style:solid;border-bottom-width:1pt">
+            <p class="s30">${activeEnergyProduced.meters.0.items.0.grossVal}</p>
+        </td>
+    </tr>
+    <tr style="height:11pt">
+        <td class="s31" style="width:205pt;border-top-style:solid;border-top-width:1pt;border-right-style:solid;border-right-width:1pt" colspan="4" bgcolor="#D9E9D3">
+            <p class="text12BoldLeftPadding5">Razem:</p>
+        </td>
+        <td class="s31" style="width:135pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt;border-right-style:solid;border-right-width:1pt" bgcolor="#D9E9D3">
+            <p class="text12BoldCenterPadding5">${activeEnergyProduced.summary.production}</p>
+        </td>
+        <td class="s31" style="width:142pt;border-top-style:solid;border-top-width:1pt;border-left-style:solid;border-left-width:1pt" bgcolor="#D9E9D3">
+            <p class="text12BoldCenterPadding5">${activeEnergyProduced.summary.grossVal}</p>
+        </td>
+    </tr>
+</table>
+<br/>
+<p class="s6"><span class="s21">2</span> Cena dla I Fixingu Rynku Dnia Następnego z uwzględnieniem treści załącznika nr 4 do umowy kompleksowej.</p>
+<br/><br/><br/>
+<p class="s5">Informacja o środkach na depozycie Prosumenta</p>
+<table style="border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr style="height:15pt">
+        <td class="s31" style="border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Depozyt  (zł) (E)</p>
+        </td>
+        <td class="s31" style="border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Depozyt po uwzględnieniem bieżącego okresu rozliczeniowego (zł) (D + E)</p>
+        </td>
+        <td class="s31" style="border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">Wykorzystano w bieżącym rozliczeniu (zł) (F)</p>
+        </td>
+        <td class="s31" style="border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Pozostaje do wykorzystania (zł)</p>
+            <p class="s29">(D + E - F)</p>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td class="s31" style="border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8; border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">0</p>
+        </td>
+        <td class="s31" style="border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8; border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${convertFloat(depositSummary.deposit.0.ppeSummary.depositCurrent, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8; border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${convertFloat(depositSummary.deposit.0.ppeSummary.depositConsumed, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8; border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${convertFloat(depositSummary.deposit.0.ppeSummary.depositNext, "%.2f", false)}</p>
+        </td>
+    </tr>
+</table>
+<br/><br /><br />
+<p class="s5">Podsumowanie sprzedaży energii elektrycznej</p>
+<table style="border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr style="height:29pt">
+        <td class="s31" style="width:227pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s27">Podsumowanie</p>
+        </td>
+        <td class="s31"style="width:70pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">Stawka VAT (%)</p>
+        </td>
+        <td class="s31"style="width:65pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">Wartość Netto (zł)</p>
+        </td>
+        <td class="s31"style="width:57pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">Kwota VAT (zł)</p>
+        </td>
+        <td class="s31" style="width:65pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Wartość Brutto (zł)</p>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td class="s31" style="width:227pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">Sprzedaż energii elektrycznej (A)</p>
+        </td>
+        <td class="s31" style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${sellSummary.items.0.vatRate}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.0.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:57pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.0.taxVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.0.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td class="s31" style="width:227pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">Dystrybucja energii (B)</p>
+        </td>
+        <td class="s31" style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${sellSummary.items.1.vatRate}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.1.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:57pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.1.taxVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.1.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td class="s31" style="width:227pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">Opłata handlowa (C)</p>
+        </td>
+        <td class="s31" style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${sellSummary.items.2.vatRate}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.2.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:57pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.2.taxVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.items.2.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:14pt">
+        <td class="s31" style="width:227pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="text12BoldLeftPadding5">Razem:</p>
+        </td>
+        <td class="s31" style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <br/>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="text12BoldRigthPadding15">${convertFloat(sellSummary.total.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:57pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="text12BoldRigthPadding15">${convertFloat(sellSummary.total.taxVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="text12BoldRigthPadding15">${convertFloat(sellSummary.total.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p class="s28">${sellSummary.groupByVatRate.itemName}</p>
+        </td>
+        <td class="s31" style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${sellSummary.groupByVatRate.items.0.vatRate}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.groupByVatRate.items.0.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:57pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.groupByVatRate.items.0.taxVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.groupByVatRate.items.0.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="s31" style="width:70pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${sellSummary.groupByVatRate.items.1.vatRate}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.groupByVatRate.items.1.netVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:57pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.groupByVatRate.items.1.taxVal, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:65pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth25">${convertFloat(sellSummary.groupByVatRate.items.1.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+</table>
+<br/>
+<p class="s5">Podsumowanie naliczeń faktury</p>
+<table style="border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr style="height:28pt">
+        <td class="s31" style="width:410pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s27">Podsumowanie</p>
+        </td>
+        <td class="s31" style="width:73pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Wartość Brutto (zł)</p>
+        </td>
+    </tr>
+    <tr style="height:10pt">
+        <td class="s31" style="width:410pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">${paymentSummary.items.0.itemName}</p>
+        </td>
+        <td class="s31" style="width:73pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth35">${convertFloat(paymentSummary.items.0.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td class="s31" style="width:410pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">${paymentSummary.items.3.itemName}</p>
+        </td>
+        <td class="s31" style="width:73pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth35">${convertFloat(paymentSummary.items.3.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:8pt">
+        <td class="s31" style="width:410pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">${paymentSummary.items.1.itemName}</p>
+        </td>
+        <td class="s31" style="width:73pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth35">${convertFloat(paymentSummary.items.1.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:9pt">
+        <td class="s31" style="width:410pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">${paymentSummary.items.2.itemName}</p>
+        </td>
+        <td class="s31" style="width:73pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="text6NormalRightPaddingLeft5Rigth35">${convertFloat(paymentSummary.items.2.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+    <tr style="height:14pt">
+        <td class="s31" style="width:410pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="text18BoldLeftPadding5">Do zapłaty:</p>
+        </td>
+        <td class="s31" style="width:73pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="text18BoldRigthPadding15">${convertFloat(paymentSummary.total.grossVal, "%.2f", false)}</p>
+        </td>
+    </tr>
+</table>
+
+<div style = "display:block; clear:both; page-break-after:always;"></div><br/>
+<p class="s5">Wartość energii wprowadzonej do i pobranej z sieci wg. okresów rozliczeniowych</p>
+<table style="border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr style="height:17pt">
+        <td class="s31" style="width:125pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <br/>
+        </td>
+        <td class="s31" style="width:28pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">I</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:27pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">II</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:26pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">III</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:26pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">IV</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:25pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">V</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:26pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">VI</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:26pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">VII</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:26pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">VIII</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:27pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">IX</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:26pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">X</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:31pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">XI</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:32pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">XII</p>
+            <p class="s29">(zł)</p>
+        </td>
+        <td class="s31" style="width:29pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">I</p>
+            <p class="s29">(zł)</p>
+        </td>
+    </tr>
+    <tr style="height:17pt">
+        <td class="s31" style="width:125pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s32">${energyValueAnnualBalance.history.0.items.0.itemName}</p>
+        </td>
+        <td class="s31" style="width:28pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.0, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.1, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.2, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.3, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:25pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.4, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.5, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.6, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.7, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.8, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.9, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:31pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.10, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:32pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.11, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:29pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.0.periods.12, "%.2f", true)}</p>
+        </td>
+    </tr>
+    <tr style="height:19pt">
+        <td class="s31" style="width:125pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s32">${energyValueAnnualBalance.history.0.items.1.itemName}</p>
+        </td>
+        <td class="s31" style="width:28pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.0, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.1, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.2, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.3, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:25pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.4, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.5, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.6, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.7, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.8, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.9, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:31pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.10, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:32pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.11, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:29pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.1.periods.12, "%.2f", true)}</p>
+        </td>
+    </tr>
+    <tr style="height:16pt">
+        <td class="s31" style="width:125pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s32">${energyValueAnnualBalance.history.0.items.2.itemName}</p>
+        </td>
+        <td class="s31" style="width:28pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.0, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.1, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.2, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.3, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:25pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.4, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.5, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.6, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.7, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.8, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.9, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:31pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.10, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:32pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.11, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:29pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.2.periods.12, "%.2f", true)}</p>
+        </td>
+    </tr>
+    <tr style="height:15pt">
+        <td class="s31" style="width:125pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s32">${energyValueAnnualBalance.history.0.items.3.itemName}</p>
+        </td>
+        <td class="s31" style="width:28pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.0, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.1, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.2, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.3, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:25pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.4, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.5, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.6, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.7, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.8, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.9, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:31pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.10, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:32pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.11, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:29pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.3.periods.12, "%.2f", true)}</p>
+        </td>
+    </tr>
+    <tr style="height:16pt">
+        <td class="s31" style="width:125pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s32">${energyValueAnnualBalance.history.0.items.4.itemName}</p>
+        </td>
+        <td class="s31" style="width:28pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.0, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.1, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.2, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.3, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:25pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.4, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.5, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.6, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.7, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:27pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.8, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:26pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.9, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:31pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.10, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:32pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.11, "%.2f", true)}</p>
+        </td>
+        <td class="s31" style="width:29pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8">
+            <p class="s30">${!convertFloat(energyValueAnnualBalance.history.0.items.4.periods.12, "%.2f", true)}</p>
+        </td>
+    </tr>
+</table>
+<br/>
+<br/>
+<br/>
+<p class="s5">Zestawienie wartościowe i ilościowe energii elektrycznej pobranej i wprowadzonej do sieci oraz usług dystrybucji dla poszczególnych punktów poboru</p>
+<table style="border-collapse:collapse;margin-left:5.6pt" cellspacing="0">
+    <tr style="height:26pt">
+        <td class="s31" style="width:34pt;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Lp.</p>
+        </td>
+        <td class="s31" style="width:101pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">PPE</p>
+        </td>
+        <td class="s31" style="width:98pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">Wartość brutto (zł)</p></td>
+        <td class="s31" style="width:117pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+                bgcolor="#D9E9D3">
+            <p class="s29">Ilość energii pobranej (kWh)</p>
+        </td>
+        <td class="s31" style="width:129pt;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">Ilość energii wprowadzonej do sieci (kWh)</p>
+        </td>
+    </tr>
+    <tr style="height:12pt">
+        <td class="s31" style="width:34pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s28">1</p>
+        </td>
+        <td class="s31" style="width:101pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${ppeSummary.items.0.ppeCode}</p>
+        </td>
+        <td class="s31" style="width:98pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${convertFloat(ppeSummary.items.0.value, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:117pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8">
+            <p class="s30">${ppeSummary.items.0.energyConsumed}</p>
+        </td>
+        <td class="s31" style="width:129pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:#C8C8C8">
+            <p class="s30">${ppeSummary.items.0.energyProduced}</p>
+        </td>
+    </tr>
+    <tr style="height:11pt">
+        <td class="s31" style="width:135pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8" colspan="2" bgcolor="#D9E9D3">
+            <p class="s27">Ogółem:</p>
+        </td>
+        <td class="s31" style="width:98pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">${convertFloat(ppeSummary.total.value, "%.2f", false)}</p>
+        </td>
+        <td class="s31" style="width:117pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8;border-right-style:solid;border-right-width:1pt;border-right-color:#C8C8C8"
+            bgcolor="#D9E9D3">
+            <p class="s29">${ppeSummary.total.energyConsumed}</p>
+        </td>
+        <td class="s31" style="width:129pt;border-top-style:solid;border-top-width:1pt;border-top-color:#C8C8C8;border-left-style:solid;border-left-width:1pt;border-left-color:#C8C8C8" bgcolor="#D9E9D3">
+            <p class="s29">${ppeSummary.total.energyProduced}</p>
+        </td>
+    </tr>
+</table>
+</body>
+
+</html>

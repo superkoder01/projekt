@@ -1,0 +1,168 @@
+<!DOCTYPE  html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Oferta B2B bez odkupu</title>
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="offer-B2B-withoutRepurchase.css"/>
+    <script type="text/javascript" src="common.js">
+        window.onload = function () {
+            var object = JSON.parse('${.}');
+            document.getElementById("date").innerText = toDate(object.offerDetails.creationDate);
+            document.getElementById("clientName").innerText = object.customerDtls.legalName;
+            document.getElementById("priceValidDate").innerText = toDate(object.conditions.offerActivePeriod.endDate) + " - " + toDate(object.conditions.offerActivePeriod.endDate);
+            document.getElementById("offerValidTo").innerText = toDate(object.conditions.offerActivePeriod.endDate);
+            document.getElementById("contractDuration").innerText = unitToPl(object.conditions.duration.number, object.conditions.duration.calendarUnit);
+            document.getElementById("consumptionPower").innerText = object.conditions.estimatedAnnualElectricityConsumption.amount + " " + object.conditions.estimatedAnnualElectricityConsumption.unit
+            document.getElementById("tarrifGroup").innerText = object.priceList[0].tariffGroup;
+            document.getElementById("billingPeriod").innerText = unitToPl(object.conditions.billingPeriod.number, object.conditions.billingPeriod.calendarUnit);
+            document.getElementById("payemntDate").innerText = object.conditions.invoiceDueDate + " " + document.getElementById("payemntDate").innerText;
+        };
+    </script>
+</head>
+
+<body>
+<p style="text-align: right">dnia <span id="date"/></p>
+<br/>
+<br/>
+<p style="text-align: center">
+    <b>Oferta Sprzedaży Energii Elektrycznej</b>
+    <br/>
+    <br/>
+    <br/>
+    Dla Firmy:
+</p>
+<br/>
+<br/>
+<p style="text-align: center" id="clientName"/>
+<br/>
+<br/>
+<p style="text-align: center">zwanej dalej Klientem</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<ol>
+    <li>Przedmiot oferty:
+        <br>
+        <br>
+        <p>Sprzedaż energii elektrycznej do klienta końcowego na zasadach TPA</p>
+    </li>
+    <li>Warunki cenowe sprzedaży energii elektrycznej:
+        <br>
+        <br>
+        <table>
+            <tr>
+                <th>Okres obowiązywania ceny</th>
+                <th id="priceValidDate"/>
+            </tr>
+            <tr>
+                <td><b>Cena netto energii elektrycznej obowiązująca we wskazanym okresie zgodnie ze wzorem:</b></td>
+                <td>
+                    <p style="font-weight: bold;font-size: 5pt;position:relative; top:18px; left: 86pt;white-space:pre">ℎ1+n               ℎ1+n</p>
+                    <p style="font-weight: bold;position:relative; left: 30pt;">
+                        SE = (
+                        <span style="font-size: 7pt;text-decoration: underline;position:relative; top:-5px;white-space:pre">(RDN        * MWh       ) + PM + A</span>
+                        )
+                    </p>
+                    <p style="font-weight: bold;font-size: 7pt;position:relative;top:-17px;left: 111pt;">MWh</p>
+                    <br/>
+                    <br/>
+                    <b>Gdzie:</b>
+                    <br/>
+                    <br/>
+                    <b>SE = Cena sprzedaży energii elektrycznej</b>
+                    <br/>
+                    <br/>
+                    <b>RDN = Cena dla I Fixingu Rynku Dnia Następnego</b>
+                    <br/>
+                    <br/>
+                    <b>MWh = energii elektryczna ( 1 MWh = 1000 kWh)</b>
+                    <br/>
+                    <br/>
+                    <b>PM – prawa majątkowe</b>
+                    <br/>
+                    <br/>
+                    <b>A - Akcyza</b>
+                    </br>
+                    <br/>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <ul style="list-style-type: circle;padding-left: 40pt;">
+            <li><b>PM</b> – koszt uiszczenia odpowiednich opłat zastępczych z tytułu realizacji obowiązków uzyskania i przedstawienia do umorzenia Prezesowi URE świadectw pochodzenia energii elektrycznej przewidzianych w ustawie z dnia 20 lutego 2015 r. o odnawialnych źródłach energii, tzw. certyfikaty zielone i błękitne, oraz związanych z umorzeniem świadectw efektywności energetycznej, o których mowa w ustawie z dnia 20 maja 2016 r. o efektywności energetycznej (t.j. Dz. U. z 2016 r., poz. 831 z późn, zm), tzw. Certyfikaty białe.</li>
+            <li><b>A</b> – stawka podatku akcyzowego naliczana zawsze zgodnie z aktualnie obowiązującymi przepisami.</li>
+        </ul>
+        <br>
+        <ul>
+            <li>Cena energii elektrycznej zawiera koszty realizacji obowiązków uzyskania i przedstawienia do umorzenia Prezesowi URE świadectw pochodzenia energii elektrycznej przewidzianych w ustawie z dnia 20 lutego 2015 r. o odnawialnych źródłach energii (t.j. Dz. U. z 2018 r., poz. 1269 z późn. zm.), tzw. Certyfikaty zielone i błękitne, oraz koszty realizacji obowiązków oraz koszty związane z umorzeniem świadectw efektywności energetycznej, o których mowa w ustawie z dnia 20 maja 2016 r. o efektywności energetycznej z dnia (t.j. Dz.U. z 2016 r., poz. 831 z późn. zm.), tzw. Certyfikaty białe.</li>
+            <li>Cena sprzedaży energii elektrycznej z sieci zawiera aktualną stawkę podatku akcyzowego od energii elektrycznej w wysokości określonej przepisami Ustawy o podatku akcyzowym.</li>
+            <li>W przypadku zmiany lub wprowadzenia nowych przepisów prawa określających obowiązki uzyskania i przedstawienia do umorzenia Prezesowi URE świadectw pochodzenia energii elektrycznej wytworzonej w kogeneracji lub uiszczenia innych opłat w tym zakresie lub wejścia w życie innych dodatkowych obowiązków aniżeli przewidzianych przepisami prawa obowiązującymi na dzień akceptacji oferty, Sprzedawca ma prawo do zmiany cen lub stawek opłat za energię elektryczną sprzedawaną na podstawie Umowy. Sprzedawca poinformuje Odbiorcę o zmianie ceny lub stawek opłat za energię elektryczną, wskazując równocześnie zmiany przepisów prawnych stanowiące podstawę tego podwyższenia. Nowe ceny energii elektrycznej lub stawki opłat będą obowiązujące dla Sprzedawcy i Odbiorcy od chwili wejścia w życie wyżej wymienionych przepisów prawnych lub zmian istniejących przepisów prawnych lub wystąpienia okoliczności uzasadniających podstawę do ich zmiany i nie wymagają zawarcia aneksu do Umowy.</li>
+            <li>W przypadku wprowadzenia nowych przepisów prawnych lub zmian w istniejących przepisach prawnych dotyczących podatków, w szczególności podatku VAT lub podatku akcyzowego zmiana ceny energii elektrycznej, opłat lub stawek następuje w trybie określonym w powyższym punkcie.</li>
+            <li>Do ceny netto energii elektrycznej zostanie doliczony podatek od towarów i usług (VAT) w wysokości zgodnej z obowiązującymi przepisami w tym zakresie.</li>
+            <li>Do ceny doliczona zostanie opłata handlowa 30 PLN/miesięcznie</li>
+        </ul>
+    </li>
+    <br/>
+    <li>Dane handlowo-techniczne
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td>Okres obowiązywania umowy</td>
+                <td id="contractDuration"/>
+            </tr>
+            <tr>
+                <td>Szacowana roczna ilość energii elektrycznej zużywanej na bieżąco przez klienta</td>
+                <td id="consumptionPower"/>
+            </tr>
+            <tr>
+                <td>Grupa taryfowa</td>
+                <td id="tarrifGroup"/>
+            </tr>
+            <tr>
+                <td>Okres rozliczeniowy</td>
+                <td id="billingPeriod"/>
+            </tr>
+            <tr>
+                <td>Termin płatności</td>
+                <td id="payemntDate"> dni licząc od dnia wystawienia faktury</td>
+            </tr>
+        </table>
+    </li>
+    <br/>
+    <li>Postanowienia dodatkowe:
+        <br>
+        <br>
+        <ul>
+            <li>Oferta w przypadku jej przyjęcia stanowi integralną część Umowy. W przypadku sprzeczności postanowień niniejszej oferty z postanowieniami Umowy pierwszeństwo mają postanowienia oferty.</li>
+            <li>KENO Energia Sp. z o.o. zastrzega sobie prawo do aktualizacji lub odwołania oferty z powodu zmian czynników wpływających na ceny energii elektrycznej bez podania przyczyn.</li>
+            <li>Działając w oparciu o art. 721 Kodeksu Cywilnego zastrzegamy poufność powyższych informacji i zobowiązujemy Państwa do nieujawniania ich jakimkolwiek innym podmiotom.</li>
+            <li>Przyjęcie Oferty następuje poprzez przyjęcie i podpisanie niniejszej Oferty przez osobę/osoby uprawioną/e do reprezentacji klienta i przesłanie jej drogą elektroniczną w formacie PDF lub listem poleconym do osoby odpowiedzialnej za ofertę ze strony Odbiorcy.</li>
+            <li>Przedstawiona oferta cenowa ma charakter informacyjny i nie stanowi oferty handlowej w rozumieniu art.66 par.1 Kodeksu Cywilnego.</li>
+            <li>Osoba odpowiedzialna za ofertę: Mateusz Pielka nr telefonu: +48 32 230 25 71 e-mail: mateusz.pielka@keno-energia.com</li>
+        </ul>
+    </li>
+    <br/>
+    <li>Ważność oferty:<br>
+        <br>
+        <ul>
+            <li>Oferta pozostaje ważna do dnia <span id="offerValidTo"/></li>
+        </ul>
+    </li>
+</ol>
+<br/>
+<br/>
+<p style="padding-left: 300pt">
+    .........................................................................................
+    <br/>
+    Miejsce i data oraz pieczęć i podpis osoby upoważnionej
+    <br>
+    do akceptacji oferty ze strony Klienta
+</p>
+</body>
+
+</html>

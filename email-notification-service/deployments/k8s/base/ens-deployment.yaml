@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-notification-service
+  labels:
+    app: email-notification-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-notification-service
+  template:
+    metadata:
+      labels:
+        app: email-notification-service
+    spec:
+      containers:
+        - name: email-notification-service
+          image: email-notification-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+          env:
+            - name: config
+              value: /opt/c4e/email-notification-service.yaml
+            - name: SMTP_USER
+              valueFrom:
+                secretKeyRef:
+                  name: ens-secret
+                  key: SmtpUser
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ens-secret
+                  key: SmtpPassword
+          volumeMounts:
+            - mountPath: /opt/c4e/email-notification-service.yaml
+              subPath: email-notification-service.yaml
+              name: app-config
+      volumes:
+        - name: app-config
+          configMap:
+            name: ens-config

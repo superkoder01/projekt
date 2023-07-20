@@ -1,0 +1,35 @@
+service:
+  ServiceName: Email-Notification-App
+  TestMode: true
+  WorkerPoolSize: 1
+  ErrorEmailTo: ["tomasz.pawlik@ovoo.pl"]
+  ErrorEmailEnvironment: local
+
+conversion:
+  Url: http://localhost:8080
+  Timeout: 60
+
+smtp:
+  Host: smtp.gmail.com
+  Port: 587
+  User: info@chain4.energy
+  Password: St48ENgfZDgLjef
+  Security: None
+  SenderName: Chain For Energy Notification
+
+rabbitmq:
+  QueueName: email-que
+  QueueType: quorum
+  IsAutoAck: false
+  PrefetchCount: 1
+  RabbitMQConfig:
+    RabbitUrl: "amqp://user:NZYvKWWtSB@10.0.14.65:5672/"
+    IsDurable: true
+    IsAutoDelete: false
+
+logger:
+  Development: true
+  DisableCaller: false
+  DisableStacktrace: false
+  Encoding: console
+  Level: info

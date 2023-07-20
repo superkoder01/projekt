@@ -1,0 +1,282 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: lukasz.dudzinski@ovoo.pl
+  title: Summary Invoice Service API
+  description: This is the REST API specification for the SummaryInvoice Service
+  version: 0.0.1
+servers:
+  - url: /api/v1/
+tags:
+- description: Access to invoice items
+  name: invoice
+    
+paths:
+  /summary-invoices/{invoiceNumber}/:
+    get:
+      description: 
+      tags:
+        - invoice
+      parameters:
+        - in: path
+          name: invoiceNumber
+          required: true
+          schema:
+            type: string
+          description: The unique invoice number
+      operationId: getSummaryInvoiceByInvoiceNumber
+      responses:
+        '200':
+          description: Successful operation, returns a summary invoice for the specified invoice number
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/SummaryInvoice'
+        '404':
+          description: Invoice not found
+          content: {}
+        default:
+          description: unexpected error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /summary-invoices/:
+    get:
+      description: 
+      tags:
+        - invoice
+      operationId: getSummaryInvoicesByDateRange
+      parameters:        
+        - name: selectBy
+          in: query
+          description: The date based field name being used as a filter
+          required: true
+          schema:
+            type: string
+        - name: startAt
+          in: query
+          description: The start date 
+          required: true
+          schema:
+            type: string
+        - name: endAt
+          in: query
+          description: The end date
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':  
+          description: Successful operation, returns a collection of summary invoices
+          content: 
+            application/json:
+              schema: {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/SummaryInvoice"
+                }
+              }       
+        '500':
+          description: Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-codegen-request-body-name: body 
+  /customers/{customerId}/summary-invoices/:
+    get:
+      description: 
+      tags:
+        - invoice
+      operationId: getCustomerSummaryInvoicesByDateRange
+      parameters:
+        - in: path
+          name: customerId
+          required: true
+          schema:
+            type: string
+          description: The unique id of the customer        
+        - name: selectBy
+          in: query
+          description: The date based field name being used as a filter
+          required: true
+          schema:
+            type: string
+        - name: startAt
+          in: query
+          description: The start date 
+          required: true
+          schema:
+            type: string
+        - name: endAt
+          in: query
+          description: The end date
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':  
+          description: Successful operation, returns a collection of summary invoices
+          content: 
+            application/json:
+              schema: {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/SummaryInvoice"
+                }
+              }       
+        '500':
+          description: Internal Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      x-codegen-request-body-name: body 
+
+components:
+  schemas:
+    SummaryInvoice:
+      type: object
+      required:
+        - header
+        - payload
+      properties:
+        header:
+          required:
+            - version
+            - provider
+            - content
+          type: object
+          properties:
+            version:
+              type: string
+              description: Version of the document type
+            provider:
+              type: string
+              description: Provider
+            content:
+              type: object
+              properties:
+                type:
+                  type: string
+
+        payload:
+          type: object
+          required:
+            - invoiceDetails
+          properties:
+            invoiceDetails:
+              type: object
+              required:
+                - invoiceNumber
+                - customerId
+                - billingStartDate
+                - billingEndDate
+                - issueDate
+                - serviceDate
+                - paymentDueDate
+                - status
+                - bankAccountNumber
+              properties:
+                invoiceNumber:
+                  type: string
+                customerId:
+                  type: string
+                billingStartDate:
+                  type: string
+                billingEndDate:
+                  type: string
+                issueDate:
+                  type: string
+                serviceDate:
+                  type: string
+                paymentDueDate:
+                  type: string    
+                status:
+                  type: string
+                bankAccountNumber:
+                  type: string
+            
+            customerDetails:
+              type: object
+              required:
+                - customerId
+              properties:
+                customerId:
+                  type: string
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                displayName:
+                  type: string
+                nip:
+                  type: string
+                regon:
+                  type: string    
+                
+            sellSummary:
+              type: object
+              properties:
+                general_information:
+                  type: array
+                  items: 
+                    $ref: '#/components/schemas/SellSummaryItem'
+            
+                total:
+                  type: object
+                  required:
+                    - netValue
+                    - taxValue
+                    - grossValue
+                  properties:
+                    netValue:
+                      type: number
+                      format: double
+                    taxValue:
+                      type: number
+                      format: double
+                    grossValue:
+                      type: number
+                      format: double
+
+    SellSummaryItem:
+      type: object
+      required:
+        - name 
+        - code
+        - vatRate
+        - netValue
+        - taxValue
+        - grossValue
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+        vatRate:
+          type: number
+          format: double
+        netValue:
+          type: number
+          format: double
+        taxValue:
+          type: number
+          format: double
+        grossValue:
+          type: number
+          format: double
+          
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+          description: Error code
+        message:
+          type: string
+          description: Error message

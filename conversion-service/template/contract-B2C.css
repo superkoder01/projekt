@@ -1,0 +1,179 @@
+th {
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    font-weight: normal;
+}
+
+ol li ol {
+    list-style-type: decimal;
+    font-weight: normal;
+    text-align: justify;
+    padding-left: 15pt;
+}
+
+ol li ol li ol {
+    list-style-type: lower-alpha;
+}
+
+#ol0 {
+    list-style-type: none;
+    counter-reset: elementcounter;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 0;
+}
+
+#ol0>li:before {
+    content: "§ " counter(elementcounter) " ";
+    counter-increment: elementcounter;
+}
+
+#ol1 {
+    list-style-type: none;
+    counter-reset: elementcounter;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 0;
+}
+
+#ol1>li:before {
+    content: "§ " counter(elementcounter) " ";
+    counter-increment: elementcounter;
+}
+
+.ul0 {
+    list-style-type: none;
+    text-indent: -13pt;
+}
+
+.ol3 {
+    list-style-type: lower-alpha;
+}
+
+.text5NormalDown {
+    margin: 0;
+    text-indent: 0pt;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 5pt;
+}
+
+.text5NormalUp {
+    margin: 0;
+    text-indent: 0pt;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 7pt;
+    vertical-align: 3pt;
+}
+
+.text7Normal {
+    margin: 0;
+    text-indent: 0pt;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 7pt;
+}
+
+.offerP1 {
+    text-align: right;
+}
+
+.offerP2 {
+    text-align: center;
+}
+
+.offerP3 {
+    font-weight: normal;
+}
+
+.offerOl0 {
+    list-style-type: decimal;
+    font-weight: bold;
+}
+
+.offerOl1 {
+    list-style-type: lower-alpha;
+    font-weight: bold;
+}
+
+.offerUl0 {
+    list-style-type: disc;
+    font-weight: normal;
+    padding-left: 0;
+}
+
+.offerUl1 {
+    list-style-type: circle;
+    font-weight: normal;
+    padding-left: 15pt;
+}
+
+.offerText7Unerline {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 7pt;
+    text-decoration: underline;
+}
+
+.offerText3 {
+    margin: 0;
+    text-indent: 0;
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 5pt;
+    padding-left: 103pt;
+    text-indent: 0pt;
+    line-height: 4pt;
+    text-align: left;
+}
+
+.offerText4 {
+    margin: 0;
+    text-indent: 0;
+    color: black;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 10pt;
+    vertical-align: -5pt;
+    padding-left: 57pt;
+    text-indent: 0pt;
+    line-height: 53%;
+    text-align: left;
+}
+
+.offerText6 {
+    text-indent: 0;
+    color: black;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 7pt;
+    padding-left: 117pt;
+    padding-right: 96pt;
+    text-indent: 0pt;
+    line-height: 7pt;
+    text-align: center;
+    margin-top: 4pt
+}

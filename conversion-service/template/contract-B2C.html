@@ -1,0 +1,900 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Umowa B2C ${contractDetails.number}</title>
+    <link rel="stylesheet" href="common.css"/>
+    <link rel="stylesheet" href="contract-B2C.css"/>
+    <script type="text/javascript" src="common.js">
+        window.onload = function () {
+            var object = JSON.parse('${.}');
+            if (object.repurchase.id !== undefined && object.repurchase.id.length > 0) {
+                document.getElementById("varaiantAB").checked="checked";
+            } else {
+                document.getElementById("varaiantA").checked="checked";
+            }
+            document.getElementById("date0").innerText=toDate(object.conditions.signatureDate);
+            document.getElementById("number0").innerText=object.contractDetails.number;
+            document.getElementById("accessPointSourceType").innerText=object.serviceAccessPoints[0].sourceType;
+            document.getElementById("client").innerText=object.customerDtls.displayName + ", zam. w " + object.customerDtls.address.city + " (" + object.customerDtls.address.postCode + ") ul." + object.customerDtls.address.street + " " + object.customerDtls.address.number + ", Pesel: " + toString(object.customerDtls.pesel);
+            document.getElementById("clientAddress").innerText=object.customerDtls.address.street + " " + object.customerDtls.address.number + "\n" + object.customerDtls.address.postCode + " " + object.customerDtls.address.city;
+            document.getElementById("accessPoint").innerText=object.serviceAccessPoints[0].sapCode;
+            document.getElementById("accessPointName").innerText=object.serviceAccessPoints[0].objectName;
+            document.getElementById("accessPointAddress0").innerText=object.serviceAccessPoints[0].address;
+            document.getElementById("accessPointOsd0").innerText=object.serviceAccessPoints[0].osd.name;
+            document.getElementById("accessPointTariffGroup0").innerText=object.serviceAccessPoints[0].tariffGroup;
+            document.getElementById("billingPeriod0").innerText=unitToPl(object.conditions.billingPeriod.number, object.conditions.billingPeriod.calendarUnit);
+            document.getElementById("accessPointPpeNumber0").innerText=object.serviceAccessPoints[0].sapCode;
+            document.getElementById("accessPointMeterNumber").innerText=object.serviceAccessPoints[0].meterNumber;
+            document.getElementById("estimatedAnnualConsumption").innerText=object.conditions.estimatedAnnualElectricityConsumption.amount + " " + object.conditions.estimatedAnnualElectricityConsumption.unit;
+            document.getElementById("accessPointConnectionPower").innerText=toString(object.serviceAccessPoints[0].connectionPower.amount);
+            document.getElementById("accessPointContractedPower").innerText=object.serviceAccessPoints[0].contractedPower.amount;
+            document.getElementById("accessPointSellerName").innerText=object.serviceAccessPoints[0].currentSeller.name;
+            document.getElementById("accessPointSellerNoticePeriod").innerText=object.serviceAccessPoints[0].currentSeller.noticePeriod + " miesięczny";
+            document.getElementById("startDate").innerText=toDate(object.conditions.signatureDate);
+            document.getElementById("clientCorrespondenceAddress").innerText=addressToString(object.customerDtls.contact.address);
+            document.getElementById("clientEmail").innerText=object.customerDtls.contact.email;
+            document.getElementById("clientPhone").innerText=object.customerDtls.contact.phoneNumbers[0].number;
+            document.getElementById("accessPointSourcePower").innerText=object.serviceAccessPoints[0].sourcePower.amount + " " + object.serviceAccessPoints[0].sourcePower.unit;
+            document.getElementById("accessPointDeclaredEnergyUsage").innerText=object.serviceAccessPoints[0].declaredEnergyUsage.amount + " " + object.serviceAccessPoints[0].declaredEnergyUsage.unit;
+            document.getElementById("accessPointAddress1").innerText=object.serviceAccessPoints[0].address;
+            document.getElementById("accessPointPpeNumber1").innerText=object.serviceAccessPoints[0].sapCode;
+            document.getElementById("accessPointOsd1").innerText=object.serviceAccessPoints[0].osd.name;
+            document.getElementById("accessPointTariffGroup1").innerText=object.serviceAccessPoints[0].tariffGroup;
+            document.getElementById("billingPeriod1").innerText=unitToPl(object.conditions.billingPeriod.number, object.conditions.billingPeriod.calendarUnit);
+            document.getElementById("date1").innerText=toDate(object.conditions.signatureDate);
+            document.getElementById("number1").innerText=object.contractDetails.number;
+            document.getElementById("clientName1").innerText=object.customerDtls.displayName;
+            document.getElementById("clientPesel1").innerText=toString(object.customerDtls.pesel);
+
+            document.getElementById("offerDate0").innerText = toDate(object.conditions.signatureDate);
+            document.getElementById("offerDate1").innerText = toDate(object.conditions.signatureDate);
+            document.getElementById("offerClientName").innerText = object.customerDtls.displayName;
+            document.getElementById("offerDate2").innerText = toDate(object.conditions.signatureDate) + " - 30.06.2024";
+            document.getElementById("offerPrice").innerText = object.priceList[0].zones[0].cost + " " + object.priceList[0].zones[0].currency + "/" + object.priceList[0].zones[0].unit;
+            document.getElementById("offerPriceAB").innerText = object.priceList[0].zones[0].cost + " " + object.priceList[0].zones[0].currency;
+            document.getElementById("offerDuration").innerText = toDate(object.conditions.offerActivePeriod.startDate) + " - " + toDate(object.conditions.offerActivePeriod.endDate);
+            document.getElementById("offerProduction").innerText = object.conditions.estimatedAnnualElectricityProduction.amount + " " + object.conditions.estimatedAnnualElectricityProduction.unit;
+            document.getElementById("offerConsumption").innerText = object.conditions.estimatedAnnualElectricityConsumption.amount + " " + object.conditions.estimatedAnnualElectricityConsumption.unit;
+            document.getElementById("offerTariffGroup").innerText = object.priceList[0].tariffGroup;
+            document.getElementById("offerBillingPeriod").innerText = unitToPl(object.conditions.billingPeriod.number, object.conditions.billingPeriod.calendarUnit);
+            document.getElementById("offerPaymentDate").innerText = object.conditions.invoiceDueDate + " " + document.getElementById("offerPaymentDate").innerText;
+            document.getElementById("offerEndDate").innerText = object.conditions.offerActivePeriod.endDate;
+            document.getElementById("offerTradeFee").innerText = object.priceList[0].commercialFee.cost + " [PLN/PPE/miesiąc]";
+        };
+    </script>
+</head>
+
+<body>
+<p class="p0">
+    UMOWA KOMPLEKSOWA
+    <br>
+    nr <span id="number0"/>
+</p>
+<br/>
+<b>zawarta w Gliwicach dnia <span id="date0"/> pomiędzy:</b>
+<br>
+<br>
+<br>
+<b>KENO Energia Sp. z o.o. z siedzibą w Gliwicach</b>, ul. O. Jana Siemińskiego 22, 44-100 Gliwice zarejestrowana w Rejestrze Przedsiębiorców KRS przez Sąd Rejonowy w Bydgoszczy, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego, KRS 0000571938 NIP: 1231302807 REGON: 362304076
+<br>
+<br>
+reprezentowaną przez Zarząd:
+<br>
+<br>
+Mateusza Pielkę – Prezesa Zarządu
+<br>
+<br>
+Tomasza Maronę – Wiceprezesa Zarządu
+<br>
+<br>
+dalej: <b>Sprzedawcą</b>
+<br>
+<br>
+a
+<br>
+<br>
+<p id="client"/>
+<br>
+<br>
+dalej: <b>Klientem</b>
+<br/>
+<br/>
+<br/>
+<ul class="ul0">
+    <li>
+        <label class="container">
+            <input type="checkbox" id="varaiantA"><b>wariant A</b> - Umowa Kompleksowa
+        </label>
+    </li>
+    <li>
+        <label class="container">
+            <input type="checkbox" id="varaiantAB"><b>wariant A i B</b> - Umowa Kompleksowa i Aneks do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji
+            <br/>
+            <br/>
+            (należy zaznaczyć wariant A, jeżeli Klient będzie korzystał wyłącznie z usługi kompleksowej lub wariant A i B – jeżeli Klient będzie korzystał z usługi kompleksowej, wytwarzając energię elektryczną w Mikroinstalacji i sprzedając nadwyżki niewykorzystanej energii)
+        </label>
+    </li>
+</ul>
+<br/>
+<br/>
+<table>
+    <tr>
+        <th class="th0">wariant A – Umowa Kompleksowa</th>
+    </tr>
+</table>
+<br/>
+<br/>
+<br/>
+<ol id="ol0">
+    <li>Przedmiot Umowy i oznaczenie Punktu Poboru
+        <ol>
+            <li>Na zasadach i w zakresie określonym w Umowie Kompleksowej oraz załącznikach do Umowy Kompleksowej, których postanowienia stanowią jej integralną część, Sprzedawca będzie świadczyć na rzecz Klienta Usługę kompleksową, która polega na sprzedaży energii elektrycznej oraz na zapewnieniu świadczenia usługi Dystrybucji energii elektrycznej, do Punktów Poboru określonych w Umowie Kompleksowej, Klient natomiast zobowiązuje się do odbierania energii elektrycznej w Punktach Poboru oraz do dokonywania płatności w przepisanym terminie.</li>
+            <li>Sprzedawca zapewnia usługę Dystrybucji energii elektrycznej dla Punktu Poboru, którajest świadczona przez OSD. Sprzedawca oświadcza, że zawarł z TAURON Dystrybucja,PGE Dystrybucja, Enea Operator, Energa Operator generalne umowy dystrybucji dlaUsług kompleksowych (GUD-k), które określają zasady świadczenia przez OSD usługDystrybucji energii elektrycznej na rzecz odbiorców, dla których Sprzedawca świadczyUsługę kompleksową na podstawie Umowy Kompleksowej.</li>
+            <li>Sprzedawca świadczy Usługę kompleksową na warunkach określonych w szczególności w:
+                <ol>
+                    <li>Umowie Kompleksowej;</li>
+                    <li>załącznikach do Umowy Kompleksowej, w szczególności w Ogólnych Warunkach Umowy Kompleksowej (dalej: OWU) oraz Ofercie Sprzedawcy,</li>
+                    <li>IRiESD;</li>
+                    <li>Prawie energetycznym;</li>
+                </ol>
+            </li>
+            <li>Klient oświadcza, że przysługuje mu Tytuł Prawny do Punktów Poboru.</li>
+            <li>Szczegółowe warunki świadczenia Usługi kompleksowej, w tym zasady prowadzenia rozliczeń oraz zakres praw i obowiązków Sprzedawcy, Klienta i OSD, określone zostały w OWU, które stanowią Załącznik nr 2 do Umowy Kompleksowej.</li>
+            <li>W przypadku sprzeczności postanowień zawartych w Umowie Kompleksowej z postanowieniami OWU, decydujące są postanowienia OWU.</li>
+            <li>Wszelkie zwroty pisane wielką literą i niezdefiniowane w Umowie Kompleksowej posiadają znaczenie nadane w OWU. Wszelkie zwroty zdefiniowane w Umowie Kompleksowej zachowują takie samo znaczenie w OWU i pozostałych załącznikach, o ile nie zostały zdefiniowane odmiennie w danym dokumencie.</li>
+            <li>Jeżeli w dniu zawarcia Umowy Kompleksowej Klient nie ma Układu pomiarowo-rozliczeniowego umożliwiającego kontrolę co najmniej jednego z parametrów:
+                <ol>
+                    <li>pobór mocy</li>
+                    <li>pobór energii biernej</li>
+                </ol>
+                - OSD może zainstalować taki układ, powiadamiając o tym Klienta<span class="text5NormalUp">1</span>
+                <p class="text5NormalDown">1<span class="text7Normal"> Należy skreślić jeżeli nie dotyczy</span></p>
+            </li>
+            <li>Klient Oświadcza, że posiada obowiązujący Tytuł Prawny do Punktu Poboru objętego Umową, określonego poniżej:
+                <table>
+                    <tr>
+                        <th class="th0">Dane Punktu Poboru</th>
+                        <th class="th0" id="accessPoint"/>
+                    </tr>
+                    <tr>
+                        <td>Nazwa/rodzaj obiektu</td>
+                        <td id="accessPointName"/>
+                    </tr>
+                    <tr>
+                        <td>Adres punktu poboru energii elektrycznej</td>
+                        <td id="accessPointAddress0"/>
+                    </tr>
+                    <tr>
+                        <td>OSD</td>
+                        <td id="accessPointOsd0"/>
+                    </tr>
+                    <tr>
+                        <td>Grupa taryfowa OSD</td>
+                        <td id="accessPointTariffGroup0"/>
+                    </tr>
+                    <tr>
+                        <td>Długość Okresu Rozliczeniowego</td>
+                        <td id="billingPeriod0">
+                    </tr>
+                    <tr>
+                        <td>Numer PPE</td>
+                        <td id="accessPointPpeNumber0"/>
+                    </tr>
+                    <tr>
+                        <td>Numer licznika</td>
+                        <td id="accessPointMeterNumber"/>
+                    </tr>
+                    <tr>
+                        <td>
+                            <br/>
+                        </td>
+                        <td>
+                            <br/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Szacowane i deklarowane roczne zużycie energii elektrycznej w punkcie poboru w MWh</td>
+                        <td id="estimatedAnnualConsumption"/>
+                    </tr>
+                    <tr>
+                        <td>Moc przyłączeniowa [kW]</td>
+                        <td id="accessPointConnectionPower"/>
+                    </tr>
+                    <tr>
+                        <td>Moc umowna [kW]</td>
+                        <td id="accessPointContractedPower"/>
+                    </tr>
+                    <tr>
+                        <td>Dotychczasowy sprzedawca</td>
+                        <td id="accessPointSellerName"/>
+                    </tr>
+                    <tr>
+                        <td>Okres wypowiedzenia umowy z dotychczasowym sprzedawcą</td>
+                        <td id="accessPointSellerNoticePeriod"/>
+                    </tr>
+                    <tr>
+                        <td>Data rozpoczęcia sprzedaży</td>
+                        <td id="startDate"/>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Potwierdzam, że wyżej wskazany okres wypowiedzenia Umowy jest zgodny z okresem wypowiedzenia obowiązującym w Umowie Sprzedaży/Kompleksowej z obecnym Sprzedawcą. Tym samym biorę na siebie                 odpowiedzialność wynikającą z przekazania niewłaściwych danych.</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td class="td0">Wnoszę o rozpoczęcie dostarczania i sprzedaży energii elektrycznej przed upływem terminu na odstąpienia od Umowy</td>
+                                    <td class="td0">☐</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <table>
+                                <tr>
+                                    <td class="td0">Oświadczam, że powyższy PPE posiada zmodernizowany układ pomiarowy umożliwiający przeprowadzenie procesu zmiany sprzedawcy</td>
+                                    <td class="td0">☐</td>
+                                </tr>
+                                <tr>
+                                    <td class="td0">albo</td>
+                                    <td class="td0"><br/></td>
+                                </tr>
+                                <tr>
+                                    <td class="td0">Oświadczam, że jestem świadomy konieczności dostosowania układu pomiarowego</td>
+                                    <td class="td0">☐</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <br/>
+            <p class="p0">Adres korespondencyjny Klienta:</p>
+            <p class="p0" id="clientCorrespondenceAddress"/>
+        </ol>
+    </li>
+    <br/>
+    <li>Zmiana Sprzedawcy
+        <ol>
+        <li>
+            Klient upoważnia Sprzedawcę do wypowiedzenia dotychczasowej umowy sprzedaży energii elektrycznej lub umowy kompleksowej Klienta w celu rozpoczęcia świadczenia Usługi kompleksowej na podstawie niniejszej Umowy oraz dokonywania wszelkich czynności faktycznych i prawnych niezbędnych do zmiany sprzedawcy oraz do rozpoczęcia świadczenia Usługi kompleksowej na podstawie niniejszej Umowy. Klient wyraża zgodę na udostępnianie Sprzedawcy danych pomiarowych Klienta przez OSD. W związku z tym Klient składa stosowne oświadczenie dotyczące obecnego sprzedawcy oraz terminu wypowiedzenia poprzedniej umowy, oraz udziela Pełnomocnictwa do zmiany sprzedawcy, które stanowi Załącznik nr 1 do Umowy<span class="text5NormalUp">2</span>.
+            <p class="text5NormalDown">2<span class="text7Normal"> Należy skreślić jeżeli nie dotyczy</span></p>
+        </li>
+        </ol>
+    </li>
+    <br/>
+    <li>Ilość energii elektrycznej
+        <ol>
+            <li>Szacowane i deklarowane roczne zużycie energii elektrycznej w Okresie Sprzedaży zostało określone dla każdego Punktu Poboru w § 1 ust. 9 Umowy.</li>
+            <li>Klient oświadcza, że pobiera energię elektryczną zgodnie z Grupą Taryfową określoną dla każdego Punktu Poboru w Umowie oraz wyraża zgodę na dostęp OSD i Sprzedawcy do danych pomiarowych dla Punktów Poboru. W przypadku, gdy Klient nie zużyje w Okresie Sprzedaży, zadeklarowanej w Umowie ilości energii elektrycznej, wówczas nie będzie miał obowiązku zapłaty za niezużytą energię elektryczną, z wyjątkiem sytuacji wskazanych w §10 ust. 8 i 9 OWU. </li>
+        </ol>
+    </li>
+    <br/>
+    <li>Okres obowiązywania Umowy i ceny
+        <ol>
+            <li>Umowa wchodzi w życie w dniu jej skutecznego zawarcia zgodnie z § 2 OWU i obowiązuje do upływu Okresu Sprzedaży wskazanego w Ofercie Sprzedawcy, z zastrzeżeniem ust. 5 poniżej.</li>
+            <li>Strony ustalają, że rozpoczęcie sprzedaży dla danego Punktu Poboru nastąpi w dniu wskazanym w § 1 ust. 9 Umowy jako <i>Data rozpoczęcia sprzedaży</i>, jednak nie wcześniej niż z chwilą przyjęcia Umowy do realizacji przez OSD</li>
+            <li>Strony potwierdzają, że w przypadku braku możliwości rozpoczęcia sprzedaży w dniu określonym powyżej z uwagi na brak pozytywnej weryfikacji zgłoszenia przez OSD bez względu na przyczynę, Sprzedawca ma prawo dokonać zgłoszenia zmiany sprzedawcy na najbliższy możliwy termin, w którym zmiana sprzedawcy będzie możliwa.</li>
+            <li>W przypadku wcześniejszego oddania do użytkowania Punktu Poboru energii elektrycznej, rozpoczęcie świadczenia Usługi kompleksowej może nastąpić przed <i>Datą rozpoczęcia sprzedaży</i> wskazaną w § 1 ust. 9 Umowy, z zastrzeżeniem warunków określonych w ust. 2 powyżej.</li>
+            <li>Po upływie Okresu Sprzedaży, Umowa ulega automatycznemu przedłużeniu i będzie obowiązywać na czas nieokreślony, chyba, że zostanie wypowiedziana przez którąkolwiek ze Stron na zasadach określonych w § 10 ust. 7 OWU.</li>
+            <li>W Okresie Sprzedaży, sprzedaż energii elektrycznej w ramach Usługi kompleksowej odbywa się według cen i stawek określonych w Ofercie Sprzedawcy.</li>
+            <li>Po upływie Okresu Sprzedaży, sprzedaż energii elektrycznej w ramach Usługi kompleksowej odbywać się będzie według cen i stawek opłat, określonych w aktualnie obowiązującym Cenniku Standardowym dla danej Grupy Taryfowej wskazanej w Umowie dla danego Punktu Poboru.</li>
+            <li>Rozliczenie zużycia energii elektrycznej odbywać się będzie w Okresach Rozliczeniowych.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Postanowienia końcowe
+        <ol>
+            <li>Zmiana danych adresowych i kontaktowych Klienta lub Sprzedawcy nie stanowi zmiany Umowy i do swojej ważności wymaga wyłącznie poinformowania drugiej Strony w formie pisemnej, poprzez e-mail, telefonicznie lub za pomocą systemu informatycznego dedykowanego do obsługi klienta.</li>
+            <li>Wszelkie spory wynikające z Umowy będą rozstrzygane przez sąd właściwy dla siedziby Sprzedawcy, chyba że sprawy sporne będą należeć do właściwości Prezesa URE.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Obowiązek informacyjny
+        <ol>
+            <li>Administratorem Państwa danych osobowych jest KENO Energia Sp. z o.o. z siedzibą w Gliwicach, ul. O. Jana Siemińskiego 22, 44-100 Gliwice zarejestrowana w Rejestrze Przedsiębiorców przez Sąd Rejonowy w Bydgoszczy, XIII Wydział Gospodarczy Krajowego Rejestru Sądowego KRS: 0000571938 NIP: 1231302807 REGON: 362304076, numer telefonu 32 230 25 71, adres e-mail: <u>biuro@keno-energia.com</u>.</li>
+            <li>Państwa dane osobowe będą przetwarzane w następujących celach:
+                <ol>
+                    <li>w celu realizacji umowy sprzedaży energii elektrycznej, w tym dochodzenia należności wynikających z umowy oraz obrony przed roszczeniami - podstawą prawną przetwarzania danych osobowych jest umowa (art. 6 ust. 1 b) RODO);</li>
+                    <li>w celu realizacji obowiązków podatkowych – podstawą prawną przetwarzania danych osobowych jest prawny obowiązek administratora (art. 6 ust. 1 c) RODO);</li>
+                    <li>w celu badania satysfakcji klienta - podstawą prawną przetwarzania danych osobowych jest uzasadniony interes administratora (art. 6 ust. 1 f) RODO) polegający na badaniu jakości swoich usług i wprowadzeniu ulepszeń w procesie obsługi klientów;</li>
+                    <li>prowadzenia działań marketingowych, jeżeli wyrazili Państwo zgodę na prowadzenie wobec Państwa działań marketingowych - podstawą prawną przetwarzania danych osobowych jest uzasadniony interes administratora (art. 6 ust. 1 f) RODO) polegający na prowadzeniu marketingu własnych produktów.</li>
+                </ol>
+            </li>
+            <li>Państwa dane mogą być przekazywane do następujących odbiorców lub kategorii odbiorców danych osobowych tj.
+                <ol>
+                    <li>w przypadku realizacji umowy - operatorom pocztowym, firmom kurierskim, kancelariom prawnym, podmiotom zajmującym się obsługą korespondencji, firmom księgowym, dostawcom i serwisantom usług IT, dostawcom systemu CRM.</li>
+                    <li>w przypadku badania satysfakcji klienta - dostawcom i serwisantom usług IT, dostawcom systemu CRM;</li>
+                    <li>w przypadku prowadzenia działań marketingowych - dostawcom i serwisantom usług IT, dostawcom systemu CRM.</li>
+                </ol>
+            </li>
+            <li>Państwa dane osobowe nie będą przekazywane do państwa trzeciego lub organizacji międzynarodowej.</li>
+            <li>Przysługuje Państwu prawo do:
+                <ol>
+                    <li>żądania od administratora dostępu do Państwa danych osobowych;</li>
+                    <li>sprostowania danych osobowych;</li>
+                    <li>usunięcia danych osobowych;</li>
+                    <li>ograniczenia przetwarzania danych osobowych;</li>
+                    <li>wniesienia sprzeciwu wobec przetwarzania;</li>
+                    <li>przenoszenia danych;</li>
+                    <li>wniesienia skargi do organu nadzorczego.</li>
+                </ol>
+            </li>
+            <li>Dane osobowe będą przechowywane:
+                <ol>
+                    <li>w przypadku realizacji umowy oraz obowiązków podatkowych - do momentu upływu terminu przedawnienia roszczeń z umowy czy obowiązków podatkowych;</li>
+                    <li>w przypadku badań satysfakcji klienta – do momentu realizacji celu, nie dłużej niż 12 miesięcy po zakończeniu obowiązywania umowy sprzedaży energii elektrycznej;</li>
+                    <li>w przypadku prowadzenia działań marketingowych – do momentu cofnięcia przez Państwa zgody na prowadzenie działań marketingowych lub wyrażenia sprzeciwu wobec przetwarzania danych osobowych na podstawie uzasadnionego interesu administratora. Dane osobowe również zostaną usunięte, jeżeli zaprzestaniemy prowadzić działania marketingowe.</li>
+                </ol>
+            </li>
+            <li>Podanie danych osobowych jest warunkiem zawarcia i realizacji umowy. Są Państwo zobowiązani do podania danych osobowych, ponieważ bez nich nie moglibyśmy zawrzeć oraz realizować umowy.</li>
+            <li>W każdym momencie mogą Państwo cofnąć zgodę na prowadzenie działań marketingowych. Cofnięcie zgody nie wpływa na zgodność z prawem przetwarzania dokonanego przed cofnięciem zgody. Również w każdym momencie mogą Państwo wnieść sprzeciw wobec przetwarzania opartego na uzasadnionym interesie administratora.</li>
+            <li>W przypadku prowadzenia działań marketingowych podanie przez Państwa danych jest dobrowolne. Natomiast bez podania tych danych nie możemy Państwa informować o prowadzonych przez nas działaniach marketingowych.</li>
+        </ol>
+    </li>
+</ol>
+<br/>
+<br/>
+<table>
+    <tr>
+        <th>Adres e-mail Klienta</th>
+        <th>Nr telefonu Klienta</th>
+    </tr>
+    <tr>
+        <td class="td1" id="clientEmail"/>
+        <td class="td1" id="clientPhone"/>
+    </tr>
+</table>
+<br/>
+<b>Załączniki do umowy:</b>
+<br/>
+<b>1. Załącznik nr 1</b> - Pełnomocnictwo do zmiany Sprzedawcy
+<br/>
+<b>2. Załącznik nr 2</b> - Ogóle Warunki Umowy
+<br/>
+<b>3. Załącznik nr 3</b> – Wzór oświadczenia o odstąpieniu od umowy
+<br/>
+<b>4. Załącznik nr 4</b> – Oferta Sprzedawcy
+<br/>
+<b>5. Załącznik nr 5</b> – Oświadczenie o statusie VAT
+<br/>
+<br/>
+Aktualnie obowiązujący Cennik Standardowy dostępny jest na stronie internetowej Sprzedawcy
+Taryfa OSD oraz IRiESD dostępne są na stronie internetowej OSD.
+<br/>
+<br/>
+<table>
+    <tr>
+        <th class="th0">Wariant B – Aneks do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji</th>
+    </tr>
+</table>
+<br/>
+<br/>
+<table>
+    <tr>
+        <td class="td1">Informacje i oświadczenia dotyczące Mikroinstalacji</td>
+    </tr>
+</table>
+<br/>
+<table>
+    <tr>
+        <th class="th0" colspan="2">Informacje dotyczące Mikroinstalacji</th>
+    </tr>
+    <tr>
+        <td>Rodzaj ze względu na źródło</td>
+        <td id="accessPointSourceType"/>
+    </tr>
+    <tr>
+        <td>Moc zainstalowana elektryczna</td>
+        <td id="accessPointSourcePower"/>
+    </tr>
+    <tr>
+        <td>Szacowana roczna ilość wyprodukowanej energii elektrycznej przez Mikroinstalację</td>
+        <td id="accessPointDeclaredEnergyUsage"/>
+    </tr>
+    <tr>
+        <td>Adres</td>
+        <td id="accessPointAddress1"/>
+    </tr>
+    <tr>
+        <td>Numer PPE</td>
+        <td id="accessPointPpeNumber1"/>
+    </tr>
+    <tr>
+        <td>OSD</td>
+        <td id="accessPointOsd1"/>
+    </tr>
+    <tr>
+        <td>Grupa taryfowa OSD</td>
+        <td id="accessPointTariffGroup1"/>
+    </tr>
+    <tr>
+        <td>Okres rozliczeniowy</td>
+        <td id="billingPeriod1"/>
+    </tr>
+</table>
+<br/>
+<b>Oświadczam, że:</b>
+<ul>
+    <li>posiadam status Prosumenta;</li>
+    <li>posiadam status Prosumenta;</li>
+    <li>jestem uprawniony do dysponowania wytworzonej w Mikroinstalacji;</li>
+    <li>wytwarzam energię elektryczną w Mikroinstalacji na potrzeby własne;</li>
+    <li>wprowadzam do sieci OSD energię elektryczną wytworzoną wyłącznie z odnawialnego źródła energii w Mikroinstalacji w ilości stanowiącej nadwyżkę wytworzonej energii, której nie zużyłem na własne potrzeby;</li>
+    <li>układ pomiarowo – rozliczeniowy na dzień wejścia w życie Umowy Kompleksowej będzie umożliwiał Sprzedawcy rozliczenie energii wprowadzonej do sieci.</li>
+</ul>
+<br/>
+<ol id="ol1">
+    <li>Zobowiązania i Oświadczenia Stron
+        <ol>
+            <li>W okresie obowiązywania niniejszego Aneksu, Sprzedawca zobowiązuje się do zakupu energii elektrycznej wytworzonej w Mikroinstalacji oraz niezużytej na potrzeby własne Klienta (dalej: Energia Sprzedana) oraz do bilansowania handlowego Mikroinstalacji Klienta.</li>
+            <li>ozliczenie Energii Sprzedanej następuje w Okresach Rozliczeniowych na podstawie wskazań urządzenia pomiarowo-rozliczeniowego, przekazanych Sprzedawcy przez OSD. Pierwsze rozliczenie nastąpi za okres od dnia potwierdzenia przez OSD wyznaczenia Sprzedawcy jako podmiotu odpowiedzialnego za bilansowanie Klienta do końca danego Okresu Rozliczeniowego.</li>
+            <li>Sprzedawca po zakończeniu każdego Okresu Rozliczeniowego przekaże Klientowi dane dotyczące ilości wytworzonej Energii Sprzedanej w każdym Okresie Rozliczeniowym (po ich otrzymaniu z OSD), a Klient na tej podstawie wystawi rachunek.</li>
+            <li>Szczegółowe zasady rozliczeń, w tym sposób ustalania wynagrodzenia za wprowadzoną do sieci energię elektryczną, zawarte są w załączniku do Umowy pn. Oferta Sprzedawcy.</li>
+            <li>Sprzedawca zapłaci kwotę rachunku w ciągu 14 dni od dnia jego doręczenia Sprzedawcy drogą elektroniczną na adres: <u>biuro@keno-energia.com</u>.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Świadczenia Stron
+        <ol>
+            <li>Sprzedawca zobowiązuje się do odbioru nadwyżek energii elektrycznej wytworzonej w Mikroinstalacji i wprowadzonej przez Klienta do sieci elektroenergetycznej należącej do OSD, do której przyłączona jest Mikroinstalacja.</li>
+            <li>Klient jest obowiązany do:
+                <ol>
+                    <li>dysponowania tytułem prawnym do Mikroinstalacji;</li>
+                    <li>dysponowania tytułem prawnym do nieruchomości lub obiektu budowlanego, na którym została zlokalizowana Mikroinstalacja;</li>
+                    <li>wytwarzania energii elektrycznej w Mikroinstalacji spełniającej wymagania określone w przepisach odrębnych, w szczególności w przepisach prawa budowlanego, przepisach o ochronie przeciwpożarowej, przepisach sanitarnych lub przepisach o ochronie środowiska;</li>
+                    <li>niewykorzystywania podczas wytwarzania energii elektrycznej w Mikroinstalacji paliw kopalnych lub paliw powstałych z ich przetworzenia lub biomasy, biogazu, biogazu rolniczego i biopłynów, do których dodano substancje niebędące biomasą, biogazem, biogazem rolniczym lub biopłynami, zwiększające ich wartość opałową.</li>
+                    <li>wprowadzania do sieci OSD energii elektrycznej spełniającej parametry jakościowe określone w IRiESD i w Prawie energetycznym, takie jak te, do których zapewnienia zobowiązany jest OSD w zakresie energii elektrycznej pobieranej z sieci dystrybucyjnej.</li>
+                </ol>
+            </li>
+            <li>Klient będzie niezwłocznie, lecz nie później niż w terminie 14 dni, informował Sprzedawcę o zmianie stanu prawnego lub faktycznego w zakresie określonym w ust. 2 oraz w zakresie <i>Informacji i oświadczeń dotyczących Mikroinstalacji</i>.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Obowiązki Klienta
+        <ol>
+            <li>Klient zobowiązuje się względem Sprzedawcy do:
+                <ol>
+                    <li>wprowadzania do sieci dystrybucyjnej w Punkcie Odbioru nadwyżek energii elektrycznej wytworzonej w Mikroinstalacji a niewykorzystanej na własne potrzeby Klienta;</li>
+                    <li>przeniesienia na Sprzedawcę własności dostarczonej energii elektrycznej.</li>
+                </ol>
+            </li>
+            <li>Klient zobowiązany jest do poinformowania Sprzedawcy w terminie 45 dni od dnia zawieszenia lub zakończenia wytwarzania energii elektrycznej w Mikroinstalacji o:
+                <ol>
+                    <li>zawieszeniu wytwarzania energii trwającym od 30 dni do 24 miesięcy;</li>
+                    <li>zakończeniu wytwarzania energii elektrycznej w Mikroinstalacji.</li>
+                </ol>
+            </li>
+            <li>Klient jest zobowiązany do przekazywania do OSD, na zasadach określonych w IRiESD, informacji oraz danych w zakresie niezbędnym do planowania i prowadzenia ruchu sieciowego oraz eksploatacji sieci elektroenergetycznej OSD.</li>
+            <li>Klient udziela Sprzedawcy wszelkich informacji oraz przedkłada dokumenty żądane przez Sprzedawcę w związku z realizacją niniejszego Aneksu.</li>
+            <li>Klient zobowiązuje się do przestrzegania postanowień IRiESD, w szczególności w zakresie nastawiania układów automatyki i zabezpieczeń na urządzeniach Klienta. Odstępstwa względem standardów eksploatacji urządzeń i instalacji, mających wpływ na realizację niniejszego Aneksu, wymagają wcześniejszego uzgodnienia z OSD.</li>
+            <li>Klient upoważnia OSD do przekazywania Sprzedawcy danych pomiarowych, niezbędnych do realizacji obowiązków wynikających z Aneksu – tj. w zakresie odbioru i rozliczenia wartości energii elektrycznej wytworzonej w Mikroinstalacji.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Obowiązki Sprzedawcy
+        <ol>
+            <li>Do obowiązków Sprzedawcy względem Klienta należy:
+                <ol>
+                    <li>odbiór energii elektrycznej wytwarzanej przez Klienta w Mikroinstalacji i nie wykorzystanej na potrzeby własne Klienta, dostarczonej przez Klienta do Punktu Odbioru;</li>
+                    <li>zapewnienia świadczenia usług dystrybucji energii elektrycznej przez OSD w zakresie energii elektrycznej wytwarzanej przez Klienta w Mikroinstalacji i wprowadzanej do sieci dystrybucyjnej w Punkcie Odbioru;</li>
+                    <li>zapłata za energię elektryczną wprowadzoną do sieci dystrybucyjnej;</li>
+                    <li>bilansowanie handlowe Klienta.</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <br/>
+    <li>Wstrzymanie odbioru energii
+        <ol>
+            <li>Sprzedawca wstrzyma lub ograniczy odbiór energii elektrycznej od Klienta, jeżeli:
+                <ol>
+                    <li>kontrola wykaże, że Mikroinstalacja znajdująca się u Klienta stwarza bezpośrednie zagrożenie dla życia, zdrowia albo środowiska;</li>
+                    <li>wytwarzanie energii elektrycznej w Mikroinstalacji stanowi zagrożenie bezpieczeństwa pracy sieci dystrybucyjnej;</li>
+                    <li>nastąpi awaria Mikroinstalacji;</li>
+                    <li>energia elektryczna wprowadzana do sieci dystrybucyjnej nie będzie mieć parametrów wymaganych przez obowiązujące przepisy.</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+    <br/>
+    <li>Okres obowiązywania
+        <ol>
+            <li>Niniejszy Aneks do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji (wariant B) obowiązuje po złożeniu podpisów przez Strony, jednak nie wcześniej niż od chwili zainstalowania lub dostosowania dwukierunkowego układu pomiarowo-rozliczeniowego oraz potwierdzenia przez OSD wyznaczenia Sprzedawcy jako podmiotu odpowiedzialnego za bilansowanie Klienta i umożliwienia przez OSD rozliczania Energii Sprzedanej.</li>
+            <li>Warunkiem obowiązywania Aneksu do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji (wariant B) jest umożliwienie realizacji niniejszej Umowy przez OSD.</li>
+            <li>Z chwilą wygaśnięcia lub rozwiązania Umowy Kompleksowej (wariant A), Aneks do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji (wariant B) ulega automatycznemu rozwiązaniu bez konieczności składania dalszych oświadczeń w tym zakresie.</li>
+            <li>Aneks do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji (wariant B), obowiązuje w Okresie Sprzedaży wskazanym w załączniku do Umowy pn. Oferta Sprzedawcy, a po jego upływie przekształca się w umowę na czas nieokreślony</li>
+            <li>Po upływie Okresu Sprzedaży, Sprzedawca odkupuje nadwyżki energii z Mikroinstalacji zgodnie z Cennikiem Standardowym.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Wypowiedzenie Umowy Kompleksowej
+        <ol>
+            <li>Po Okresie Sprzedaży wskazanym w Ofercie Sprzedawcy, każdej ze Stron przysługuje prawo rozwiązania Umowy Kompleksowej (w zakresie Wariantu A i Wariantu B), z zachowaniem miesięcznego okresu wypowiedzenia. Oświadczenie powinno mieć formę pisemną pod rygorem nieważności. Klient nie jest uprawniony do wypowiedzenia Umowy Kompleksowej wyłącznie w zakresie odbioru nadwyżek energii z Mikroinstalacji (tj. Wariantu B).</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Rozwiązanie Umowy Kompleksowej w zakresie rozliczania wartości nadwyżek energii elektrycznej wprowadzonej do sieci
+        <ol>
+            <li>Rozwiązanie Aneksu do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji z przyczyn innych niż wypowiedzenie Umowy Kompleksowej upoważnia Sprzedawcę do rozwiązania Umowy Kompleksowej z zachowaniem miesięcznego okresu wypowiedzenia.</li>
+            <li>Z chwilą rozwiązania Umowy Kompleksowej (wariant A), postanowienia niniejszego Aneksu przestają obowiązywać.</li>
+        </ol>
+    </li>
+    <br/>
+    <li>Inne przypadki rozwiązania Aneksu do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji
+        <ol>
+            <li>Aneks do Umowy Kompleksowej w zakresie odbioru nadwyżek energii z Mikroinstalacji ulega rozwiązaniu na skutek:
+                <ol>
+                    <li>złożenia przez Klienta oświadczenia o zakończeniu wytwarzania energii elektrycznej w Mikroinstalacji;</li>
+                    <li>utraty statusu Mikroinstalacji przez instalację odnawialnego źródła energii wykorzystywaną przez Klienta;</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+</ol>
+<br/>
+<b>
+    Dane osoby składającej ofertę: ……………………………………. (Imię i nazwisko),
+    <br/>
+    ……….………………………….. (nr telefonu),e-mail).
+</b>
+<br/>
+<table>
+    <tr>
+        <td>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </td>
+        <td>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </td>
+    </tr>
+    <tr>
+        <td class="td1">Czytelny podpis Sprzedawcy</td>
+        <td class="td1">Czytelny podpis Klienta</td>
+    </tr>
+</table>
+<div style="page-break-after:always;"></div>
+<b>Załącznik nr 1 do Umowy Kompleksowej nr <span id="number1"/> z dnia <span id="date1"/></b>
+<br/>
+<br/>
+<p class="p0">PEŁNOMOCNICTWO</p>
+<br/>
+<table>
+    <tr>
+        <td class="td1">
+            <br/>
+            <span id="clientName1"/>
+            <br/>
+            <br/>
+        </td>
+    </tr>
+</table>
+Imię i nazwisko
+<br/>
+<br/>
+<table>
+    <tr>
+        <td class="td1">
+            <br/>
+            <span id="clientAddress"></span>
+            <br/>
+            <br/>
+        </td>
+    </tr>
+</table>
+Adres zamieszkania
+<br/>
+<br/>
+<table>
+    <tr>
+        <td class="td1">
+            <br/>
+            <span id="clientPesel1"/>
+            <br/>
+            <br/>
+        </td>
+    </tr>
+</table>
+nr PESEL
+<br/>
+<br/>
+(dalej: <b>MOCODAWCA</b>)
+<br/>
+<br/>
+niniejszym udziela pełnomocnictwa Spółce:
+<br/>
+<table>
+    <tr>
+        <td class="td1">
+            <br/>
+            KENO Energia Sp. z o.o. z siedzibą w Gliwicach, przy ulicy Siemińskiego 22, 44-100 Gliwice, zarejestrowana w rejestrze przedsiębiorców prowadzonym przez Sąd Rejonowy dla Sądu Rejonowego w Bydgoszczy, XIII Wydział Gospodarczy, KRS: 0000571938 kapitał zakładowy 1 000 400,00 zł, NIP: 1231302807 REGON: 362304076
+            <br/>
+            <br/>
+        </td>
+    </tr>
+</table>
+<br/>
+<b>do dokonywania w imieniu i na rzecz Mocodawcy następujących czynności:</b>
+<br/>
+<ol class="ol3">
+    <li>wypowiadania umów kompleksowych sprzedaży energii elektrycznej, umów o świadczenie usług dystrybucji energii elektrycznej, umów sprzedaży energii elektrycznej oraz rezerwowych umów sprzedaży energii elektrycznej i rezerwowych umów kompleksowych, których stroną jest Mocodawca, w trybie przewidzianym przez te umowy oraz do uzyskiwania od dotychczasowego sprzedawcy oraz od operatora systemu dystrybucyjnego wszelkich informacji związanych z wypowiedzeniem umowy, które są lub mogą być potrzebne w procesie zmiany sprzedawcy;</li>
+    <li>złożenia właściwemu operatorowi systemu dystrybucyjnego oświadczenia o zgodzie na zawarcie umowy o świadczenie usług dystrybucji energii elektrycznej;</li>
+    <li>zawarcia umowy o świadczenie usług dystrybucji energii elektrycznej, rezerwowej umowy sprzedaży energii elektrycznej oraz aneksów do tych umów, a także do wyboru w imieniu Mocodawcy sprzedawcy rezerwowego;</li>
+    <li>zgłoszenia właściwemu operatorowi systemu dystrybucyjnego w imieniu Mocodawcy umowy sprzedaży energii elektrycznej zawartej między Mocodawcą a Pełnomocnikiem oraz do informowania operatora systemu dystrybucyjnego o wszelkich zmianach wyżej wskazanej umowy;</li>
+    <li>wskazywanie w umowie o świadczenie usług dystrybucji sprzedawcy rezerwowego;</li>
+    <li>występowania do operatora systemu dystrybucyjnego o udostępnienie danych identyfikujących punkty poboru energii elektrycznej;</li>
+    <li>prowadzenia korespondencji z operatorem systemu dystrybucyjnego oraz z dotychczasowym sprzedawcą energii elektrycznej dla Mocodawcy;</li>
+    <li>podejmowania wszelkich czynności koniecznych do przeprowadzenia procesu zmiany sprzedawcy energii elektrycznej;</li>
+    <li>cofania oświadczeń woli, zgłoszeń i czynności materialno – technicznych, o których mowa w pkt. a) – h) powyżej;</li>
+    <li>żądania wyjaśnień bądź informacji oraz komunikowania się z operatorem systemu dystrybucyjnego w każdej formie w zakresie dotyczącym przeprowadzenia procesu zmiany sprzedawcy i realizacji umowy sprzedaży energii elektrycznej pomiędzy Mocodawcą a KENO Energia Sp. z o.o.</li>
+</ol>
+<br/>
+Niniejsze pełnomocnictwo nie obejmuje swym zakresem upoważnienia do odbioru od operatora systemu dystrybucyjnego egzemplarzy umów zawieranych w imieniu Mocodawcy. Wszelkie egzemplarze umów zawartych w imieniu Mocodawcy powinny być doręczane bezpośrednio do Mocodawcy.
+<br/>
+Pełnomocnik jest uprawniony do udzielania dalszych pełnomocnictw. Pełnomocnictwo jest udzielone na czas nieoznaczony.
+<br/>
+<br/>
+<table>
+    <tr>
+        <td>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </td>
+        <td>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </td>
+    </tr>
+    <tr>
+        <td class="td1">Miejscowość, data</td>
+        <td class="td1">Czytelny podpis Klienta</td>
+    </tr>
+</table>
+<div style="page-break-after:always;"></div>
+<b>Załącznik nr 4 do Umowy Kompleksowej</b>
+<br/>
+<p class="offerP1">dnia <span id="offerDate0"/></p>
+<br/>
+<br/>
+<b>Oferta Sprzedaży Energii Elektrycznej I Świadczenia Usług Dystrybucji Oraz Zakupu Nadwyżek Energii Pochodzących Z Mikro Instalacji w Okresie Sprzedaży <span id="offerDate1"/> - 30.06.2024</b>
+<br/>
+<br/>
+<br/>
+<p class="offerP2">Dla Pana/Pani:</p>
+<br/>
+<br/>
+<p style="text-align: center" id="offerClientName"/>
+<br/>
+<br/>
+<p style="text-align: center">Zwanego/zwaną dalej Prosumentem</p>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<ol class="offerOl0">
+    <li>Przedmiot oferty:</li>
+    <br>
+    <p class="offerP3">Zakup nadwyżek energii od Prosumenta oraz dostarczenie Prosumentowi energii pochodzącej z sieci w przypadku zaistnienia takiej konieczności.</p>
+    <li>Warunki cenowe zakupu nadwyżek energii elektrycznej oraz sprzedaży energii elektrycznej z sieci:
+        <br>
+        <br>
+        <ol class="offerOl1">
+            <li>Zakup nadwyżek energii elektrycznej:
+                <br>
+                <br/>
+                <table>
+                    <tr>
+                        <th>Okres Sprzedaży</th>
+                        <th id="offerDate2"/>
+                    </tr>
+                    <tr>
+                        <td><b>Cena netto energii elektrycznej obowiązująca we wskazanym okresie zgodnie ze wzorem:</b></td>
+                        <td>
+                            <p class="offerText3">ℎ1+n ℎ1+n</p>
+                            <p class="offerText4">ZE = (<span class=offerText7Unerline>(RDN  * 0,7* MWh ) </span>)</p>
+                            <p class="offerText6">MWh</p>
+                            <br/>
+                            <br/>
+                            <b>Gdzie:</b>
+                            <br/>
+                            <br/>
+                            <b>ZE = Cena zakupu energii wytworzonej</b>
+                            <br/>
+                            <br/>
+                            <b>RDN = Cena dla I Fixingu Rynku Dnia Następnego</b>
+                            <br/>
+                            <br/>
+                            <b>MWh = energii elektryczna ( 1 MWh = 1000 kWh)</b>
+                            </br>
+                            <br/>
+                        </td>
+                    </tr>
+                </table>
+                <br/>
+                <ul class="offerUl0">
+                    <li>Powyższa cena jest finalną ceną netto, która zostanie wskazana na fakturze rozliczeniowej, do której nie zostaną naliczone żadne dodatkowe opłaty.</li>
+                    <li>Do ceny netto energii elektrycznej zostanie doliczony podatek od towarów i usług (VAT) w wysokości zgodnej z obowiązującymi przepisami w tym zakresie.</li>
+                </ul>
+            </li>
+            <br/>
+            <li>Sprzedaż energii elektrycznej z sieci:
+                <br>
+                <br>
+                <ul class="offerUl0">
+                    <li><b>Cena za MWh sprzedanej Prosumentowi energii zostaje ustalone na poziomie <span id="offerPrice"/> netto w Okresie Sprzedaży.</b>
+                        <br/>
+                        <br/>
+                        Powyższa cena obowiązuje <b>tylko w przypadku wybrania Wariantu A i B</b> do Umowy Sprzedaży Energii, tzn. pod warunkiem, że Klient kupuje energię z sieci i sprzedaje Sprzedawcy nadwyżki energii elektrycznej wytworzonej w Mikroinstalacji (Wariant w zakresie sprzedaży energii oraz zakupu nadwyżek).
+                        <br/>
+                        <br/>
+                        W przypadku, gdy Klient nie odsprzedaje Sprzedawcy nadwyżek energii z Mikroinstalacji, tj. <b>w przypadku obowiązywania jedynie Wariantu A</b> do Umowy, cena energii elektrycznej zostaje ustalona na <b>2000 PLN</b>/MWh netto. Powyższa cena stanowi również podstawę do rozliczeń za energię elektryczną z sieci w Okresach Rozliczeniowych po zaprzestaniu przez Klienta sprzedaży nadwyżek energii elektrycznej z Mikroinstalacji.
+                        <br/>
+                        <br>
+                        <table>
+                            <tr>
+                                <th>Wariant Umowy</th>
+                                <th>Cena zł/MWh</th>
+                            </tr>
+                            <tr>
+                                <td>Wariant A</td>
+                                <td>2000 PLN</td>
+                            </tr>
+                            <tr>
+                                <td>Wariant A i B</td>
+                                <td id="offerPriceAB"/>
+                            </tr>
+                        </table>
+                        <br/>
+                        Cena energii elektrycznej zawiera koszty realizacji obowiązków uzyskania i przedstawienia do umorzenia Prezesowi URE świadectw pochodzenia energii elektrycznej przewidzianych w ustawie z dnia 20 lutego 2015 r. o odnawialnych źródłach energii (tj. Dz.U. z 2021 r. poz. 610 ze zm.), tzw. Certyfikaty zielone i błękitne, oraz koszty realizacji obowiązków oraz koszty związane z umorzeniem świadectw efektywności energetycznej, o których mowa w ustawie z dnia 20 maja 2016 r. o efektywności energetycznej z dnia (tj. Dz.U. z 2021 r. poz. 2166), tzw. Certyfikaty białe.
+                    </li>
+                    <br/>
+                    <li>Cena sprzedaży energii elektrycznej z sieci zawiera stawkę podatku akcyzowego od energii elektrycznej w wysokości określonej przepisami Ustawy o podatku akcyzowym. W przypadku zwiększenia stawki podatku akcyzowego cena sprzedaży energii ulegnie automatycznie zwiększeniu o wartość wzrostu stawki podatku akcyzowego.</li>
+                    <br>
+                    <li>W przypadku zmiany lub wprowadzenia nowych przepisów prawa określających obowiązki uzyskania i przedstawienia do umorzenia Prezesowi URE świadectw pochodzenia energii elektrycznej lub uiszczenia innych opłat lub wejścia w życie innych dodatkowych obowiązków aniżeli przewidzianych przepisami prawa obowiązującymi na dzień akceptacji oferty, Sprzedawca ma prawo do zmiany cen lub stawek opłat za energię elektryczną sprzedawaną na podstawie Umowy. Sprzedawca poinformuje Odbiorcę o zmianie ceny lub stawek opłat za energię elektryczną, wskazując równocześnie zmiany przepisów prawnych stanowiące podstawę tego podwyższenia. Nowe ceny energii elektrycznej lub stawki opłat będą obowiązujące dla Sprzedawcy i Odbiorcy od chwili wejścia w życie wyżej wymienionych przepisów prawnych lub zmian istniejących przepisów prawnych lub wystąpienia okoliczności uzasadniających podstawę do ich zmiany i nie wymagają zawarcia aneksu do Umowy.</li>
+                    <br>
+                    <li>W przypadku wprowadzenia nowych przepisów prawnych lub zmian w istniejących przepisach prawnych dotyczących podatków, w szczególności podatku VAT lub podatku akcyzowego zmiana ceny energii elektrycznej lub opłat następuje w trybie określonym w powyższym punkcie.</li>
+                    <li>Do ceny netto energii elektrycznej zostanie doliczony podatek od towarów i usług (VAT) w wysokości zgodnej z obowiązującymi przepisami w tym zakresie</li>
+                    <li>Do ceny doliczone zostaną opłaty dystrybucyjne zgodne z lokalnym OSD</li>
+                    <li>Do ceny doliczona zostanie opłata handlowa:
+                        <br>
+                        <br>
+                        <ul class="offerUl1">
+                            <li>w przypadku Wariantu A i B:
+                                <table>
+                                    <tr>
+                                        <th class="th0">Moc zainstalowana elektryczna</th>
+                                        <th class="th0">Wysokość opłaty handlowej</th>
+                                    </tr>
+                                    <tr>
+                                        <td>0 - 5 kWp</td>
+                                        <td>15 PLN/miesięcznie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5.1 - 10 kWp</td>
+                                        <td>20 PLN/miesięcznie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10.1 - 20 kWp</td>
+                                        <td>25 PLN/miesięcznie</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pow. 20 kWp</td>
+                                        <td>30 PLN/miesięcznie</td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <br>
+                            <li>W przypadku wariantu A:
+                                <br/>
+                                30 PLN/miesięcznie
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+    <br/>
+    <li>Dane handlowo-techniczne
+        <br>
+        <br>
+        <table>
+            <tr>
+                <td>Okres obowiązywania umowy</td>
+                <td id="offerDuration"/>
+            </tr>
+            <tr>
+                <td>Szacowana roczna ilość wyprodukowanej energii elektrycznej przez mikro instalację prosumenta</td>
+                <td id="offerProduction"/>
+            </tr>
+            <tr>
+                <td>Szacowana roczna ilość energii elektrycznej zużywanej na bieżąco przez Prosumenta</td>
+                <td id="offerConsumption"/>
+            </tr>
+            <tr>
+                <td>Opłata handlowa</td>
+                <td id="offerTradeFee"/>
+            </tr>
+            <tr>
+                <td>Grupa taryfowa</td>
+                <td id="offerTariffGroup"/>
+            </tr>
+            <tr>
+                <td>Okres rozliczeniowy</td>
+                <td id="offerBillingPeriod"/>
+            </tr>
+            <tr>
+                <td>Termin płatności</td>
+                <td id="offerPaymentDate"> dni licząc od dnia wystawienia faktury</td>
+            </tr>
+            <tr>
+                <td>Usługi dystrybucyjne</td>
+                <td style="width: 200pt">Usługi dystrybucyjne zostaną rozliczone na jednej fakturze razem ze sprzedawaną energią w ramach kompleksowej umowy sprzedaży energii elektrycznej i świadczenia usług dystrybucji. Koszty dystrybucyjne zostaną naliczone zgodnie z taryfą dystrybucyjną odpowiedniego OSD w ramach grupy taryfowej, do której zakwalifikowany jest Prosument.</td>
+            </tr>
+        </table>
+    </li>
+    <br/>
+    <li>Dodatkowe korzyści:
+        <br>
+        <br>
+        <ul class="offerUl0">
+            <li>Możliwość wystawiania faktur za energię zakupioną i sprzedaną w imieniu Prosumenta</li>
+            <li>Możliwość przesyłania faktur elektronicznych na adres email wskazany w Umowie.</li>
+            <li>Możliwość zwrotu należności niewykorzystanych nadwyżek energii zgromadzonych na koncie bilingowym Prosumenta po okresie 12 miesięcy obowiązywania Umowy.</li>
+        </ul>
+    </li>
+    <br/>
+    <li>Bonifikata
+        <br>
+        <br>
+        <ul class="offerUl0">
+            <li>Za niedotrzymanie standardów jakościowych obsługi klientów, Klientowi przysługuje prawo do bonifikaty zgodnie z Rozporządzeniem Ministra Energii z dnia 6 marca 2019 r. w sprawie szczegółowych zasad kształtowania i kalkulacji taryf oraz rozliczeń w obrocie energią elektryczną. Bonifikata obliczana jest na podstawie przeciętnego wynagrodzenia w gospodarce narodowej ogłoszonego przez Prezesa Głównego Urzędu Statystycznego w Dzienniku Urzędowym Rzeczypospolitej Polskiej "Monitor Polski" w roku kalendarzowym poprzedzającym zawarcie Umowy albo aneksu do Umowy zmieniającego ceny lub stawki opłat określone w Umowie.</li>
+        </ul>
+    </li>
+    <br/>
+    <li>Postanowienia dodatkowe:
+        <br>
+        <br>
+        <ul class="offerUl0">
+            <li>Oferta w przypadku jej przyjęcia stanowi integralną część Umowy. W przypadku sprzeczności postanowień niniejszej oferty z postanowieniami Umowy pierwszeństwo mają postanowienia oferty. Dla zawarcia Umowy konieczne jest jednak zaakceptowanie formularza Umowy oraz OWU.</li>
+            <li>KENO Energia sp. z o.o. zastrzega sobie prawo do aktualizacji lub odwołania oferty z powodu zmian czynników wpływających na ceny energii elektrycznej bez podania przyczyn.</li>
+            <li>Działając w oparciu o art. 721 Kodeksu Cywilnego zastrzegamy poufność powyższych informacji i zobowiązujemy Państwa do nie ujawniania ich jakimkolwiek innym podmiotom.</li>
+            <li>Przyjęcie Oferty następuje poprzez przyjęcie i podpisanie niniejszej Oferty przez osobę/osoby uprawioną/e do reprezentacji Prosumenta i przesłanie jej drogą elektroniczną w formacie PDF lub listem poleconym do osoby odpowiedzialnej za ofertę ze strony Odbiorcy.</li>
+            <li>Osoba odpowiedzialna za ofertę: Mateusz Pielka nr telefonu: +48 32 230 25 71 e- mail: mateusz.pielka@keno-energia.com</li>
+        </ul>
+    </li>
+    <br/>
+    <li>Ważność oferty:<br>
+        <br>
+        <ul class="offerUl0">
+            <li>Oferta pozostaje ważna do dnia <span id="offerEndDate"/></li>
+        </ul>
+    </li>
+</ol>
+<br/>
+<br/>
+<p class="offerP1">
+    ………………………………………………………………………
+    <br/>
+    Miejsce i data oraz pieczęć i podpis osoby upoważnionej
+    <br>
+    do akceptacji oferty ze strony Prosumenta
+</p>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+def NEW_TAG
+def CREDENTIALS_ID
+def REGISTRY
+def DOCKER_IMAGE
+pipeline {
+
+  agent { label 'c4e-billing' }
+
+  // define global variables
+
+  environment {
+    GIT_REPOSITORY = "http://gitlab.sce-ovoo.pl/ovoo/products/chain4energy/billing/email-notification-service.git"
+    GIT_BRANCH = "master"
+    GIT_CREDENTIALS = "66b4b80c-429f-4bf1-a3a8-21a35cc2cafc"
+
+    // Parameters read from jenkins job params
+    TAG = "${version}"
+    ENVIRONMENT = "${environment}"
+    RELEASE_TYPE = "${type}"
+
+    // docker registry
+    DEV_REGISTRY = "10.0.8.1:5000"
+    PROD_REGISTRY = "g99vzm03.gra7.container-registry.ovh.net"
+    PROD_DOCKER_CREDENTIALS = "ovh-docker-registry"
+
+    // k8s credentials
+    OVOO_LAB = "c4e-billing"
+    OVH = "ovh-c4e-k8s"
+  }
+
+  stages {
+    stage('Setup env') {
+      steps {
+        script {
+          // Set env related vars
+          switch(ENVIRONMENT) {
+            case ["dev", "pre_prod"]:
+              REGISTRY = DEV_REGISTRY
+              CREDENTIALS_ID = OVOO_LAB
+              break
+            case "prod":
+              REGISTRY = PROD_REGISTRY
+              CREDENTIALS_ID = OVH
+              break
+            default:
+              currentBuild.result = 'FAILURE'
+              return
+          }
+        }
+      }
+    }
+
+    stage('Checkout source') {
+      steps {
+        git branch: GIT_BRANCH, credentialsId: GIT_CREDENTIALS, url: GIT_REPOSITORY
+      }
+    }
+
+    stage('Build') {
+      steps {
+        script {
+          sh './scripts/jenkins/build.sh'
+        }
+      }
+    }
+
+    stage('Tests') {
+      when {
+        expression { params.skipTests == false }
+      }
+      steps {
+        script {
+          sh 'go test -p 1 -v ./...'
+        }
+      }
+    }
+
+    stage('Release') {
+      when {
+        expression { params.release == true }
+      }
+      steps {
+        script {
+          sh "./scripts/jenkins/release.sh release $RELEASE_TYPE $ENVIRONMENT"
+        }
+      }
+    }
+
+    stage('Docker image') {
+      when {
+        expression { params.release == true }
+      }
+      steps {
+        script {
+          DOCKER_IMAGE = sh (
+            script: "./scripts/jenkins/build_image.sh $ENVIRONMENT",
+            returnStdout: true
+          ).trim()
+        }
+        script {
+          docker.withRegistry("https://${PROD_REGISTRY}", "${PROD_DOCKER_CREDENTIALS}") {
+            sh "docker push $DOCKER_IMAGE"
+          }
+        }
+      }
+    }
+
+    stage('Deploy') {
+      when {
+        expression { params.deploy == true }
+      }
+      steps {
+        script {
+          if ( params.release == false ) {
+            sh "./scripts/jenkins/release.sh replace_old_tag_with_new_tag $TAG $ENVIRONMENT"
+          }
+        }
+        script {
+          withCredentials([kubeconfigFile(credentialsId: "$CREDENTIALS_ID", variable: 'KUBECONFIG')]) {
+            sh "./scripts/jenkins/k8s_clear.sh $ENVIRONMENT"
+            sh "./scripts/jenkins/k8s_deploy.sh $ENVIRONMENT"
+          }
+        }
+      }
+    }
+
+  }
+
+}

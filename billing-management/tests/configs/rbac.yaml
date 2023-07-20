@@ -1,0 +1,34 @@
+roles:
+  - name: "SUPER_ADMIN"
+    rules:
+      - resource: "*"
+        verbs:
+          - "*"
+  - name: "ADMINISTRATOR_FULL"
+    rules:
+      - resource: "/api/providers/{id}/users*"
+        verbs:
+          - GET
+          - POST
+          - PUT
+          - DELETE # ?
+      - resource: "/api/providers/{id}/customerAccounts*"
+        verbs:
+          - GET
+          - POST
+          - PUT
+          - DELETE # ?
+  - name: "ADMINISTRATOR_BASIC"
+    rules:
+      - resource: "/api/providers/{id}/users*"
+        verbs:
+          - GET
+      - resource: "/api/providers/{id}/customerAccounts*"
+        verbs:
+          - GET
+  - name: "TRADER"
+  - name: "SUPER_AGENT"
+  - name: "AGENT"
+
+omitEndpoints:
+  - "/api/authenticate"

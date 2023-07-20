@@ -1,0 +1,171 @@
+{
+  "id": "62e925760ded90f1a465f374",
+  "header": {
+    "version": "1.0",
+    "provider": "Keno Energia Sp. z o.o.",
+    "content": {
+      "type": "contract",
+      "catg": "prosumer"
+    }
+  },
+  "payload": {
+    "contractDetails": {
+      "title": "",
+      "type": "Rozdzielona",
+      "clientType": "Odbiorca",
+      "offerId": "62e916af0ded90f1a465f372",
+      "tpaParameter": "nowe przyłącze",
+      "number": "C.52/02/08/2022",
+      "creationDate": "2022/08/02 13:24:06",
+      "state": "DRAFT",
+      "customerId": "273",
+      "transactionId": "",
+      "referenceId": "",
+      "tariffGroup": "G11",
+      "agreementType": "B2B"
+    },
+    "sellerDtls": {
+      "legalName": "Ovoo",
+      "displayName": "Ovoo",
+      "krs": "SAMPLE KRS",
+      "nip": "6762457439",
+      "address": {
+        "street": "Uliczna 12/1",
+        "postCode": "31211",
+        "city": "krakow"
+      },
+      "contact": {
+        "address": {
+          "street": "Uliczna 12/1",
+          "postCode": "31211",
+          "city": "krakow"
+        },
+        "phoneNumbers": [
+          {
+            "type": "fix",
+            "number": "987654321"
+          }
+        ],
+        "email": "ovoo@ovoo.pl"
+      }
+    },
+    "customerDtls": {
+      "registrationNumber": "395554471671",
+      "isVatPayer": "YES",
+      "firstName": "Jacek",
+      "lastName": "Kowalski",
+      "displayName": "Jacek Kowalski",
+      "pesel": "14112384374",
+      "nip": "6016276328",
+      "regon": "635831850",
+      "krs": "523462346",
+      "companyType": "nie wiem ",
+      "address": {
+        "number": "12",
+        "street": "Długa",
+        "postCode": "64-920",
+        "city": "Wrocław"
+      },
+      "contact": {
+        "address": {
+          "number": "12",
+          "street": "Długa",
+          "postCode": "64-920",
+          "city": "Wrocław"
+        },
+        "phoneNumbers": [
+          {
+            "type": "mobile",
+            "number": "344235789"
+          }
+        ],
+        "email": "faleb63844@logodez.com"
+      }
+    },
+    "conditions": {
+      "signatureDate": "2022/07/21 12:36:57",
+      "startDate": "2022/09/01",
+      "endDate": "2023/09/01",
+      "duration": {
+        "calendarUnit": "month",
+        "number": "12"
+      },
+      "billingPeriod": {
+        "calendarUnit": "month",
+        "number": "6"
+      },
+      "invoiceDueDate": "14",
+      "estimatedAnnualElectricityConsumption": {
+        "unit": "MWh",
+        "amount": "7"
+      },
+      "estimatedAnnualElectricityProduction": {
+        "unit": "MWh",
+        "amount": "7"
+      }
+    },
+    "serviceAccessPoints": [
+      {
+        "objectName": "Gospodarstwo domowe",
+        "address": "Test 11-111 Test, ul. Tets 213",
+        "sapCode": "1234",
+        "meterNumber": "4123",
+        "osd": {
+          "name": "Tauron"
+        },
+        "tariffGroup": "G11",
+        "estimatedEnergyUsage": {
+          "unit": "MWh",
+          "amount": "7"
+        },
+        "declaredEnergyUsage": {
+          "unit": "MWh",
+          "amount": "7"
+        },
+        "connectionPower": {
+          "unit": "kW",
+          "amount": "8"
+        },
+        "contractedPower": {
+          "unit": "kW",
+          "amount": "8"
+        },
+        "currentSeller": {
+          "name": "PGE",
+          "noticePeriod": "0"
+        },
+        "phase": "",
+        "sourceType": "Instalacja fotowoltaiczna",
+        "sourcePower": {
+          "unit": "kWp",
+          "amount": "8"
+        }
+      }
+    ],
+    "priceList": [
+      {
+        "name": "Nazwa cennika2",
+        "id": "",
+        "type": "sale",
+        "osd": "ENID",
+        "tariffGroup": "G11",
+        "zones": [
+          {
+            "id": "1",
+            "name": "całodobowa",
+            "unit": "MWh",
+            "cost": "1",
+            "currency": "pln"
+          }
+        ],
+        "commercialFee": {
+          "calendarUnit": "month",
+          "cost": "2",
+          "currency": "pln"
+        },
+        "price": {}
+      }
+    ],
+    "repurchase": {}
+  }
+}
