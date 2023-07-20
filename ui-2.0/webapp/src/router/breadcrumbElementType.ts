@@ -1,0 +1,5 @@
+export enum BreadcrumbElementType {
+  SELECTED_PROVIDE_NAME,
+  SELECTED_CUSTOMER_NAME,
+  SELECTED_EMPLOYEE_NAME
+}

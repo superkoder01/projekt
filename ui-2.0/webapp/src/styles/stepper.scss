@@ -1,0 +1,28 @@
+@import "./variables.scss";
+
+.no-border {
+  border: 0 !important;
+
+  .card-header {
+    background-color: transparent;
+    color: var($--main-color);
+    border: 0 !important;
+  }
+}
+
+.sticky {
+  position: sticky !important;
+  top: 230px;
+  z-index: 100;
+  padding: 10px 0px;
+  background-color: #fff;
+}
+
+.p-steps-number {
+  border-radius: 50% !important;
+  background: white !important;
+}
+
+.p-steps .p-steps-item.p-highlight .p-steps-number {
+  background: var(--main-color) !important;
+}

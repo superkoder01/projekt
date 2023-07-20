@@ -1,0 +1,72 @@
+@import './variables.scss';
+
+
+.p-button:not(.p-button-icon-only) {
+  border-radius: 30px !important;
+  padding: 0.5rem 1rem !important;
+  margin: 0.5rem !important;
+  align-self: center;
+}
+
+.p-button:not(.p-button-icon-only):not(.secondary):not(.outlined):not(.outlined-secondary):not(.preview):not(.delete) {
+  background-color: var(--main-color) !important;
+  color: var(--secondary-color) !important;
+  border-color: var(--main-color) !important;
+
+  &:hover {
+    background-color: var(--main-lighter-color) !important;
+  }
+}
+
+.secondary {
+  background-color: var(--secondary-color) !important;
+  color: var(--main-color) !important;
+  border-color: var(--main-color) !important;
+
+  &:hover {
+    background-color: var(--secondary-darker-color) !important;
+  }
+} 
+
+.outlined {
+  background-color: transparent !important;
+  color: var(--main-color) !important;
+  border-color: var(--main-color) !important;
+
+  &:hover {
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    background-color: var(--header-text-color) !important;
+
+  }
+}
+
+.outlined-secondary {
+  background-color: transparent !important;
+  color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+
+  &:hover {
+    color: var(--main-color) !important;
+    border-color: var(--main-color) !important;
+    background-color: var(--header-text-color) !important;
+
+  }
+}
+
+.p-radiobutton .p-radiobutton-box.p-highlight {
+  border-color: var(--secondary-color) !important;
+  background: var(--secondary-color) !important;
+}
+
+.p-radiobutton .p-radiobutton-box:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+}
+
+.tooltip-icon{
+  .p-button {
+    background-color: transparent !important;
+    color: var(--main-color) !important;
+    border: 0 !important;
+  }
+}

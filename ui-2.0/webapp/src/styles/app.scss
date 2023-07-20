@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@200;300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons");
+@import "./variables.scss";
+@import "./header.scss";
+@import "./mixins";
+@import "./tables.scss";
+@import "./stepper.scss";
+@import "./inputs.scss";
+@import "./tabs.scss";
+@import "./details.scss";
+@import "./buttons.scss";
+
+:root {
+    @include spread-map($theme-map-t1);
+}
+
+#app {
+    font-family: 'Work Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.p-component {
+    font-family: 'Work Sans', sans-serif !important;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+.main-container {
+    display: flex;
+    padding-bottom: 90px;
+    .content {
+        width: 100%;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+}
+
+nav {
+    padding: 30px;
+    a {
+        font-weight: bold;
+        color: #2c3e50;
+        &.router-link-exact-active {
+            color: #42b983;
+        }
+    }
+}
+.card {
+    border: 0 !important;
+}
+
+@media screen and (max-width: 700px) {
+    #app {
+        .main-container {
+            .content {
+                width: 100%;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+}

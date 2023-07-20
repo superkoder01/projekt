@@ -1,0 +1,646 @@
+{
+  "GLOBALS": {
+    "ROLES": {
+      "SUPER_ADMIN": "Super Administrator",
+      "ADMINISTRATOR_FULL": "Administrator Full",
+      "ADMINISTRATOR_BASIC": "Administrator Basic",
+      "TRADER": "Trader",
+      "SUPER_AGENT": "Super Agent",
+      "AGENT": "Agent",
+      "PROSUMER": "Client",
+      "SUPERE_ADMIN": "Super Administrator",
+      "CONSUMER" : "Consumer",
+      "PRODUCER": "Producer"
+    },
+    "BUTTONS": {
+      "NEXT": "Next",
+      "BACK": "Back",
+      "CREATE": "Create",
+      "ADD_AGENT": "ADD AGENT",
+      "ADD_SUPER_AGENT": "ADD SUPER-AGENT",
+      "ADD_TRADER": "ADD TRADER",
+      "ADD_ADMIN": "ADD ADMINISTRATOR",
+      "ADD_SUPER_ADMIN": "ADD SUPERADMIN",
+      "ADD_CUSTOMER": "ADD B2C CUSTOMER",
+      "ADD_BUSINESS_CUSTOMER": "ADD B2B CUSTOMER",
+      "ACTIVATE_ACCOUNT": "ACTIVATE ACCOUNT",
+      "SAVE_TO_PDF": "Save to PDF",
+      "ADD_INSTALLATION": "ADD INSTALLATION",
+      "RESET_PASSWORD": "RESET PASSWORD",
+      "ADD_PRICING" : "ADD NEW PRICING",
+      "ADD_OFFER": "ADD NEW OFFER TEMPLATE",
+      "ADD_NEW_OFFER": "ADD NEW OFFER",
+      "CREATE_CONTRACT": "Create contract",
+      "ACTIVATE": "Activate",
+      "DEACTIVATE": "Deactivate",
+      "SAVE":  "Save",
+      "EDIT": "Edit"
+    },
+    "TOASTS": {
+      "ERROR_POST": "Error during sending a form",
+      "ERROR_DELETE": "Cannot delete",
+      "ADDED_CUSTOMER": "Added new customer",
+      "ADDED_WORKER": "Added new employee",
+      "ADDED_TARRIF_GROUP": "Added new tarrif group",
+      "ADDED_PROVIDER": "Added new provider",
+      "ADDED_SUPER_ADMIN": "Added new superadmin",
+      "ADDED_DRAFT_OFFER": "Added new draft offer",
+      "ADDED_PRICING": "Added new pricing",
+      "PASSWORD_SET": "New password set",
+      "CREATED_INSTALLATION": "Created installation"
+    },
+    "POPUPS": {
+      "GENERAL": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "SUPERADMIN": {
+        "delete_message": "Do you want to delete this SuperAdmin?"
+      }
+    },
+    "LAYOUT": {
+      "PROVIDER": "Provider",
+      "VERSION": "Version"
+    },
+    "STATUS": {
+      "DRAFT": "Draft",
+      "SENT": "Sent",
+      "DELIVERED": "Delivered",
+      "FINAL": "Final",
+      "REJECTED": "Rejected",
+      "ACCEPTED": "Accepted",
+      "draft": "Draft"
+    },
+    "CUSTOMER_TYPES": {
+      "PROSUMER": "Prosumer",
+      "CONSUMER": "Consumer",
+      "PRODUCER": "Producer"
+    },
+    "PLACEHOLDERS": {
+      "SEARCH": "Search"
+    }
+  },
+  "SECTION_TITLES": {
+    "HOME": "Home",
+    "USERS": "Users",
+    "PROVIDERS": "Providers",
+    "INVOICES": "Invoices",
+    "CONTRACTS": "Contracts",
+    "OFFERS": "Offers",
+    "DOCUMENTS": "Documents",
+    "CUSTOMERS": "Customers",
+    "EMPLOYEES": "Employees",
+    "PRODUCT_CATALOG": "Products Catalog",
+    "TARIFF_PRICING": "Tariff Pricing",
+    "EMPLOYEE_DETAILS": "Employee Detils",
+    "CUSTOMER_TABS": "Customer Details",
+    "PROVIDER_TABS": "Provider Details",
+    "SUPER_ADMINS": "Super Admins",
+    "SUPER_ADMIN_DETAILS": "Super Administrator details",
+    "ADMIN_DETAILS": "Admin details",
+    "NEW_SUPER_ADMIN": "Add Super Admin",
+    "SUPER_ADMIN_PERSONAL_STEP": "Personal data",
+    "NEW_AGENT": "Add new Agent",
+    "AGENT_PERSONAL_STEP": "Personal data",
+    "AGENT_ADDRESS": "Address",
+    "NEW_SUPER_AGENT": "Add new Super Agent",
+    "SUPER_AGENT_PERSONAL_STEP": "Personal data",
+    "SUPER_AGENT_ADDRESS": "Address",
+    "NEW_TRADER": "Add new Trader",
+    "TRADER_PERSONAL_STEP": "Personal data",
+    "TRADER_ADDRESS": "Address",
+    "NEW_ADMIN": "Add new Admin",
+    "ADMIN_PERSONAL_STEP": "Personal data",
+    "CONFIGURATION": "Configuration",
+    "HISTORY": "History",
+    "ABOUT": "This is an about page",
+    "INFO": "Information",
+    "INSTALATIONS": "Instalations",
+    "OFFER_DRAFT_LIST": "Offer drafts",
+    "OFFER_DRAFT": "Offer drafts",
+    "NEW_OFFER_DRAFT": "Add new offer draft",
+    "EMPLOYEE_DETAILS_VIEW": "Employee details",
+    "PROVIDER_ADMINS": "Partner administrators",
+    "FAQ": "FAQ",
+    "HELP": "Help",
+    "TERMS_CONDITIONS": "Terms & Conditions",
+    "PRIVACY_POLICY": "Privacy Policy",
+    "RESET_PASSWORD": "Reset Password",
+    "SETTINGS": "Settings",
+    "NEW_PRICING": "New pricing",
+    "PRICING_STEP1": "New pricing",
+    "PRICING_STEP2": "Fees",
+    "CUSTOMER_TABS_INFO": "Info",
+    "CUSTOMER_TABS_OFFERS" : "Offers",
+    "CUSTOMER_TABS_CONTRACTS" : "Contracts",
+    "CUSTOMER_TABS_INVOICES": "Invoices",
+    "CUSTOMER_TABS_INSTALLATIONS" :"Installations",
+    "NEW_INSTALLATION": "New installation",
+    "INSTALLATION_DATA_STEP_1": "Installation data",
+    "INSTALLATION_ADDRESS": "Installation address",
+    "INSTALLATIONS" : "Installations",
+    "CUSTOMER_ROUTING": "Customers",
+    "CUSTOMER_TABS_OFFERS_ROUTING": "Offers",
+    "CUSTOMER_TABS_INSTALLATIONS_ROUTING": "Installations",
+    "NEW_OFFER": "New offer",
+    "OFFER_STEP1": "New offer",
+    "OFFER_STEP2": "New offer",
+    "NEW_CONTRACT": "New contract",
+    "CONTRACT_STEP1": "New contract",
+    "CONTRACT_STEP2": "New contract",
+    "CONTRACT_STEP3": "New contract",
+    "CONTRACT_STEP4": "New contract",
+    "PRICING_TABLE": "Pricing",
+    "PRICING": "Pricing",
+    "NEW_OFFER_DRAFT_STEP1": "New offer draft",
+    "NEW_OFFER_DRAFT_STEP2": "New offer draft - pricing",
+    "NEW_OFFER_DRAFT_STEP3": "New offer draft - conditions",
+    "PROVIDER_DATA_STEP" : "Provider data",
+    "NEW_PROVIDER": "New provider",
+    "PROVIDER_ADDRES": "Contact",
+    "PROVIDER_ADMIN": "Admin data",
+    "ADMINS": "Partner administrators",
+    "EDIT_PERSONAL_STEP_1": "Edit customer",
+    "EDIT_CUSTOMER": "Edit customer",
+    "EDIT_ADDRESS": "Edit Address",
+    "EDIT_ADMIN_FULL_PERSONAL_STEP": "Edit super admin personal data",
+    "EDIT_ADMIN_FULL": "Edit personal data",
+    "EDIT_SUPER_AGENT_PERSONAL_STEP": "Edit super agent",
+    "EDIT_SUPER_AGENT": "Edit personal data",
+    "EDIT_SUPER_AGENT_ADDRESS": "Edit super agent address",
+    "EDIT_TRADER_PERSONAL_STEP": "Edit trader personal data",
+    "EDIT_TRADER": "Edit personal data",
+    "EDIT_TRADER_ADDRESS": "Edit trader address",
+    "EDIT_AGENT_PERSONAL_STEP": "Edit agent personal data",
+    "EDIT_AGENT": "Edit personal data",
+    "EDIT_AGENT_ADDRESS": "Edit agent address",
+    "ADMINS_ROUTER": "Administrators",
+    "EDIT_PROVIDER_DATA_STEP": "Edit provider data",
+    "EDIT_PROVIDER": "Edit provider data",
+    "EDIT_PROVIDER_ADDRES": "Edit provider address",
+    "EDIT_PROVIDER_ADMIN": "Edit provider admin",
+    "PROVIDER_ADMINS_ROUTER": "Admin details",
+    "TARIFF": "Tariff group",
+    "PERSONAL_STEP_1": "New B2C client",
+    "NEW_CUSTOMER": "New B2C client",
+    "ADDRESS": "New B2C client",
+    "BUSINESS_STEP_1": "New B2B client",
+    "NEW_BUSINESS_CUSTOMER": "New B2B client",
+    "PERSONAL_STEP_2": "New B2B client",
+    "BUSINESS_ADDRESS_STEP_3": "New B2B client",
+    "CUSTOMER_TABS_CONTRACTS_ROUTER": "Contracts",
+    "EDIT_CONTRACT_STEP1": "Edit contract",
+    "EDIT_CONTRACT_STEP2": "Edit contract",
+    "EDIT_CONTRACT_STEP3": "Edit contract",
+    "EDIT_CONTRACT_STEP4": "Edit contract",
+    "EDIT_CONTRACT": "Edit contract"
+  },
+  "PAGE_ENUMS": {
+    "Providers": "Providers",
+    "Users": "Users",
+    "Contracts": "Contracts",
+    "Invoices": "Invoices",
+    "Offers": "Offers",
+    "Home": "Home",
+    "Documents": "Documents",
+    "Employees": "Employees",
+    "Customers": "Customers",
+    "ProductCatalog": "Products Catalog",
+    "SuperAdmins": "Super Admins",
+    "Configuration": "Configuration",
+    "History": "History",
+    "Installations": "Installations",
+    "Settings": "Settings"
+  },
+  "TTT": "noga",
+  "LOGIN": {
+    "username": "Login",
+    "password": "Password",
+    "log_in": "Log In",
+    "forgot_password": "Forgot your password?"
+  },
+  "TABLES": {
+    "ACTIONS": {
+      "delete": "Delete",
+      "preview": "Preview",
+      "edit": "Edit"
+    },
+    "CONTRACTS": {
+      "NUMBER": "Numer",
+      "TYPE": "Typ",
+      "TITLE": "Nazwa",
+      "CREATION_DATE": "Data utworzenia",
+      "STATE": "Status"
+    },
+    "SUPER_ADMINS": {
+      "LOGIN": "Login",
+      "EMAIL": "E-mail",
+      "FIRST_NAME":"Imię",
+      "LAST_NAME":"Nazwisko",
+      "PHONE":"Nr telefonu",
+      "STATE": {
+        "TITLE": "Status",
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive"
+      },
+      "NOT_FOUND": "No superadmins found"
+    },
+    "PROVIDER_ADMINS": {
+      "LOGIN": "Login",
+      "FIRST_NAME": "First ame",
+      "LAST_NAME": "Last name",
+      "PHONE": "Phone number",
+      "STATUS": "Status",
+      "INFO": "INFO",
+      "ADMINS": "ADMINS",
+      "STATE": {
+        "TITLE": "Status",
+        "ACTIVE": "Active",
+        "INACTIVE": "Inactive"
+      }
+    }
+  },
+  "SIDEBAR_MENU": {
+    "TITLE": "Menu_EN"
+  },
+  "HOME_VIEW": {
+    "SITE_UNDER_CONSTRUCTION": "Website under construction...",
+    "RDN_PRICES": "RDN repurchase prices",
+    "RDN_PRICES_NUMERIC": "Numeric data",
+    "RDN_PRICES_CHART": "Price change chart",
+    "REPORTS": "Reports",
+    "SHORTCUTS": "Shortcut",
+    "TITLE": "Basic nfo",
+     "DETAILS": "Customer details",
+    "RESET_PASSWORD_BUTTON": "Reset password",
+    "ADDRESS_DATA": "Address",
+    "FORMS": {
+      "BANK_ACCOUNT_NUMBER": "Bank account number",
+      "STREET": "Street",
+      "POSTAL_CODE": "Postal code",
+      "CITY": "City",
+      "PROVINCE": "Province",
+      "COUNTRY": "Country",
+      "PESEL": "PESEL",
+      "NIP": "NIP",
+      "REGON": "REGON",
+      "KRS": "KRS",
+      "BLOCKCHAIN_ACC": "Blockchain account",
+      "LICENSE_EXPIRATION_DATE": "License expiration date",
+      "WORK_START_DATE": "Work start date",
+      "WORK_END_DATE": "Work end date",
+      "EXTRA_INFO": "Extra info"
+    }
+  },
+  "PROVIDERS": {
+    "ADDRESS_DATA": "Address data",
+    "ADDITIONAL_DATA": "Extra info"
+  },
+  "FORMS": {
+    "HEADERS": {
+      "PERSONAL_DATA": "Personal data",
+      "BUSINESS_DATA": "Business data",
+      "ADDRESS": "Address",
+      "GENERAL_INFO": "General info",
+      "FEES": "Fees",
+      "INSTALLATION_DATA": "Installation data",
+      "ABOUT_OFFER": "Info about offer",
+      "PRICING": "Pricing",
+      "CONDITIONS": "Conditions",
+      "CUSTOMER_INFO": "Customer info",
+      "ADDRESS_FOR_CORRESPONDENCE": "Address for correspondence",
+      "TECHNICAL_DATA": "Commercial and technical data",
+      "PROVIDER_DATA": "Provider data",
+      "CONTACT": "Contact",
+      "ADMIN_DATA": "Admin data",
+      "OSD_DATA": "OSD Data",
+      "SAP_DATA": "SAP Data",
+      "EXTRA": "Extra info"
+    },
+    "PLACEHOLDERS": {
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Second name",
+      "FULL_NAME": "Full name",
+      "NAME": "Name",
+      "PHONE": "Phone number",
+      "BLOCKCHAIN_ACC": "Blockchain Account",
+      "END_DATE": "End date",
+      "TYPE": "Type",
+      "ROLE": "Role",
+      "PESEL": "PESEL",
+      "LOGIN": "Login",
+      "EMAIL": "E-mail",
+      "STREET": "Street",
+      "BUILDING_NUMBER": "Building number",
+      "APARTMENT_NUMBER": "Local",
+      "CITY": "City",
+      "POSTAL_CODE": "Postal code",
+      "PROVINCE": "Province",
+      "COUNTRY": "Country",
+      "NIP": "NIP",
+      "KRS": "KRS",
+      "REGON": "REGON",
+      "DSO": "Operator",
+      "TARIFF_TYPE": "Tariff type",
+      "TARIFF_GROUP": "Tariff group",
+      "PRICE": "Price",
+      "ZONE_PRICE": "Electricity price in PLN/MWh",
+      "MONTHLY_FEE": "Monthly trade/subscription fee depending on the power of the installation",
+      "PASSWORD": "Password",
+      "RETYPE_PASSWORD": "Retype password",
+      "NEW_PASSWORD": "New password",
+      "RETYPE_NEW_PASSWORD": "Retype new password",
+      "SAP_CODE": "SAP Code",
+      "METER_NUMBER": "Meter number",
+      "ADDRESS": "Address",
+      "STATUS": "Status",
+      "AGREEMENT_TYPE": "Client type",
+      "CONTRACT_TYPE": "Contract type",
+      "TPA_PARAMETER": "TPA parameter",
+      "CURRENT_SELLER": "Current seller",
+      "BRANCH": "Branch",
+      "INVOICE_DUE_DATE": "Invoice payment date (days) ",
+      "OBJECT_NAME": "Object name / type",
+      "REGISTRATION_NUMBER": "Registration number",
+      "CONNECTION_POWER": "Connected power in kW",
+      "CONTRACTED_POWER": "Contracted power in kW",
+      "DECLARED_ENERGY_USAGE": "Declared annual electricity consumption in MWh",
+      "SOURCE_POWER": "Electric power in kWp",
+      "NOTICE_PERIOD": "Notice period in months",
+      "START_DATE": "Sales start date",
+      "WORK_START_DATE": "Work start date",
+      "WORK_END_DATE": "Work end date",
+      "BANK_ACCOUNT_NUMBER": "Bank account number",
+      "SALE_PERIOD_FROM": "Sale period from",
+      "SALE_PERIOD_TO": "Sale period to",
+      "0_MONTHS": "No notice period",
+      "1_MONTHS": "1 month",
+      "2_MONTHS": "2 months",
+      "3_MONTHS": "3 months",
+      "4_MONTHS": "4 months",
+      "5_MONTHS": "5 months",
+      "6_MONTHS": "6 months",
+      "12_MONTHS": "12 months",
+      "7_DAYS": "7 days",
+      "14_DAYS": "14 days",
+      "30_DAYS": "30 days",
+      "DRAFT_OFFER": "Draft offer",
+      "ESTIMATED_ENERGY_USAGE": "Estimated annual energy consumption in MWh",
+      "ESTIMATED_ENERGY_PRODUCTION": "Estimated annual amount of energy produced in MWh",
+      "NUMBER_OF_PPE": "Number of PPE",
+      "PROVIDER_NAME": "Company name",
+      "NONE": "None",
+      "RDN_SALE": "RDN Sale",
+      "FIXED_RATE_SALE": "Fixed rate sale",
+      "RDN_REPURCHASE": "RDN Repurchase",
+      "FIXED_RATE_REPURCHASE": "Fixed rate repurchase",
+      "RDN_REPURCHASE_PRICING": "RDN Repurchase pricing",
+      "REPURCHASE_PRICING": "Repurchase pricing",
+      "SALE_PRICING": "Sale pricing",
+      "MONTH_CONTRACT_DURATION" : "Duration of the contract expressed in months",
+      "MONTH_BILLING_PERIOD_DURATION" : "Duration of the billing period expressed in months",
+      "DISTRICT_COURT": "District court of entity registration",
+      "COMPANY_TYPE": "Company type"
+    },
+    "VALIDATION_ERRORS": {
+      "REQUIRED": "This field is required",
+      "PHONE": {
+        "NaN": "Phone number should only contains numbers",
+        "INVALID_LENGTH": "Phone nummber should contains between 8 and 13 digits"
+      },
+      "PESEL": "PESEL should only contains numbers",
+      "EMAIL": "Invalid email format",
+      "EMAIL": {
+        "INCORRECT_FORMAT": "Invalid email format",
+        "ALREADY_IN_USE": "Email is already registered in the system"
+      },
+      "NUMBERS": {
+        "NaN": "This field must be a number",
+        "NOT_AN_INT": "This field must be an integer",
+        "NEGATIVE": "This field must be greater than 0"
+      },
+      "POSTAL_CODE": "Postal code should have format: XX-XXX",
+      "DATE_FORMAT": "Date must be a valid date in the format MM-DD-YYYY",
+      "INVALID_MAIL": "Invalid mail format",
+      "INVALID_FNAME": "This field can contain only letters",
+      "INVALID_SNAME": "This field can contain only letters, - and .",
+      "PASSWORD_REGEX": "Password must have at least 8 characters, contains at least one capital letter, lowercase, number and special character.",
+      "PASSWORD_MATCH": "Passwords don't match",
+      "CONTRACT_TYPE": "Contract type is required",
+      "TPA_PARAMETER": "TPA parameter is required",
+      "CURRENT_SELLER": "Current seller is required",
+      "OSD": "OSD is required",
+      "BRANCH": "Branch is required",
+      "OBJECT_NAME": "Object name / type is required",
+      "REGISTRATION_NUMBER": "Registration number is required",
+      "CONNECTION_POWER": "Connection power is required",
+      "CONTRACTED_POWER": "Contracted power is required",
+      "DECLARED_ENERGY_USAGE": "Declared energy usage is required",
+      "SOURCE_POWER": "Source power is required",
+      "ACCESS_POINT_METER_NUMBER": "Meter is required",
+      "BANK_ACCOUNT_NUMBER": "Bank account number is required",
+      "INVALID_PESEL": "PESEL is not valid",
+      "INVALID_NIP": "NIP is not valid",
+      "INVALID_REGON": "REGON is not valid",
+      "NIP_ALREADY_IN_USE": "NIP is already registered in the system",
+      "NAME_ALREADY_IN_USE": "Name is already registered in the system",
+      "REGON_ALREADY_IN_USE": "REGON is already registered in the system",
+      "KRS_ALREADY_IN_USE": "KRS is already registered in the system",
+      "POSITIVE_NUMBER": "The number must be positive"
+    }
+  },
+  "PROVIDERS_VIEW": {
+    "TABLE_HEADERS" : {
+      "STATUS": "Status",
+      "PROVIDER" : "Provider",
+      "COUNTRY": "Country",
+      "TYPE": "Type",
+      "WEBSITE": "Website"
+    }
+  },
+  "CUSTOMERS_VIEW": {
+    "TITLE": "Customers",
+    "TABLE_HEADERS": {
+      "ID": "Id",
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Second Name",
+      "EMAIL": "E-mail",
+      "PHONE": "Phone number",
+      "PROVINCE": "Province",
+      "TYPE": "Type",
+      "INFORMATION": "Info"
+    },
+    "NOT_FOUND": "No customers found"
+  },
+  "EMPLOYEES_VIEW": {
+    "TITLE": "Employees",
+    "TABLE_HEADERS": {
+      "FIRST_NAME": "First name",
+      "LAST_NAME": "Last name",
+      "STATUS": "Status",
+      "ROLE": "Role",
+      "EMAIL": "E-mail",
+      "PHONE": "Phone number",
+      "ACTIONS": "Actions"
+    },
+    "OTHER": {
+      "NO_EMPLOYEES_FOUND": "No employees found",
+      "NO_ADMINS_FOUND": "No administrators found"
+    }
+  },
+  "OFFERS_VIEW": {
+    "TABLE_HEADERS": {
+      "OFFER_NAME": "Name",
+      "OFFER_NUMBER": "Offer number",
+      "OFFER_TYPE": "Type",
+      "OFFER_CREATION_DATE": "Creation date",
+      "PRICING_NAME": "Name of the sales price list",
+      "ZONE_PRICE": "Sales rate",
+      "COMMERCIAL_FEE": "Trade fee rate",
+      "REPURCHASE_NAME": "Name of the repurchase price list",
+      "REPURCHASE_PRICE": "Repurchase rate",
+      "BILLING_PERIOD": "Billing period",
+      "BILLING_PERIOD_month": "Monthly",
+      "OFFER_STATE": "Offer status",
+      "TARRIF": "Tarrif",
+      "CONTRACT_TYPE": "Contract type"
+    },
+    "OTHER": {
+      "NO_CUSTOMERS_FOUND": "No customers found",
+      "NO_OFFERS_FOUND": "No offers found"
+    },
+    "DETAILS": {
+      "DOCUMENT_DETAILS": "Document details",
+      "OFFER_NAME": "Name",
+      "NUMBER": "Number",
+      "CREATION_DATE": "Creation date",
+      "TYPE": "Type",
+      "STATUS": "Status",
+      "SELLER": "Seller",
+      "SELLER_NAME": "Name",
+      "STREET": "Street",
+      "POSTAL_CODE": "Postal code",
+      "CITY": "City",
+      "EMAIL": "E-mail"
+    }
+  },
+  "CONTRACTS_VIEW": {
+    "TABLE_HEADERS": {
+      "NUMBER": "Number",
+      "TYPE": "Type",
+      "STATE": "Status"
+    },
+    "DETAILS": {
+      "DETAILS": "Details",
+      "NAME": "Name",
+      "NUMBER": "Number",
+      "CREATION_DATE": "Creation date",
+      "TYPE": "Type",
+      "START_DATE": "Start date",
+      "END_DATE": "End date",
+      "STATUS": "Status",
+      "PPE_CODE": "PPE Code",
+      "PPE_ADDRESS": "PPE Address",
+      "PRICING_NAME": "Pricing name",
+      "ZONE_NAME": "Zone name",
+      "COMMERCIAL_FEE": "Commercial fee",
+      "REPURCHASE_NAME": "Repurchase name",
+      "REPURCHASE_PRICE": "Repurchase price",
+      "BILLING_PERIOD": "Billing period",
+      "ACTIVATION_DATE": "Activation date"
+    },
+    "OTHER": {
+      "NO_CONTRACTS_FOUND": "No customers found"
+    }
+  },
+  "INSTALLATIONS_VIEW": {
+    "TABLE_HEADERS" : {
+      "PPE_NUMBER": "PPE Code",
+      "ADDRESS": "Address",
+      "CITY": "City",
+      "SAP_CODE":"SAP Code",
+      "INSTALLATION_POWER": "Installation power",
+      "OSD": "OSD",
+      "METER_NUMBER": "Number licznika"
+    },
+    "OTHER": {
+      "NOT_FOUND": "No instalations found"
+    }
+  },
+  "INVOICES_VIEW": {
+    "TABLE_HEADERS": {
+      "NUMBER": "Number",
+      "BILLING_START_DATE": "Billing start date",
+      "PAY_DUE_DATE": "Pay due date",
+      "ISSUE_DATE": "Issue date",
+      "STATUS": "Status"
+    },
+    "OTHER": {
+      "NO_INVOICES_FOUND": "No invoices found"
+    }
+  },
+  "PRICING_VIEW": {
+    "TABLE_HEADERS": {
+      "ID": "ID",
+      "NAME": "Name",
+      "TARRIF_GROUP": "Tariff group",
+      "START_DATE": "Start date",
+      "END_DATE": "End date",
+      "ZONES": "Zones",
+      "PRICE": "Price",
+      "ZONE": {
+        "ID": "Id",
+        "NAME": "Name",
+        "UNIT": "Unit",
+        "COST": "Cost",
+        "CURRENCY": "Currency"
+      },
+      "TYPE": "Type",
+      "OSD": "OSD",
+      "COMMERCIAL_FEE": "Trade fee rates",
+      "COMMERCIAL_FEE_ITEM": "Trade fee rate",
+      "SINGLE_COMMERCIAL_FEE": {
+        "FROM": "From",
+        "TO": "To",
+        "UNIT": "Unit",
+        "PRICES": "Prices",
+        "PRICE": {
+          "CALENDAR_UNIT": "Calendar unit",
+          "COST": "Cost",
+          "CURRENCY": "Currency"
+        }
+      },
+      "FIXED_PRICE": {
+        "UNIT": "Unit",
+        "COST": "Cost",
+        "CURRENCY": "Currency"
+      }
+    },
+    "OTHER": {
+      "NO_PRICING_FOUND": "No pricing found",
+      "RDN_INFO": "Data taken from the day-ahead commodity exchange"
+    }
+  },
+  "PRODUCT_CATALOG_VIEW": {
+    "SALE": "Sale",
+    "REPURCHASE": "Repurchase",
+    "REPURCHASE_RDN": "Repurchase RDN"
+  },
+  "OFFER_DRAFTS_VIEW": {
+    "TABLE_HEADERS": {
+    }
+  },
+  "ENUMS": {
+    "SERVICE_TYPE": {
+      "SALE": "Sale",
+      "REPURCHASE": "Repurchase",
+      "REPURCHASE_RDN": "Repurchase RDN"
+    },
+    "CALENDAR_UNIT_TYPE": {
+      "MONTH": "month"
+    }
+  },
+  "TOOLTIP": {
+    "CONTRACT_TYPE": "<p><b>Typ umowy:</b></p><p><b>Odbiorca</b>- klient końcowy</p><p><b>Wytwórca</b> - moc zainstalowana powyżej 50 kW (możliwość zgłoszenia tylko umowy rozdzielonej)</p><p><b>Prosument</b> - moc zainstalowana równa lub mniejsza niż 50 kW (możliwość zgłoszenia tylko umowy kompleksowej)<br> - odbiorca końcowy, czyli wytwarza ee na własne potrzeby z odnawialnych źródeł energii w mikroinstalacji</p><p><b>Odbiorca z mikroinstalacją</b> - moc zainstalowana równa lub mniejsza niż 50 kW (możliwość zgłoszenia tylko umowy rozdzielonej)</p>"
+  }
+}
