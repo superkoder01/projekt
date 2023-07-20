@@ -1,1 +1,1 @@
-# projekt
+# projekt: backend + ui
